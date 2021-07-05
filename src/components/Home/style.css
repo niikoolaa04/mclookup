@@ -116,6 +116,20 @@
   font-family: 'Overpass', sans-serif;
 }
 
+.infoHeader {
+  text-align: center;
+  font-family: 'Kanit', sans-serif;
+  color: #EDF6E1;
+  margin-top: 35px;
+}
+
+.teamMembers {
+  margin-top: 35px;
+  text-align: center;
+  color: #EDF6E1;
+  font-family: 'Overpass', sans-serif;
+}
+
 svg {
   display: flex;
   position: absolute;

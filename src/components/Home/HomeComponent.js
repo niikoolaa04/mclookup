@@ -36,8 +36,22 @@ function HomeComponent() {
           <div className="moreInfo">
             <h2 className="infoTitle">About { config.name }</h2>
             <p className="infoText">{ config.name } is Web Tool which allows you to check Status/Informations 
-about Minecraft Server or Minecraft Player.
-</p>
+of Minecraft Server or Minecraft Player<br />by just typing Server IP/Minecraft Username in Search Box.
+            </p>
+            <h3 className="infoHeader">Development</h3>
+            <p className="infoText">
+              Website is built by team of Specialist for Web Development who used newest technologies such as ReactJS<br />
+              to provide you with best possible experience on Website!
+            </p>
+            <h3 className="infoHeader">Team</h3>
+            <p className="infoText">
+              Like we said before our team is constructed from excellent Web Developers who is<br />
+              experienced at their job and know to do it pretty well.
+            </p>
+            <div className="teamMembers">
+              <strong>CEO & Developer</strong> - Nikola
+              <br /><strong>Designer</strong> - N/A
+            </div>
           </div>
         </div>
       </div>

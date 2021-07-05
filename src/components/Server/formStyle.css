@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+.formContainer form {
+  display: flex;
+  position: absolute;
+  left: 77vh;
+}
+
+.formContainer {
+  text-align: center;
+}
+
+.formBttn {
+  top: 17px;
+  left: 110px;
+}

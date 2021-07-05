@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap');
 
+.homeContainer {
+  height: 183vh;
+}
+
 .heroContainer {
-  height: 110vh;
+  height: 80vh;
   background: linear-gradient(rgb(17, 20, 24), rgb(18, 24, 34));
   z-index: 3 !important;
 }
@@ -97,7 +101,7 @@
 
 .moreInfo {
   background-color: #242a30;
-  height: 100vh;
+  height: 45rem;
   z-index: 2 !important;
 }
 
@@ -128,11 +132,19 @@
   text-align: center;
   color: #EDF6E1;
   font-family: 'Overpass', sans-serif;
+  z-index: 5 !important;
 }
 
-svg {
+.heroWave {
   display: flex;
   position: absolute;
   margin-top: 80px;
   z-index: 1 !important;
+}
+
+.svgClass {
+  display: flex;
+  position: absolute;
+  top: 62rem;
+  z-index: 1;
 }

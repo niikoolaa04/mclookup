@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.footerContainer {
+  height: 85px;
+  background: #222831;
+}
+
+.copyright {
+  text-align: center;
+  position: relative;
+  top: 33px;
+  font-family: 'Lato', sans-serif;
+  color: white;
+}
+
+.fa-discord {
+  transition: 0.3s;
+  color: #8f6af5;
+  cursor: pointer;
+}
+
+.fa-discord:hover {
+  opacity: 75%;
+  transition: all 0.3s ease-in-out;
+}
+
+.social {
+  position: relative;
+  padding-left: 35px;
+  padding-top: 10px;
+}

@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap');
+
+.heroContainer {
+  height: 110vh;
+  background: linear-gradient(rgb(17, 20, 24), rgb(18, 24, 34));
+  z-index: 3 !important;
+}
+
+.homeTitle {
+  font-family: 'Kanit', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 45px;
+  color: #EDF6E5;
+}
+
+.subTitleDiv {
+  padding-top: 30px;
+}
+
+.subtitle {
+  text-align: center;
+  font-family: 'Kanit', sans-serif;
+  color: #EDF6E1;
+  line-height: 17px;
+}
+
+.boxContainer {
+  /* text-align: center; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 90px;
+  font-family: 'Overpass', sans-serif;
+}
+
+.firstBox {  
+  transition: 0.3s;
+  text-align: center;
+  width: 375px;
+  height: 270px;
+  background-color: beige;
+  border-radius: 5px;
+  margin-right: 65px;
+  box-shadow: rgb(201, 199, 199) 2px 2px;
+  z-index: 3 !important;
+}
+.secondBox {
+  transition: 0.3s;
+  text-align: center;
+  width: 375px;
+  height: 270px;
+  background-color: beige;
+  border-radius: 5px;
+  margin-left: 65px;
+  box-shadow: rgb(201, 199, 199) 2px 2px;
+  z-index: 3 !important;
+}
+
+.boxText.user {
+  padding-left: 15px;
+  text-align: center;
+  justify-content: flex-end;
+}
+
+.boxText.server {
+  padding-left: 15px;
+  text-align: center;
+  justify-content: center;
+}
+
+.boxText {
+  padding-top: 10px;
+}
+
+.boxContainer a {
+  text-decoration: none;
+  color: #EDF6E1;
+}
+
+.boxBttn {
+  top: 35px;
+}
+
+.userImage, .serverImage {
+  padding-top: 13px;
+  width: 96px;
+  height: 96px;
+}
+
+.firstBox:hover, .secondBox:hover {
+  transition: all 0.3s ease-in-out;
+  cursor: cursor;
+  transform: scale(1.1, 1.1);
+}
+
+.moreInfo {
+  background-color: #242a30;
+  height: 100vh;
+  z-index: 2 !important;
+}
+
+.infoTitle {
+  text-align: center;
+  padding-top: 150px;
+  font-family: 'Kanit', sans-serif;
+  color: #EDF6E1;
+  text-transform: uppercase;
+}
+
+.infoText {
+  margin-top: 35px;
+  text-align: center;
+  color: #EDF6E1;
+  font-family: 'Overpass', sans-serif;
+}
+
+svg {
+  display: flex;
+  position: absolute;
+  margin-top: 80px;
+  z-index: 1 !important;
+}

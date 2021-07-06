@@ -1,0 +1,3 @@
+- Change Container Elements Color to Dark; Light > Dark
+- Add 'Copy on Click' to User Lookup (UUID and maybe name history)
+- Change Search Bar Design

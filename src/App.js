@@ -10,7 +10,6 @@ function App() {
 
   return (
     <div className="App">
-      <NavbarComponent style={{ zIndex: '5000' }}/>
       <Router>
         <Switch>
           <Route exact path="/">

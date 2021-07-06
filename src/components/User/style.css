@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap');
+
+.userContainer {
+  height: 142vh;
+}
+
+.userHero {
+  height: 80vh;
+  background: linear-gradient(rgb(17, 20, 24), rgb(18, 24, 34));
+  z-index: 3 !important;
+}
+
+.userTitle {
+  font-family: 'Kanit', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 45px;
+  color: #EDF6E5;
+}
+
+.userSubtitleDiv {
+  padding-top: 30px;
+}
+
+.userSubtitle {
+  text-align: center;
+  font-family: 'Kanit', sans-serif;
+  color: #EDF6E1;
+  line-height: 17px;
+}
+
+.userBoxContainer {
+  /* text-align: center; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 90px;
+  font-family: 'Overpass', sans-serif;
+}
+
+.userBox {
+  transition: 0.3s;
+  text-align: center;
+  width: 900px;
+  height: 500px;
+  background-color: beige;
+  border-radius: 5px;
+  z-index: 3 !important;
+}
+
+.noUser {
+  font-family: 'Kanit', sans-serif;
+  display: flex;
+  width: 880px;
+  height: 200px;
+  border-radius: 5px;
+  background-color: #fff;
+  z-index: 8 !important;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.noUsername {
+  padding-top: 25px;
+}
+
+.userBoxText {
+  padding-top: 10px;
+}
+
+.userBoxContainer a {
+  text-decoration: none;
+  color: #EDF6E1;
+}
+
+.boxBttn {
+  top: 35px;
+}
+
+.userImg {
+  padding-top: 13px;
+  width: 96px;
+  height: 96px;
+}
+
+.userBox {
+  transition: all 0.3s ease-in-out;
+  cursor: cursor;
+  transform: scale(1.1, 1.1);
+}
+
+.nothing {
+  background-color: #242a30;
+  /* background-color: red; */
+  height: 21rem;
+  margin-top: -7.5rem;
+  z-index: 2 !important;
+}
+
+.userWave {
+  display: flex;
+  position: absolute;
+  margin-top: 80px;
+  z-index: 1 !important;
+}
+
+.svgUser {
+  display: flex;
+  position: absolute;
+  top: 45rem;
+  z-index: 1;
+}
+
+.userBoxContent {
+  display: flex;
+  flex-direction: row;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.mcUsername {
+  display: flex;
+  margin-left: 18rem;
+  margin-top: 1rem;
+  font-family: 'Kanit', sans-serif;
+  font-size: 24px;
+}
+
+.mcSkin {
+  transform: scale(1, 1);
+  display: flex;
+  position: relative;
+  vertical-align: middle;
+  top: 10px;
+  left: 10px;
+  background-color: rgb(231, 225, 225);
+  border-radius: 5px;
+  padding: 20px 20px 20px 20px;
+  box-shadow: rgb(240, 235, 235) 5px 5px;
+}
+
+.imageBox {
+  position: absolute;
+  margin-top: 13px;
+  margin-left: 10px;
+  height: 54.5vh;
+  width: 30vh;
+}
+
+.uuidField {
+  margin-top: 1.1rem;
+  width: 250px;
+  height: 60px;
+  margin-left: 18rem;
+  background-color: rgb(231, 225, 225);
+  border-radius: 5px;
+  box-shadow: rgb(240, 235, 235) 5px 5px;
+  font-family: 'Overpass', sans-serif;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.uuidField p {
+  padding-top: 10px;
+}
+
+.uuidField:hover {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.08, 1.08);
+}
+
+.skinField {
+  margin-top: 1.1rem;
+  width: 250px;
+  height: 60px;
+  margin-left: 18rem;
+  background-color: rgb(231, 225, 225);
+  border-radius: 5px;
+  box-shadow: rgb(240, 235, 235) 5px 5px;
+  font-family: 'Overpass', sans-serif;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.skinField p {
+  text-decoration: none;
+  color: #000;
+  padding-top: 20px;
+}
+
+.skinField:hover {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.08, 1.08);
+}
+
+.capeField {
+  margin-top: 1.1rem;
+  width: 250px;
+  height: 60px;
+  margin-left: 18rem;
+  background-color: rgb(231, 225, 225);
+  border-radius: 5px;
+  box-shadow: rgb(240, 235, 235) 5px 5px;
+  font-family: 'Overpass', sans-serif;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.capeField p {
+  text-decoration: none;
+  color: #000;
+  padding-top: 20px;
+}
+
+.capeField:hover {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.08, 1.08);
+}
+
+.nameHistory {
+  position: absolute;
+  margin-top: 1.5rem;
+  width: 190px;
+  height: 310px;
+  margin-left: 42rem;
+  background-color: rgb(231, 225, 225);
+  border-radius: 5px;
+  box-shadow: rgb(240, 235, 235) 5px 5px;
+  font-family: 'Overpass', sans-serif;
+  transition: 0.3s;
+}
+
+.newName {
+  padding-bottom: 8px;
+  font-size: 13px;
+}
+
+.nameHistoryInner {
+  padding-top: 10px;
+}
+
+.historySpan {  
+  font-size: 10px;
+}
+
+.capePreview {
+  display: block;
+  margin-top: 4.5rem;
+  width: 160px;
+  height: 90px;
+  margin-left: 1.3rem;
+  background-color: rgb(231, 225, 225);
+  border-radius: 5px;
+  box-shadow: rgb(240, 235, 235) 5px 5px;
+  font-family: 'Overpass', sans-serif;
+  transition: 0.3s;
+}
+
+.capeIMG {
+  margin-top: 17px;
+  width: 32px;
+}

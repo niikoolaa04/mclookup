@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import './style.css'
 
 function NavbarComponent() {
@@ -27,24 +28,28 @@ function NavbarComponent() {
               setOpen(false);
             }}></i>
             <li className="nav-item">
-              <a href="#home" className="nav-link home" onClick={() => {
+              {/* <a href="#home" className="nav-link home" onClick={() => {
               setOpen(false);
-            }}>Home</a>
+            }}>Home</a> */}
+            <Link to="/" onClick={() => setOpen(false)} className="nav-link home">Home</Link>
             </li>
             <li className="nav-item">
-              <a href="#server" className="nav-link server" onClick={() => {
+              {/* <a href="#server" className="nav-link server" onClick={() => {
               setOpen(false);
-            }}>Server Status</a>
+            }}>Server Status</a> */}
+              <Link to="/server" onClick={() => setOpen(false)} className="nav-link server">Server Lookup</Link>
             </li>
             <li className="nav-item">
-              <a href="#user" className="nav-link user" onClick={() => {
+              {/* <a href="#user" className="nav-link user" onClick={() => {
               setOpen(false);
-            }}>User Informations</a>
+            }}>User Informations</a> */}
+              <Link to="/user" onClick={() => setOpen(false)} className="nav-link user">User Lookup</Link>
             </li>
             <li className="nav-item">
-              <a href="#contact" className="nav-link other" onClick={() => {
+              {/* <a href="#contact" className="nav-link other" onClick={() => {
               setOpen(false);
-            }}>Soon</a>
+            }}>Soon</a> */}
+              <Link to="/" onClick={() => setOpen(false)} className="nav-link other">Other</Link>
             </li>
           </ul>
         </div>

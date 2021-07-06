@@ -14,66 +14,51 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function ServerFormComponent({ data, setData }) {
+function ServerFormComponent({ data, setData, input, setInput, searchIP, setSearchIP, setTest }) {
   const classes = useStyles();
 
   function getJavaServer(ip) {
     axios.get(`https://api.mcsrvstat.us/2/${ip}`)
       .then(response => {
         const apiResponse = response.data;
+        let motdText = '';
+
+        for(let i = 0; i < apiResponse.motd.clean.length; i++) {
+          motdText += apiResponse.motd.clean[i];
+        }
+        setInput('');
         setData({
-          status: apiResponse.online,
+          status: apiResponse.online == true ? 'Online' : 'Offline',
           hostname: apiResponse.hostname,
           ip: apiResponse.ip,
           port: apiResponse.port,
           version: apiResponse.version,
-          playerCount: apiResponse.players.online,
-          maxPlayerCount: apiResponse.players.max,
-          software: apiResponse.software
-        })
+          playerCount: apiResponse.players.online + '/' + apiResponse.players.max,
+          software: apiResponse.software || 'Not Detected',
+          motd: motdText
+        });
       }).catch((e) => {
-        setData({ status: '' });
+        setData({ status: 'Error' });
       });
   }
 
-
-  // const handleChange = (e) => {
-  //   setCity(e.target.value);
-  //   setInput(e.target.value);
-  // }
-
-  // function getWeather() {
-  //   axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.REACT_APP_WEATHER_ACCESS_KEY}`)
-  //     .then(response => {
-  //       const apiResponse = response.data;
-  //       //console.log(apiResponse)
-  //       setInput('');
-  //       setData({
-  //         city: apiResponse.name,
-  //         country: apiResponse.sys.country,
-  //         temp: apiResponse.main.temp,
-  //         tempmax: apiResponse.main.temp_max,
-  //         tempmin: apiResponse.main.temp_min,
-  //         icon: apiResponse.weather[0].icon,
-  //         humidity: apiResponse.main.humidity,
-  //         feelslike: apiResponse.main.feels_like,
-  //         wind_speed: apiResponse.wind.speed
-  //       });
-  //       setCity({ city: '' });
-  //     }).catch((e) => {
-  //       setData({ city: 'Error Ocurred' });
-  //     });
-  // }
+  const handleChange = (e) => {
+    setSearchIP(e.target.value);
+    setInput(e.target.value);
+  }
 
   return (
     <div className={classes.root}>
       <div className="formContainer">
         <form onSubmit={(e) => {
+          getJavaServer(searchIP);
           e.preventDefault();
           }}>
-          <TextField id="filled-basic" variant="filled" className="formInput" />
+          <TextField id="filled-basic" value={input} variant="filled" className="formInput" onChange={(e) => handleChange(e)} />
         </form>
-        <Button variant="contained" className="formBttn" color="primary"> 
+        <Button variant="contained" className="formBttn" color="primary" onClick={() => {
+          getJavaServer(searchIP)
+        }}> 
           Search
         </Button>
       </div>

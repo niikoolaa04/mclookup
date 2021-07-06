@@ -49,11 +49,21 @@
   z-index: 3 !important;
 }
 
-.ostatak {
+.noServer {
+  font-family: 'Kanit', sans-serif;
   display: flex;
-  position: absolute;
-  width: 700px;
-  height: 360px;
+  width: 880px;
+  height: 200px;
+  border-radius: 5px;
+  background-color: #fff;
+  z-index: 8 !important;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.noServerIP {
+  padding-top: 25px;
 }
 
 .boxText.user {
@@ -87,20 +97,20 @@
   transform: scale(1.1, 1.1);
 }
 
-.nothing {
+.justempty {
   background-color: #242a30;
   height: 20rem;
   z-index: 2 !important;
 }
 
-.heroWave {
+.serverWave {
   display: flex;
   position: absolute;
   margin-top: 80px;
   z-index: 1 !important;
 }
 
-.svgClass {
+.svgServer {
   display: flex;
   position: absolute;
   top: 45rem;

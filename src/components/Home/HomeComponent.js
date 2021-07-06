@@ -4,10 +4,12 @@ import './style.css'
 import config from '../../config.json'
 import { Link } from 'react-router-dom';
 import FooterComponent from '../Footer/FooterComponent';
+import NavbarComponent from '../Navigation/NavbarComponent';
 
 function HomeComponent() {
   return (
     <div>
+      <NavbarComponent style={{ zIndex: '5000' }} />
       <div className="homeContainer">
         <div className="heroContainer" id="hero">
           

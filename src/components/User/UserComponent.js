@@ -88,7 +88,7 @@ function UserComponent() {
                           userData.cape == '' ?
                           '' :
                           <div className="capeField">
-                            <a href={userData.skin}><p>Download Cape</p></a>
+                            <a href={userData.cape}><p>Download Cape</p></a>
                           </div>
                         }
                         <div className="nameHistory">

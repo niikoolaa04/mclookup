@@ -1,4 +1,2 @@
-- Change Container Elements Color to Dark; Light > Dark (Just Server Lookup, User Lookup is Done)
-  - Find new Design for Server Lookup Page ~ Similar to User Lookup
 - Add 'Copy on Click' to User Lookup (UUID and maybe name history)
 - Change Search Bar Design

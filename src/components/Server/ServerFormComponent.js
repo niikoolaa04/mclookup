@@ -1,9 +1,10 @@
-import { React, useRef, useState, useEffect } from 'react';
+import { React, useEffect } from 'react';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
 import './formStyle.css';
+import $ from 'jquery';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,30 +15,41 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function ServerFormComponent({ data, setData, input, setInput, searchIP, setSearchIP, setTest }) {
+function ServerFormComponent({ data, setData, input, setInput, searchIP, setSearchIP, loading, setLoading }) {
   const classes = useStyles();
 
   function getJavaServer(ip) {
     axios.get(`https://api.mcsrvstat.us/2/${ip}`)
       .then(response => {
+        setLoading(true);
+        setTimeout(() => {
+          setLoading(false);
+        }, 2000);
         const apiResponse = response.data;
-        let motdText = '';
-
-        for(let i = 0; i < apiResponse.motd.clean.length; i++) {
-          motdText += apiResponse.motd.clean[i];
-        }
         setInput('');
+        setData({});
         setData({
           status: apiResponse.online == true ? 'Online' : 'Offline',
           hostname: apiResponse.hostname,
           ip: apiResponse.ip,
           port: apiResponse.port,
           version: apiResponse.version,
-          playerCount: apiResponse.players.online + '/' + apiResponse.players.max,
+          playerCount: apiResponse.players.online,
+          maxPlayerCount: apiResponse.players.max,
+          players: apiResponse.players.list == undefined ? [] : apiResponse.players.list,
           software: apiResponse.software || 'Not Detected',
-          motd: motdText
+          pluginsCount: apiResponse.plugins == undefined ? 0 : apiResponse.plugins.names.length,
+          plugins: apiResponse.plugins == undefined ? [] : apiResponse.plugins.names
         });
+        $(".firstLine").html('');
+        $(".secondLine").html('');
+        $(".firstLine").html(apiResponse.motd.html[0]);
+        if(apiResponse.motd.html.length == 1) return;
+        $(".secondLine").html(apiResponse.motd.html[1]);
       }).catch((e) => {
+        $(".firstLine").html('');
+        $(".secondLine").html('');
+        setInput('');
         setData({ status: 'Error' });
       });
   }
@@ -49,6 +61,7 @@ function ServerFormComponent({ data, setData, input, setInput, searchIP, setSear
 
   return (
     <div className={classes.root}>
+      <div className="motdElement"></div>
       <div className="formContainer">
         <form onSubmit={(e) => {
           getJavaServer(searchIP);

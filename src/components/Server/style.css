@@ -42,9 +42,11 @@
 .serverBox {
   transition: 0.3s;
   text-align: center;
-  width: 700px;
-  height: 360px;
-  background-color: beige;
+  width: 900px;
+  height: 500px;
+  /* background-color: beige;
+   */
+  background: linear-gradient(rgb(17, 20, 24), rgb(18, 24, 34));
   border-radius: 5px;
   z-index: 3 !important;
 }
@@ -99,7 +101,8 @@
 
 .justempty {
   background-color: #242a30;
-  height: 20rem;
+  margin-top: -14rem;
+  height: 25rem;
   z-index: 2 !important;
 }
 
@@ -120,4 +123,87 @@
 .boxContent {
   display: flex;
   flex-direction: row;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.serverDomain {
+  display: flex;
+  margin-left: 6rem;
+  margin-top: 1rem;
+  font-family: 'Kanit', sans-serif;
+  font-size: 24px;
+  color: rgb(252, 252, 252);
+}
+
+.imageBox {
+  position: absolute;
+  margin-top: 13px;
+  margin-left: 10px;
+  height: 54.5vh;
+  width: 30vh;
+}
+
+.serverPlayers p, .serverSoftware p, .serverIP p, .serverVersion p, .serverPlugins p {
+  text-decoration: none;
+  padding-top: 15px;
+  color: rgb(252, 252, 252);
+}
+
+.serverVersion, .serverSoftware, .serverPlayers, .serverIP, .serverPlugins {
+  margin-top: 1.1rem;
+  width: 250px;
+  height: 60px;
+  margin-left: 6rem;
+  background: linear-gradient(rgb(34, 39, 46), rgb(43, 52, 66));
+  box-shadow: rgb(34, 39, 46) 3px 3px;
+  border-radius: 5px;
+  font-family: 'Overpass', sans-serif;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.serverVersion:hover, .serverSoftware:hover, .serverPlayers:hover, .serverIP:hover, .serverPlugins:hover {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.08, 1.08);
+}
+
+.textBelow {
+  font-size: 10px;
+}
+
+.serverFavicon {
+  position: absolute;
+  margin-top: 15rem;
+  margin-left: 36rem;
+  width: 124px;
+  background: linear-gradient(rgb(34, 39, 46), rgb(43, 52, 66));
+  box-shadow: rgb(34, 39, 46) 3px 3px;
+  border-radius: 5px;
+  font-family: 'Overpass', sans-serif;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.favicon {
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
+
+.motdEl {
+  display: inline-flex;
+  position: absolute;
+  flex-direction: column;
+  left: 30rem;
+  top: 4.3rem;
+  font-size: 18px;
+  background: linear-gradient(rgb(34, 39, 46), rgb(43, 52, 66));
+  box-shadow: rgb(34, 39, 46) 3px 3px;
+  padding: 20px 20px;
+  width: 300px;
+  border-radius: 10px;
 }

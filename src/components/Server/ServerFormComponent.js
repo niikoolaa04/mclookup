@@ -15,16 +15,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function ServerFormComponent({ data, setData, input, setInput, searchIP, setSearchIP, loading, setLoading }) {
+function ServerFormComponent({ data, setData, input, setInput, searchIP, setSearchIP, loading, isLoading }) {
   const classes = useStyles();
 
   function getJavaServer(ip) {
+    setLoading(true);
     axios.get(`https://api.mcsrvstat.us/2/${ip}`)
       .then(response => {
-        setLoading(true);
-        setTimeout(() => {
-          setLoading(false);
-        }, 2000);
         const apiResponse = response.data;
         setInput('');
         setData({});
@@ -44,6 +41,7 @@ function ServerFormComponent({ data, setData, input, setInput, searchIP, setSear
         $(".firstLine").html('');
         $(".secondLine").html('');
         $(".firstLine").html(apiResponse.motd.html[0]);
+        setLoading(false);
         if(apiResponse.motd.html.length == 1) return;
         $(".secondLine").html(apiResponse.motd.html[1]);
       }).catch((e) => {

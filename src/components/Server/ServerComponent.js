@@ -25,12 +25,10 @@ function ServerComponent() {
 
   const [input, setInput] = useState('');
   const [searchIP, setSearchIP] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setLoading] = useState(false);
 
-  useEffect(() => {
-    // loading == true ? $(".spanTest").html('Loading..') : $(".spanTest").html('Loaded!!!!!')
-    console.log(loading)
-  }, [loading])
+  let loadingText;
+  if(isLoading) loadingText = <p>Please wait, site is loading..</p>;
 
   let emptySearch = '';
   if(searchIP == '') emptySearch = 'No IP Entered'
@@ -46,9 +44,7 @@ function ServerComponent() {
             <p className="serverSubtitle">Enter desired Server IP into Search Box</p>
           </div>
           <span className="spanTest">
-            {
-              loading ? 'GNJW JGJSGN SJNBAJG' : ' AMGKLAGJSNGILSNGT KBTGJKBESGB;SKGBS'
-            }
+            { loadingText }
           </span>
           <ServerFormComponent 
             data={serverData} 
@@ -57,7 +53,7 @@ function ServerComponent() {
             setInput={setInput} 
             searchIP={searchIP}
             setSearchIP={setSearchIP}
-            loading={loading}
+            loading={isLoading}
             setLoading={setLoading}
           />
           { serverData.status == '' ? 

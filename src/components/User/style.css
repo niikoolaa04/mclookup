@@ -56,11 +56,12 @@
   width: 880px;
   height: 200px;
   border-radius: 5px;
-  background-color: #fff;
+  background: linear-gradient(rgb(17, 20, 24), rgb(18, 24, 34));
   z-index: 8 !important;
   justify-content: center;
   text-align: center;
   flex-direction: column;
+  color: rgb(238, 238, 238);
 }
 
 .noUsername {
@@ -270,4 +271,29 @@
 .capeIMG {
   margin-top: 17px;
   width: 32px;
+}
+
+.avatarPreview {
+  display: block;
+  margin-top: -5.6rem;
+  width: 160px;
+  height: 90px;
+  margin-left: 43rem;
+  background: linear-gradient(rgb(34, 39, 46), rgb(43, 52, 66));
+  box-shadow: rgb(34, 39, 46) 3px 3px;
+  border-radius: 5px;
+  font-family: 'Overpass', sans-serif;
+  transition: 0.3s;
+}
+
+.avatarIMG {
+  margin-top: 30px;
+  width: 32px;
+}
+
+#copy-uuid {
+  width: 10px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1 !important;
 }

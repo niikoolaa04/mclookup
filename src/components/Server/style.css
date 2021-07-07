@@ -57,11 +57,12 @@
   width: 880px;
   height: 200px;
   border-radius: 5px;
-  background-color: #fff;
+  background: linear-gradient(rgb(17, 20, 24), rgb(18, 24, 34));
   z-index: 8 !important;
   justify-content: center;
   text-align: center;
   flex-direction: column;
+  color: rgb(238, 238, 238);
 }
 
 .noServerIP {
@@ -206,4 +207,11 @@
   padding: 20px 20px;
   width: 300px;
   border-radius: 10px;
+}
+
+#copy-ip {
+  width: 10px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1 !important;
 }

@@ -1,8 +1,7 @@
-import { React, useRef, useState, useEffect } from 'react';
+import { React } from 'react';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import { player, getNameHistory } from 'minecraft_head';
 import axios from 'axios';
 import './formStyle.css';
 
@@ -15,12 +14,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function UserFormComponent({ data, setData, input, setInput, searchUser, setSearchUser, searchUUID, setSearchUUID, setNameHistory, nameHistory }) {
+function UserFormComponent({ data, setData, input, setInput, searchUser, setSearchUser, searchUUID, setSearchUUID, setNameHistory, nameHistory,setLoading }) {
   const classes = useStyles();
 
   function getPlayer(e) {
     e.preventDefault();
-    let history = [];;
+    setLoading(true);
+    let history = [];
     axios.get(`https://playerdb.co/api/player/minecraft/${input}`)
       .then(response => {
         let apiResponse = response.data.data.player;
@@ -41,8 +41,11 @@ function UserFormComponent({ data, setData, input, setInput, searchUser, setSear
               cape: apiResp.optifine.imageUrls == undefined ? '' : apiResp.optifine.imageUrls.still.front
             });
             setNameHistory(history);
+            setLoading(false);
         });
-        console.log(data);
+      }).catch((e) => {
+        setData({ username: 'Error' });
+        setLoading(false);
       });
   }
 
@@ -57,7 +60,7 @@ function UserFormComponent({ data, setData, input, setInput, searchUser, setSear
         <form onSubmit={(e) => {
           getPlayer(e);
           }}>
-          <TextField id="filled-basic" value={input} variant="filled" className="userInput" onChange={(e) => handleChange(e)} />
+          <input type="text" className="userInput" id="name" placeholder="Username/UUID" onChange={(e) => handleChange(e)} required="" />
         </form>
         <Button variant="contained" className="formBttn" color="primary" onClick={(e) => {
           getPlayer(e)

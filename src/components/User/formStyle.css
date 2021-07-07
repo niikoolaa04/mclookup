@@ -10,7 +10,26 @@
   text-align: center;
 }
 
+.userInput {
+  position: relative;
+  top: 11px;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  font-size: 1.2rem;
+	margin: 0 auto;
+  padding: 10px 10px 10px 10px;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  width: 90%;
+  display: block;
+  border-bottom: 0.3rem solid transparent;
+  transition: all 0.3s;
+  outline: none;
+}
+
 .formBttn {
-  top: 17px;
-  left: 110px;
+  top: 11px;
+  left: 130px;
+  height: 48px;
 }

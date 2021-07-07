@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function ServerFormComponent({ data, setData, input, setInput, searchIP, setSearchIP, loading, isLoading }) {
+function ServerFormComponent({ data, setData, input, setInput, searchIP, setSearchIP, isLoading, setLoading }) {
   const classes = useStyles();
 
   function getJavaServer(ip) {
@@ -49,6 +49,7 @@ function ServerFormComponent({ data, setData, input, setInput, searchIP, setSear
         $(".secondLine").html('');
         setInput('');
         setData({ status: 'Error' });
+        setLoading(false);
       });
   }
 
@@ -65,7 +66,7 @@ function ServerFormComponent({ data, setData, input, setInput, searchIP, setSear
           getJavaServer(searchIP);
           e.preventDefault();
           }}>
-          <TextField id="filled-basic" value={input} variant="filled" className="formInput" onChange={(e) => handleChange(e)} />
+            <input type="text" className="userInput" id="name" placeholder="Server Address" onChange={(e) => handleChange(e)} required="" />
         </form>
         <Button variant="contained" className="formBttn" color="primary" onClick={() => {
           getJavaServer(searchIP)

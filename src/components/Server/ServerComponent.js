@@ -1,10 +1,10 @@
-import { React, useState, useEffect } from 'react';
+import { React, useState } from 'react';
 import './style.css'
 import FooterComponent from '../Footer/FooterComponent';
 import ServerFormComponent from './ServerFormComponent';
 import NavbarComponent from '../Navigation/NavbarComponent';
 import Tooltip from '@material-ui/core/Tooltip';
-import $ from 'jquery'
+import LoadingComponent from '../Loading/LoadingComponent';
 
 function ServerComponent() {
 
@@ -27,12 +27,13 @@ function ServerComponent() {
   const [searchIP, setSearchIP] = useState('');
   const [isLoading, setLoading] = useState(false);
 
-  let loadingText;
-  if(isLoading) loadingText = <p>Please wait, site is loading..</p>;
-
   let emptySearch = '';
   if(searchIP == '') emptySearch = 'No IP Entered'
   else emptySearch = searchIP;
+
+  const styleFix = {
+    transition: 'all 0.3s ease-in-out'
+  };
 
   return (
     <div>
@@ -43,9 +44,6 @@ function ServerComponent() {
           <div className="serverSubtitleDiv">
             <p className="serverSubtitle">Enter desired Server IP into Search Box</p>
           </div>
-          <span className="spanTest">
-            { loadingText }
-          </span>
           <ServerFormComponent 
             data={serverData} 
             setData={setServerData} 
@@ -56,6 +54,9 @@ function ServerComponent() {
             loading={isLoading}
             setLoading={setLoading}
           />
+          {
+            isLoading == true ? <LoadingComponent style={styleFix}/> : ''
+          }
           { serverData.status == '' ? 
             <div className="serverBoxContainer">
               <div className="serverBox" style={{ width: '0px' }}>
@@ -84,6 +85,7 @@ function ServerComponent() {
                   <div className="serverBox">
                     <div className="boxContent">
                       <div className="profileInfo">
+                        <input type="input" value={serverData.ip + ':' + serverData.port} id="copy-ip"></input> 
                         <div className="serverFavicon">
                           <img src={`https://api.minetools.eu/favicon/${serverData.hostname}`} alt="" className="favicon" />
                         </div>
@@ -92,9 +94,15 @@ function ServerComponent() {
                           <span className="secondLine"></span>
                         </div>
                         <p className="serverDomain">{ serverData.hostname }</p>
-                        <div className="serverIP">
-                          <p>{ serverData.ip + ':' + serverData.port } <br /><span className="textBelow">Server IP</span></p>
-                        </div>
+                        <Tooltip title={`Click to Copy Server IP`} placement="top">
+                          <div className="serverIP" onClick={(e) => {
+                            var text = document.querySelector('#copy-ip');
+                            text.select();
+                            document.execCommand('copy');
+                          }}>
+                            <p>{ serverData.ip + ':' + serverData.port } <br /><span className="textBelow">Server IP</span></p>
+                          </div>
+                        </Tooltip>
                         <div className="serverSoftware">
                           <p>{ serverData.software } <br /><span className="textBelow">Server Software</span></p>
                         </div>

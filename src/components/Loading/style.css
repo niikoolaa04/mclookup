@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap');
+
+.loadingContainer {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  margin-top: 4rem;
+  width: 500px;
+  height: 60px;
+  margin-left: 25.5rem;
+  background: rgb(12, 14, 17);
+  color: beige;
+  border-radius: 5px;
+  font-family: 'Kanit', sans-serif;
+  transition: all 0.3s ease-in-out;
+}

@@ -1,23 +1,10 @@
-import { React, useEffect } from 'react';
-import TextField from '@material-ui/core/TextField';
-import { makeStyles } from '@material-ui/core/styles';
+import { React } from 'react';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
 import './formStyle.css';
 import $ from 'jquery';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& .MuiTextField-root': {
-      margin: theme.spacing(1),
-      width: '25ch',
-    },
-  },
-}));
-
 function ServerFormComponent({ data, setData, input, setInput, searchIP, setSearchIP, isLoading, setLoading }) {
-  const classes = useStyles();
-
   function getJavaServer(ip) {
     setLoading(true);
     axios.get(`https://api.mcsrvstat.us/2/${ip}`)
@@ -59,16 +46,16 @@ function ServerFormComponent({ data, setData, input, setInput, searchIP, setSear
   }
 
   return (
-    <div className={classes.root}>
+    <div>
       <div className="motdElement"></div>
-      <div className="formContainer">
+      <div className="serverFormContainer">
         <form onSubmit={(e) => {
           getJavaServer(searchIP);
           e.preventDefault();
           }}>
-            <input type="text" className="userInput" id="name" placeholder="Server Address" onChange={(e) => handleChange(e)} required="" />
+            <input type="text" className="serverInput" id="name" placeholder="Server Address" onChange={(e) => handleChange(e)} required="" />
         </form>
-        <Button variant="contained" className="formBttn" color="primary" onClick={() => {
+        <Button variant="contained" className="serverFormBttn" color="primary" onClick={() => {
           getJavaServer(searchIP)
         }}> 
           Search

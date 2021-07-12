@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
-.formContainer form {
+.userFormContainer form {
   display: flex;
   position: absolute;
   left: 77vh;
 }
 
-.formContainer {
+.userFormContainer {
   text-align: center;
 }
 
@@ -28,7 +28,7 @@
   outline: none;
 }
 
-.formBttn {
+.userFormBttn {
   top: 11px;
   left: 130px;
   height: 48px;

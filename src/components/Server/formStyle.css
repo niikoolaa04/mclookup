@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
-.formContainer form {
+.serverFormContainer form {
   display: flex;
   position: absolute;
+  left: 77vh;
 }
 
-.formContainer {
+.serverFormContainer {
   text-align: center;
 }
 
-.userInput {
+.serverInput {
   position: relative;
   top: 11px;
   font-family: 'Roboto', sans-serif;
@@ -27,14 +28,7 @@
   outline: none;
 }
 
-.formBttn {
+.serverFormBttn {
   top: 17px;
   left: 110px;
-}
-
-@media screen and (max-width:800px) {
-  .formContainer form {
-    left: 0;
-    margin-left: -25rem;
-  }
 }

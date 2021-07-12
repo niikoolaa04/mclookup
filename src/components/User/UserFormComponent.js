@@ -1,22 +1,9 @@
 import { React } from 'react';
-import TextField from '@material-ui/core/TextField';
-import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
 import './formStyle.css';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& .MuiTextField-root': {
-      margin: theme.spacing(1),
-      width: '25ch',
-    },
-  },
-}));
-
 function UserFormComponent({ data, setData, input, setInput, searchUser, setSearchUser, searchUUID, setSearchUUID, setNameHistory, nameHistory,setLoading }) {
-  const classes = useStyles();
-
   function getPlayer(e) {
     e.preventDefault();
     setLoading(true);
@@ -55,14 +42,14 @@ function UserFormComponent({ data, setData, input, setInput, searchUser, setSear
   }
 
   return (
-    <div className={classes.root}>
-      <div className="formContainer">
+    <div>
+      <div className="userFormContainer">
         <form onSubmit={(e) => {
           getPlayer(e);
           }}>
           <input type="text" className="userInput" id="name" placeholder="Username/UUID" onChange={(e) => handleChange(e)} required="" />
         </form>
-        <Button variant="contained" className="formBttn" color="primary" onClick={(e) => {
+        <Button variant="contained" className="userFormBttn" color="primary" onClick={(e) => {
           getPlayer(e)
         }}> 
           Search

@@ -3,7 +3,6 @@
 .formContainer form {
   display: flex;
   position: absolute;
-  left: 77vh;
 }
 
 .formContainer {
@@ -35,6 +34,7 @@
 
 @media screen and (max-width:800px) {
   .formContainer form {
-    left: 5px;
+    left: 0;
+    margin-left: -25rem;
   }
 }

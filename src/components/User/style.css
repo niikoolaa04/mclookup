@@ -31,7 +31,6 @@
 }
 
 .userBoxContainer {
-  /* text-align: center; */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -96,8 +95,8 @@
 .nothing {
   background-color: #242a30;
   /* background-color: red; */
-  height: 21rem;
-  margin-top: -7.5rem;
+  height: 26rem;
+  margin-top: -15rem;
   z-index: 2 !important;
 }
 
@@ -276,9 +275,9 @@
 .avatarPreview {
   display: block;
   margin-top: -5.6rem;
-  width: 160px;
+  width: 190px;
   height: 90px;
-  margin-left: 43rem;
+  margin-left: 42rem;
   background: linear-gradient(rgb(34, 39, 46), rgb(43, 52, 66));
   box-shadow: rgb(34, 39, 46) 3px 3px;
   border-radius: 5px;

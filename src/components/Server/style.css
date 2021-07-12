@@ -102,23 +102,9 @@
 
 .justempty {
   background-color: #242a30;
-  margin-top: -14rem;
-  height: 25rem;
+  margin-top: -15rem;
+  height: 27rem;
   z-index: 2 !important;
-}
-
-.serverWave {
-  display: flex;
-  position: absolute;
-  margin-top: 80px;
-  z-index: 1 !important;
-}
-
-.svgServer {
-  display: flex;
-  position: absolute;
-  top: 45rem;
-  z-index: 1;
 }
 
 .boxContent {

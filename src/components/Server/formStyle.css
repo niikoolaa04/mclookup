@@ -32,3 +32,9 @@
   top: 17px;
   left: 110px;
 }
+
+@media screen and (max-width:800px) {
+  .formContainer form {
+    left: 5px;
+  }
+}

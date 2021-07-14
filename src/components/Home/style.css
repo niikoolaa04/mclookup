@@ -101,8 +101,9 @@
 
 .moreInfo {
   background-color: #242a30;
-  height: 53rem;
+  height: 45rem;
   z-index: 2 !important;
+  margin-top: -1px;
 }
 
 .infoTitle {

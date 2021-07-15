@@ -201,3 +201,9 @@
   pointer-events: none;
   z-index: -1 !important;
 }
+
+@media screen and (max-width:800px) {
+  .serverBox {
+    width: 500px;
+  }
+}

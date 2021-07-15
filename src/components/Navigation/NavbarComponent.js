@@ -20,11 +20,11 @@ function NavbarComponent() {
       <div className="navContainer">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/archive/a/ac/20070325222640%21No_image_available.svg/120px-No_image_available.svg.png" alt="title image" className="title" />
         <div className="navigation">
-          <i id="open-menu" class="fas fa-bars" onClick={() => {
+          <i id="open-menu" className="fas fa-bars" onClick={() => {
             setOpen(true);
           }}></i>
           <ul id="testiranje" className="nav-list" style={menuOpened}>
-            <i id="close-menu" class="fas fa-times fa-2x" onClick={() => {
+            <i id="close-menu" className="fas fa-times fa-2x" onClick={() => {
               setOpen(false);
             }}></i>
             <li className="nav-item">

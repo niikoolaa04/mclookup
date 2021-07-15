@@ -34,3 +34,15 @@
   padding-left: 35px;
   padding-top: 10px;
 }
+
+@media screen and (max-width:800px) { 
+  .copyright {
+    font-size: 13px;
+  }
+  .fa-discord {
+    transform: scale(0.8);
+  }
+  .social {
+    padding-left: 25px;
+  }
+}

@@ -44,7 +44,7 @@
   text-align: center;
   width: 375px;
   height: 270px;
-  background-color: beige;
+  background-color: #fff;
   border-radius: 5px;
   margin-right: 65px;
   box-shadow: rgb(201, 199, 199) 2px 2px;
@@ -55,7 +55,7 @@
   text-align: center;
   width: 375px;
   height: 270px;
-  background-color: beige;
+  background-color: #fff;
   border-radius: 5px;
   margin-left: 65px;
   box-shadow: rgb(201, 199, 199) 2px 2px;
@@ -83,9 +83,9 @@
   color: #EDF6E1;
 }
 
-.boxBttn {
-  top: 35px;
-}
+/* .boxBttn {
+  margin-top: 50px;
+} */
 
 .userImage, .serverImage {
   padding-top: 13px;
@@ -136,16 +136,55 @@
   z-index: 5 !important;
 }
 
-.heroWave {
-  display: flex;
-  position: absolute;
-  margin-top: 80px;
-  z-index: 1 !important;
-}
+@media screen and (max-width:800px) {
+  .boxContainer {
+    margin-top: 50px;
+  }
+  .firstBox {  
+    width: 210px;
+    height: 140px;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  .secondBox {
+    width: 210px;
+    height: 140px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .userImage, .serverImage {
+    padding-top: 13px;
+    width: 32px;
+    height: 32px;
+  }
+  .boxText.user {
+    padding-right: 5px;
+    text-align: center;
+    justify-content: center;
+    font-size: 13px;
+  }
+  .boxText.server {
+    padding-left: 5px;
+    text-align: center;
+    justify-content: center;
+    font-size: 13px;
+  }
+  .boxContainer button {
+    margin-top: -26px;
+    left: 2px;
+  }
+  .infoTitle {
+    padding-top: 85px;
+  }
+  .homeContainer {
+    height: 135vh;
+  }
+  .infoText {
+    margin-top: 25px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
 
-.svgClass {
-  display: flex;
-  position: absolute;
-  top: 62rem;
-  z-index: 1;
+
+
 }

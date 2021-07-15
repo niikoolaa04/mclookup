@@ -90,6 +90,7 @@
   opacity: 0;
   pointer-events: none;
   z-index: -1 !important;
+  color: #fff;
 }
 
 @media screen and (max-width:800px) {
@@ -138,5 +139,10 @@
 
   .nav-list {
     flex-direction: column;
+  }
+  .title {
+    width: 35px;
+    height: 35px;
+    top: 2px;
   }
 }

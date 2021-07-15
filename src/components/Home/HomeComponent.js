@@ -21,16 +21,14 @@ function HomeComponent() {
           <div className="boxContainer">
             <div className="firstBox">
               <img src="https://image.flaticon.com/icons/png/512/3208/3208726.png" alt="Server Image" className="serverImage" />
-              <p className="boxText server">Lookup any Minecraft Server by</p>
-              <p className="boxText server">clicking button below.</p>
+              <p className="boxText server">Lookup any Minecraft Server by<br />clicking button below.</p>
               <Button variant="contained" color="primary" className="boxBttn server">
                 <Link to="/server">Let's go</Link>
               </Button>
             </div>
             <div className="secondBox">
               <img src="https://image.flaticon.com/icons/png/512/560/560216.png" alt="User Image" className="userImage" />
-              <p className="boxText user">Lookup any Minecraft Player by</p>
-              <p className="boxText user">clicking button below.</p>
+              <p className="boxText user">Lookup any Minecraft Player by<br />clicking button below.</p>
               <Button variant="contained" color="primary" className="boxBttn user">
                 <Link to="/user">Let's go</Link>
               </Button>

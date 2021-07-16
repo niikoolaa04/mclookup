@@ -44,8 +44,6 @@
   text-align: center;
   width: 900px;
   height: 500px;
-  /* background-color: beige;
-   */
   background: linear-gradient(rgb(17, 20, 24), rgb(18, 24, 34));
   border-radius: 5px;
   z-index: 3 !important;
@@ -204,6 +202,35 @@
 
 @media screen and (max-width:800px) {
   .serverBox {
-    width: 500px;
+    width: 300px;
+  }
+  .motdEl {
+    left: -7px;
+    top: 33rem;
+    font-size: 18px;
+    padding: 15px 15px;
+    width: 280px;
+  }
+  .serverFavicon {
+    margin-top: 40rem;
+    margin-left: 5.5rem;
+  }
+  .serverVersion, .serverSoftware, .serverPlayers, .serverIP, .serverPlugins {
+    margin-left: 1.7rem;
+  }
+  .serverDomain {
+    margin-left: 2rem;
+    margin-top: 0px;
+  }
+  .justempty {
+    height: 45.1rem;
+  }
+  .noServer {
+    display: flex;
+    width: 340px;
+    height: 150px;
+  }
+  .noServer p {
+    padding: 3px 3px;
   }
 }

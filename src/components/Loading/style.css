@@ -17,3 +17,10 @@
   font-family: 'Kanit', sans-serif;
   transition: all 0.3s ease-in-out;
 }
+
+@media screen and (max-width:800px) {
+  .loadingContainer {
+    margin-left: 2rem;
+    width: 310px;
+  }
+}

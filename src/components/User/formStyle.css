@@ -33,3 +33,12 @@
   left: 130px;
   height: 48px;
 }
+
+@media screen and (max-width:800px) {
+  .userInput {
+    width: 70%;
+  }
+  .userFormContainer form {
+    left: 3vh;
+  }
+}

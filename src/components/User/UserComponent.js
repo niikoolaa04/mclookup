@@ -126,20 +126,26 @@ function UserComponent() {
                             }
                           </div>
                         </div>
-                        {
-                          userData.cape == '' ?
-                          <div className="capePreview" style={{ marginTop: '9.5rem' }}>
-                            <img src={`https://crafatar.com/avatars/${userData.uuid}`} alt="" className="avatarIMG" />
-                          </div> :
-                          <div>
-                            <div className="capePreview">
-                              <img src={userData.cape} alt="" className="capeIMG" />
-                            </div>
-                            <div className="avatarPreview">
+                        <div className="mobilePreview">
+                          <img src={`https://crafatar.com/avatars/${userData.uuid}`} alt="" className="mobileAvatar" />
+                          <img src={userData.cape} alt="" className="mobileCape" />
+                        </div>
+                        <div className="previewSection">
+                          {
+                            userData.cape == '' ?
+                            <div className="capePreview" style={{ marginTop: '9.5rem' }}>
                               <img src={`https://crafatar.com/avatars/${userData.uuid}`} alt="" className="avatarIMG" />
+                            </div> :
+                            <div>
+                              <div className="capePreview">
+                                <img src={userData.cape} alt="" className="capeIMG" />
+                              </div>
+                              <div className="avatarPreview">
+                                <img src={`https://crafatar.com/avatars/${userData.uuid}`} alt="" className="avatarIMG" />
+                              </div>
                             </div>
-                          </div>
-                        }
+                          }
+                        </div>
                       </div>
                     </div>
                   </div>

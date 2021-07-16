@@ -296,3 +296,84 @@
   pointer-events: none;
   z-index: -1 !important;
 }
+
+.mobilePreview {
+  display: block;
+}
+
+@media screen and (max-width:800px) {
+  .userBox {
+    width: 300px;
+    height: 73rem;
+  }
+  .userContainer {
+    height: 200vh;
+  }
+  .nothing {
+    height: 61rem;
+    margin-top: -20rem;
+  }
+  .mcUsername {
+    margin-left: 1.5rem;
+    margin-top: 0rem;
+  }
+  .imageBox {
+    margin-top: 25px;
+    margin-left: 12px;
+  }
+  .uuidField {
+    margin-top: 20rem;
+    margin-left: 25px;
+  }
+  .skinField, .capeField {
+    margin-left: 25px;
+  }
+  .nameHistory {
+    position: absolute;
+    margin-top: 49rem;
+    width: 190px;
+    height: 310px;
+    margin-left: 3.5rem;
+  }
+  .userBoxContainer {
+    display: flex;
+    height: 41.8rem;
+  }
+  .avatarPreview, .capePreview {
+    display: none;
+  }
+  .mobilePreview {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+    margin-left: 20px;
+    width: 260px;
+    height: 90px;
+    background: linear-gradient(rgb(34, 39, 46), rgb(43, 52, 66));
+    box-shadow: rgb(34, 39, 46) 3px 3px;
+    border-radius: 5px;
+    font-family: 'Overpass', sans-serif;
+    transition: 0.3s;
+  }
+  .mobileCape {
+    display: flex;
+    position: absolute;
+    margin-top: 20px;
+    padding-right: 130px;
+    width: 32px;
+  }
+  .mobileAvatar {
+    display: flex;
+    position: absolute;
+    margin-top: 30px;
+    width: 32px;
+  }
+  .noUser {
+    display: flex;
+    width: 340px;
+    height: 150px;
+  }
+  .noUser p {
+    padding: 3px 3px;
+  }
+}

@@ -1,0 +1,4 @@
+Change height of 'nothing, justempty etc.' divs for responsive
+Fix Seach Bar for responsive
+Check 'Content is loading' on responsive pages
+Move down server favicon for little bit

@@ -37,7 +37,7 @@ function NavbarComponent() {
               <Link to="/user" onClick={() => setOpen(false)} className="nav-link user">User Lookup</Link>
             </li>
             <li className="nav-item">
-              <Link to="/" onClick={() => setOpen(false)} className="nav-link other">Other</Link>
+              <Link to="/" onClick={() => setOpen(false)} className="nav-link other">Soon</Link>
             </li>
           </ul>
         </div>

@@ -29,9 +29,8 @@
 }
 
 .userFormBttn {
-  top: 11px;
-  left: 130px;
-  height: 48px;
+  top: 17px;
+  left: 110px;
 }
 
 @media screen and (max-width:800px) {

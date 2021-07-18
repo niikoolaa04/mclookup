@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-* {
-  padding: 0;
-  margin: 0;
-}
-
 .footerContainer {
   height: 85px;
   background: #222831;

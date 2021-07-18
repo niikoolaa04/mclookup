@@ -33,6 +33,22 @@
   left: 110px;
 }
 
+@media screen and (max-width: 1280px) {
+  .serverFormContainer form {
+    display: flex;
+    position: absolute;
+    left: 54vh;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .serverFormContainer form {
+    display: flex;
+    position: absolute;
+    left: 39vh;
+  }
+}
+
 @media screen and (max-width:800px) {
   .serverInput {
     width: 70%;

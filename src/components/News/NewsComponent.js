@@ -31,7 +31,7 @@ function NewsComponent() {
         onMouseLeave={() => {
           let newsElement = document.querySelector(".fullNews");
           newsElement.style.opacity = "0%";
-        }}>{ newsArray[Math.floor(Math.random() * newsArray.length)].title + ', click me'}</p>
+        }}>{ newsArray[Math.floor(Math.random() * newsArray.length)].title}</p>
       </div>
       <div className="newsOuter">
         <div className="fullNews">

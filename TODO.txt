@@ -1,4 +1,4 @@
-Change height of 'nothing, justempty etc.' divs for responsive
-Fix Seach Bar for responsive
-Check 'Content is loading' on responsive pages
-Move down server favicon for little bit
+Change height of 'nothing, justempty etc.' divs for responsive - ?% done
+Fix Seach Bar for responsive - done
+Check 'Content is loading' on responsive pages - done
+Move down server favicon for little bit - done for 800px min-width, check others

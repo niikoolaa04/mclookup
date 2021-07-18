@@ -18,6 +18,20 @@
   transition: all 0.3s ease-in-out;
 }
 
+@media screen and (max-width: 1280px) {
+  .loadingContainer {
+    margin-left: 29rem;
+    width: 310px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .loadingContainer {
+    margin-left: 21rem;
+    width: 310px;
+  }
+}
+
 @media screen and (max-width:800px) {
   .loadingContainer {
     margin-left: 2rem;

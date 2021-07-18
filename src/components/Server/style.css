@@ -200,19 +200,31 @@
   z-index: -1 !important;
 }
 
+@media screen and (max-width: 1280px) {
+  .serverContainer {
+    height: 110vh;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .serverContainer {
+    height: 120vh;
+  }
+}
+
 @media screen and (max-width:800px) {
   .serverBox {
     width: 300px;
   }
   .motdEl {
     left: -7px;
-    top: 33rem;
+    top: 32rem;
     font-size: 18px;
     padding: 15px 15px;
     width: 280px;
   }
   .serverFavicon {
-    margin-top: 40rem;
+    margin-top: 41.5rem;
     margin-left: 5.5rem;
   }
   .serverVersion, .serverSoftware, .serverPlayers, .serverIP, .serverPlugins {

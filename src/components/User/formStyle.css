@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
+/* .userFormContainer form {
+  display: flex;
+  position: absolute;
+  left: 77vh;
+} */
+
 .userFormContainer form {
   display: flex;
   position: absolute;
@@ -31,6 +37,22 @@
 .userFormBttn {
   top: 17px;
   left: 110px;
+}
+
+@media screen and (max-width: 1280px) {
+  .userFormContainer form {
+    display: flex;
+    position: absolute;
+    left: 54vh;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .userFormContainer form {
+    display: flex;
+    position: absolute;
+    left: 39vh;
+  }
 }
 
 @media screen and (max-width:800px) {

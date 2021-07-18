@@ -301,13 +301,25 @@
   display: none;
 }
 
+@media screen and (max-width: 1280px) {
+  .userContainer {
+    height: 110vh;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .userContainer {
+    height: 120vh;
+  }
+}
+
 @media screen and (max-width:800px) {
   .userBox {
     width: 300px;
     height: 73rem;
   }
   .userContainer {
-    height: 200vh;
+    height: 176vh;
   }
   .nothing {
     height: 61rem;

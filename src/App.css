@@ -7,3 +7,7 @@
 .loadingContainer {
   z-index: 12 !important;
 }
+
+.fullNews {
+  z-index: 10 !important;
+}

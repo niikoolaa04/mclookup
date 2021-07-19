@@ -94,11 +94,11 @@
 }
 
 @media screen and (max-width:800px) {
-
   .navigation {
     height: 40px;
   }
   #close-menu {
+    cursor: pointer;
     position: relative;
     top: -100px;
     right: -39%;
@@ -112,6 +112,7 @@
   }
 
   #open-menu {
+    cursor: pointer;
     z-index: 97;
     color: white;
     display: block;

@@ -246,3 +246,15 @@
     padding: 3px 3px;
   }
 }
+
+@media screen and (max-width: 412px) {
+  .serverContainer {
+    height: 126.5vh;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .serverContainer {
+    height: 132vh;
+  }
+}

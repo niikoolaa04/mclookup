@@ -63,3 +63,9 @@
     left: 3vh;
   }
 }
+
+@media screen and (max-width: 375px) {
+  .userFormContainer form {
+    left: 1vh;
+  }
+}

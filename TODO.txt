@@ -1,4 +1,2 @@
-Change height of 'nothing, justempty etc.' divs for responsive - ?% done
-Fix Seach Bar for responsive - done
-Check 'Content is loading' on responsive pages - done
-Move down server favicon for little bit - done for 800px min-width, check others
+Check - 360px and check P30 Lite Dimension
+Check 393px when got time

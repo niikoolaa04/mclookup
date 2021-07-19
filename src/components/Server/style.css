@@ -258,3 +258,9 @@
     height: 132vh;
   }
 }
+
+@media screen and (max-width: 360px) {
+  .serverContainer {
+    height: 137vh;
+  }
+}

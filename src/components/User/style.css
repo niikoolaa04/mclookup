@@ -395,3 +395,13 @@
     height: 188.5vh;
   }
 }
+
+@media screen and (max-width: 360px) {
+  .userContainer {
+    height: 195vh;
+  }
+  .nothing {
+    height: 61rem;
+    margin-top: -25rem;
+  }
+}

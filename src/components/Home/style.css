@@ -206,3 +206,22 @@
     margin-top: -30px;
   }
 }
+
+@media screen and (max-width: 360px) {
+  .homeContainer {
+    height: 163vh;
+  }
+  .moreInfo {
+    height: 47.5rem;
+  }
+}
+
+/* 
+@media screen and (max-width: 360px) {
+  .moreInfo {
+    height: 50rem;
+  }
+  .homeContainer {
+    height: 190rem;
+  }
+} */

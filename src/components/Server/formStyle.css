@@ -63,3 +63,12 @@
     left: 1vh;
   }
 }
+
+@media screen and (max-width: 360px) {
+  .serverFormContainer form {
+    left: -10px;
+  }
+  .serverFormBttn {
+    left: 115px;
+  }
+}

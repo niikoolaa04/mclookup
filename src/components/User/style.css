@@ -398,10 +398,10 @@
 
 @media screen and (max-width: 360px) {
   .userContainer {
-    height: 195vh;
+    height: 240vh;
   }
   .nothing {
-    height: 61rem;
-    margin-top: -25rem;
+    height: 75.7rem;
+    margin-top: -30rem;
   }
 }

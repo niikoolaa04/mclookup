@@ -47,12 +47,3 @@
   justify-content: center;
   pointer-events: none;
 }
-
-@media screen and (max-width: 375px) {
-  .homeContainer {
-    height: 135vh;
-  }
-  .firstBox button, .secondBox button {
-    margin-top: -30px;
-  }
-}

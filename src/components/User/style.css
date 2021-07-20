@@ -410,6 +410,16 @@
   }
 }
 
+@media screen and (max-width: 375px) and (max-height: 667px) {
+  .userContainer {
+    height: 235vh;
+  }
+  .nothing {
+    height: 65rem;
+    margin-top: -27.6rem;
+  }
+}
+
 @media screen and (max-width: 360px) {
   .userContainer {
     height: 210vh;
@@ -417,5 +427,11 @@
   .nothing {
     height: 70rem;
     margin-top: -30rem;
+  }
+}
+
+@media screen and (max-width: 360px) and (max-height: 647px) {
+  .userContainer {
+    height: 240vh;
   }
 }

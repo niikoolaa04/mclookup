@@ -265,11 +265,23 @@
   }
 }
 
+@media screen and (max-width: 375px) and (max-height: 667px) {
+  .serverContainer {
+    height: 160vh;
+  }
+}
+
 @media screen and (max-width: 360px) {
   .serverContainer {
     height: 156vh;
   }
   .justempty {
     height: 45.5rem;
+  }
+}
+
+@media screen and (max-width: 360px) and (max-height: 647px) {
+  .serverContainer {
+    height: 166vh;
   }
 }

@@ -1,1 +1,2 @@
 Check 393px if you're bored
+Add three dots when username history is too long

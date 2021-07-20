@@ -238,6 +238,7 @@
   border-radius: 5px;
   font-family: 'Overpass', sans-serif;
   transition: 0.3s;
+  overflow: hidden;
 }
 
 .newName {

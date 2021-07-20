@@ -51,6 +51,7 @@ function UserComponent() {
           <div className="userSubtitleDiv">
             <p className="userSubtitle">Enter Username of Minecraft Player</p>
           </div>
+          { document.documentElement.clientWidth + '- WIDTH HEIGHT -' + document.documentElement.clientHeight }
           <UserFormComponent 
             data={userData} 
             setData={setUserData} 

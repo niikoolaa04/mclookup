@@ -391,18 +391,31 @@
   }
 }
 
+@media screen and (max-width: 414px) and (max-height: 736px) {
+  .userContainer {
+    height: 210vh;
+  }
+  .nothing {
+    height: 61rem;
+    margin-top: -22rem;
+  }
+}
+
 @media screen and (max-width: 375px) {
   .userContainer {
-    height: 188.5vh;
+    height: 190vh;
+  }
+  .nothing {
+    margin-top: -20.5rem;
   }
 }
 
 @media screen and (max-width: 360px) {
   .userContainer {
-    height: 240vh;
+    height: 210vh;
   }
   .nothing {
-    height: 75.7rem;
+    height: 70rem;
     margin-top: -30rem;
   }
 }

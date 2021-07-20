@@ -2,7 +2,8 @@
 
 .footerContainer {
   height: 85px;
-  background: #222831;
+  /* background: #222831; */
+  background-color: red;
 }
 
 .copyright {

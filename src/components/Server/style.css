@@ -247,6 +247,12 @@
   }
 }
 
+@media screen and (max-width: 414px) and (max-height: 736px) {
+  .serverContainer {
+    height: 145vh;
+  }
+}
+
 @media screen and (max-width: 412px) {
   .serverContainer {
     height: 126.5vh;
@@ -261,7 +267,7 @@
 
 @media screen and (max-width: 360px) {
   .serverContainer {
-    height: 165vh;
+    height: 156vh;
   }
   .justempty {
     height: 45.5rem;

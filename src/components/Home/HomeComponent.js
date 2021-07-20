@@ -55,9 +55,10 @@ of Minecraft Server or Minecraft Player<br />by just typing Server IP/Minecraft 
           </div>
         </div>
       </div>
-      {/* <div className="footerComponent">
-      </div> */}
+      {/* { document.documentElement.clientWidth } */}
+      <div className="footerComponent">
         <FooterComponent />
+      </div>
     </div>
   )
 }

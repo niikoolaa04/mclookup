@@ -136,15 +136,39 @@
   z-index: 5 !important;
 }
 
+@media screen and (min-width: 1281px) {
+  .homeContainer {
+    height: 70rem;
+  }
+  .moreInfo {
+    height: 45rem;
+    margin-top: -5.2rem;
+  }
+}
+
 @media screen and (max-width: 1280px) {
   .homeContainer {
-    height: 152vh;
+    height: 65rem;
+  }
+  .moreInfo {
+    height: 40rem;
+    margin-top: -5.2rem;
   }
 }
 
 @media screen and (max-width: 1024px) {
   .homeContainer {
-    height: 152vh;
+    height: 66rem;
+  }
+  .moreInfo {
+    height: 44rem;
+    margin-top: -5.2rem;
+  }
+  .firstBox, .secondBox {  
+    width: 325px;
+    height: 220px;
+    margin-right: 20px;
+    margin-left: 20px;
   }
 }
 
@@ -186,10 +210,13 @@
     left: 2px;
   }
   .infoTitle {
-    padding-top: 85px;
+    padding-top: 135px;
   }
   .homeContainer {
-    height: 121vh;
+    height: 60rem;
+  }
+  .moreInfo {
+    height: 45rem;
   }
   .infoText {
     margin-top: 25px;
@@ -198,9 +225,18 @@
   }
 }
 
+@media screen and (max-width: 414px) {
+  .homeContainer {
+    height: 62.8rem;
+  }
+}
+
 @media screen and (max-width: 375px) {
   .homeContainer {
     height: 135vh;
+  }
+  .moreInfo {
+    height: 50rem;
   }
   .firstBox button, .secondBox button {
     margin-top: -30px;
@@ -209,19 +245,9 @@
 
 @media screen and (max-width: 360px) {
   .homeContainer {
-    height: 163vh;
+    height: 145vh;
   }
-  .moreInfo {
-    height: 47.5rem;
-  }
-}
-
-/* 
-@media screen and (max-width: 360px) {
   .moreInfo {
     height: 50rem;
   }
-  .homeContainer {
-    height: 190rem;
-  }
-} */
+}

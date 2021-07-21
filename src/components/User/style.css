@@ -6,8 +6,8 @@
 }
 
 .userHero {
-  height: 80vh;
-  background: linear-gradient(rgb(17, 20, 24), rgb(18, 24, 34));
+  height: 60rem;
+  background: linear-gradient(360deg, rgb(17, 20, 24) 40%, rgb(18, 24, 34) 60%);
   z-index: 3 !important;
 }
 
@@ -395,9 +395,17 @@
   .userContainer {
     height: 210vh;
   }
-  .nothing {
-    height: 61rem;
-    margin-top: -22rem;
+}
+
+@media screen and (max-width: 414px) and (max-height: 896px){
+  .userHero {
+    height: 100rem;
+  }
+}
+
+@media screen and (max-width: 412px) and (max-height: 846px) {
+  .userHero {
+    height: 95rem;
   }
 }
 
@@ -405,18 +413,20 @@
   .userContainer {
     height: 190vh;
   }
-  .nothing {
-    margin-top: -20.5rem;
+}
+
+@media screen and (max-width: 375px) and (max-height: 812px) and (min-height: 668px) {
+  .userHero {
+    height: 98rem;
   }
 }
 
 @media screen and (max-width: 375px) and (max-height: 667px) {
-  .userContainer {
-    height: 235vh;
+  .userHero {
+    height: 95.5rem;
   }
-  .nothing {
-    height: 65rem;
-    margin-top: -27.6rem;
+  .userContainer {
+    height: 229vh;
   }
 }
 
@@ -424,14 +434,13 @@
   .userContainer {
     height: 210vh;
   }
-  .nothing {
-    height: 70rem;
-    margin-top: -30rem;
-  }
 }
 
 @media screen and (max-width: 360px) and (max-height: 647px) {
   .userContainer {
     height: 240vh;
+  }
+  .userHero {
+    height: 98rem;
   }
 }

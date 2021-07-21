@@ -151,9 +151,6 @@ function UserComponent() {
               }
             </div>
           }
-          <div className="nothing">
-
-          </div>
         </div>
       </div>
       <FooterComponent />

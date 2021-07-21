@@ -2,12 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap');
 
 .serverContainer {
-  height: 142vh;
+  height: 150vh;
 }
 
 .serverHero {
-  height: 80vh;
-  background: linear-gradient(rgb(17, 20, 24), rgb(18, 24, 34));
+  height: 62rem;
+  background: linear-gradient(360deg, rgb(17, 20, 24) 40%, rgb(18, 24, 34) 60%);
   z-index: 3 !important;
 }
 
@@ -96,13 +96,6 @@
   transition: all 0.3s ease-in-out;
   cursor: cursor;
   transform: scale(1.1, 1.1);
-}
-
-.justempty {
-  background-color: #242a30;
-  margin-top: -20rem;
-  height: 33rem;
-  z-index: 2 !important;
 }
 
 .boxContent {
@@ -234,9 +227,6 @@
     margin-left: 2rem;
     margin-top: 0px;
   }
-  .justempty {
-    height: 45.1rem;
-  }
   .noServer {
     display: flex;
     width: 340px;
@@ -253,11 +243,26 @@
   }
 }
 
-@media screen and (max-width: 412px) {
-  .serverContainer {
-    height: 126.5vh;
+@media screen and (max-width: 414px) and (max-height: 896px){
+  .serverHero {
+    height: 68rem;
   }
 }
+
+@media screen and (max-width: 412px) and (max-height: 846px) {
+  .serverHero {
+    height: 68rem;
+  }
+  .serverContainer {
+    height: 128vh;
+  }
+}
+
+/* @media screen and (max-width: 412px) {
+  .serverHero {
+    height: 65rem;
+  }
+} TEMP DISABLED */
 
 @media screen and (max-width: 375px) {
   .serverContainer {
@@ -275,11 +280,15 @@
   .serverContainer {
     height: 156vh;
   }
-  .justempty {
-    height: 45.5rem;
-  }
 }
 
+/* LOOK HERE FOR FURTHER MEDIA QUERIES */
+
+@media screen and (max-width: 360px) and (max-height: 740px) and (min-height: 648px) {
+  .serverHero {
+    height: 73rem;
+  }
+}
 @media screen and (max-width: 360px) and (max-height: 647px) {
   .serverContainer {
     height: 166vh;

@@ -42,7 +42,8 @@ function ServerComponent() {
         <div className="serverHero" id="hero">
           <h2 className="serverTitle">Minecraft Server Lookup</h2>
           <div className="serverSubtitleDiv">
-            <p className="serverSubtitle">Enter desired Server IP into Search Box</p>
+            {/* <p className="serverSubtitle">Enter desired Server IP into Search Box</p> */}
+            <p className="serverSubtitle">{  }</p>
           </div>
           <ServerFormComponent 
             data={serverData} 
@@ -135,7 +136,6 @@ function ServerComponent() {
               }
             </div>
           }
-          <div className="justempty"></div>
         </div>
       </div>
       <FooterComponent />

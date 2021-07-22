@@ -301,30 +301,23 @@
 .mobilePreview {
   display: none;
 }
-
+/* 
 @media screen and (max-width: 1280px) {
   .userContainer {
     height: 110vh;
   }
-}
+} */
 
-@media screen and (max-width: 1024px) {
+/* @media screen and (max-width: 1024px) {
   .userContainer {
     height: 120vh;
   }
-}
+} */
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:1024px) {
   .userBox {
     width: 300px;
     height: 73rem;
-  }
-  .userContainer {
-    height: 176vh;
-  }
-  .nothing {
-    height: 61rem;
-    margin-top: -20rem;
   }
   .mcUsername {
     margin-left: 1.5rem;
@@ -391,19 +384,46 @@
   }
 }
 
+@media screen and (max-width: 1024px) and (max-height: 800px) {
+  .userContainer {
+    height: 245vh;
+  }
+  .userHero {
+    height: 100rem;
+  }
+}
+
+@media screen and (width: 1024px) and (height: 800px) {
+  .userContainer {
+    height: 190vh;
+  }
+}
+
+@media screen and (width:1280px) and (height:800px) {
+  .userContainer {
+    height: 120vh;
+  }
+}
+
+@media screen and (max-width: 414px) and (max-height: 896px){
+  .userContainer {
+    height: 178vh;
+  }
+  .userHero {
+    height: 100rem;
+  }
+}
+
 @media screen and (max-width: 414px) and (max-height: 736px) {
   .userContainer {
     height: 210vh;
   }
 }
 
-@media screen and (max-width: 414px) and (max-height: 896px){
-  .userHero {
-    height: 100rem;
-  }
-}
-
 @media screen and (max-width: 412px) and (max-height: 846px) {
+  .userContainer {
+    height: 178vh;
+  }
   .userHero {
     height: 95rem;
   }

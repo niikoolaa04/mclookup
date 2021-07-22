@@ -136,6 +136,8 @@
   z-index: 5 !important;
 }
 
+/* browser resize znaci nekih ovako ovi do 800px */
+
 @media screen and (min-width: 1281px) {
   .homeContainer {
     height: 70rem;

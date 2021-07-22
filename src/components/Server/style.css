@@ -193,7 +193,7 @@
   z-index: -1 !important;
 }
 
-@media screen and (max-width: 1280px) {
+/* @media screen and (max-width: 1280px) {
   .serverContainer {
     height: 110vh;
   }
@@ -203,9 +203,20 @@
   .serverContainer {
     height: 120vh;
   }
+} */
+
+/* stao ovde */
+
+@media screen and (width: 1280px) and (height: 800px) {
+  .serverContainer {
+    height: 120vh;
+  }
+  .serverHero {
+    height: 65rem;
+  }
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:1024px) {
   .serverBox {
     width: 300px;
   }
@@ -237,15 +248,36 @@
   }
 }
 
-@media screen and (max-width: 414px) and (max-height: 736px) {
+@media screen and (max-width: 1024px) and (max-height: 800px) {
   .serverContainer {
-    height: 145vh;
+    height: 176vh;
+  }
+  .serverHero {
+    height: 74rem;
+  }
+}
+
+@media screen and (width: 1024px) and (height: 800px) {
+  .serverContainer {
+    height: 133vh;
+  }
+  .serverHero {
+    height: 68rem;
   }
 }
 
 @media screen and (max-width: 414px) and (max-height: 896px){
+  .serverContainer {
+    height: 120vh;
+  }
   .serverHero {
     height: 68rem;
+  }
+}
+
+@media screen and (max-width: 414px) and (max-height: 736px) {
+  .serverContainer {
+    height: 145vh;
   }
 }
 
@@ -290,6 +322,9 @@
   }
 }
 @media screen and (max-width: 360px) and (max-height: 647px) {
+  .serverHero {
+    height: 73rem;
+  }
   .serverContainer {
     height: 166vh;
   }

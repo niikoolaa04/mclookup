@@ -1,77 +1,9 @@
 Check 393px if you're bored
 Add three dots when username history is too long
 
-- Responsie of everything
+Fix Search Bar for responsivnes
+'Content is Loading' is somewhere moved too much to left/right
+Maybe to find a better color for news section
+When screen is smaller move buttons at Home page down a bit
 
-------------------------------
-
-Galaxy S9 Plus, S8 Plus
-
-412x846
-
-
-iPhone XR, XS Max
-
-414x896
-
-
-iPhone 8, 7, 6S, 6
-
-375x667
-
-iPhone 8 Plus, 7 Plus, 6S Plus
-
-414x736
-
-Huawei P30 Lite
-
-360x647
-
-iPhone XS, X
-
-375x812
-
-Galaxy S9, Note 8, S8
-
-360x740
-
-URADJENI ZA SERVER
-
-------------------------------
-
-Galaxy S9 Plus, S8 Plus
-
-412x846
-
-
-iPhone XR, XS Max
-
-414x896
-
-
-iPhone 8, 7, 6S, 6
-
-375x667
-
-
-iPhone 8 Plus, 7 Plus, 6S Plus
-
-414x736
-
-Phone XS, X
-
-375x812
-
-
-Huawei P30 Lite
-
-360x647
-
-
-Galaxy S9, Note 8, S8
-
-360x740
-
-URADJENI ZA USER
-
------------------------------
+* Maybe check responsive again one time

@@ -5,6 +5,7 @@ import NewsComponent from './components/News/NewsComponent';
 import { newsArray } from './assets/news';
 import { BrowserRouter as Router, Switch, Route  } from 'react-router-dom';
 import './App.css';
+import ErrorComponent from './components/Other/ErrorComponent';
 
 function App() {
 
@@ -22,11 +23,17 @@ function App() {
           <Route exact path="/">
             <HomeComponent />
           </Route>
-          <Route path="/server">
+          <Route exact path="/server">
             <ServerComponent />
           </Route>
-          <Route path="/user">
+          <Route exact path="/user">
             <UserComponent />
+          </Route>
+          <Route>
+            <ErrorComponent 
+              errorCode="404" 
+              errorType="Page Not Found" 
+              errorText="Page you tried to access couldn't be found or have been moved to other location."/>
           </Route>
         </Switch>
       </Router>

@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap');
+
+.errorHero {
+  height: 90vh;
+  background: linear-gradient(rgb(17, 20, 24), rgb(18, 24, 34));
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.errorCode {
+  font-family: 'Kanit', sans-serif;
+  color: rgb(235, 223, 223);
+  margin-top: 5rem;
+  font-size: 8rem;
+}
+
+.errorTitle {
+  font-family: 'Kanit', sans-serif;
+  color: rgb(235, 223, 223);
+}
+
+.errorText {
+  font-family: 'Overpass', sans-serif;
+  color: rgb(235, 223, 223);
+  margin-top: 5px;
+}

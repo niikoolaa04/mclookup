@@ -37,7 +37,8 @@ function NavbarComponent() {
               <Link to="/user" onClick={() => setOpen(false)} className="nav-link user">User Lookup</Link>
             </li>
             <li className="nav-item">
-              <Link to="/" onClick={() => setOpen(false)} className="nav-link other">Soon</Link>
+              <a href="https://discord.com/api/oauth2/authorize?client_id=868109773286035476&redirect_uri=http%3A%2F%2Flocalhost%3A3009%2Fauth%2Fdiscord%2Fcallback&response_type=code&scope=identify%20email%20guilds%20guilds.join" onClick={() => setOpen(false)} className="nav-link other">Login</a>
+              {/* <Link to="/" onClick={() => setOpen(false)} className="nav-link other">Soon</Link> */}
             </li>
           </ul>
         </div>

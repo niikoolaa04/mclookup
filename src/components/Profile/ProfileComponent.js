@@ -11,12 +11,10 @@ import { getGuildsFromID } from '../../utils/getGuildsFromID'
 import { isValidUser } from '../../utils/isValidUser'
 import LoadingComponent from '../Loading/LoadingComponent'
 import ProfileServersComponent from './ProfileServersComponent'
-import { Database } from 'quickmongo'
 import config from '../../config.json'
+import axios from 'axios';
 
 function ProfileComponent() {
-  const db = new Database(config.mongodb);
-
   const history = useHistory();
 
   const [userID, setUserID] = useState(0);
@@ -42,10 +40,24 @@ function ProfileComponent() {
     setUserGuilds(filtered);
   }
 
+  async function postNow() {
+    let username = "niikoolaa04";
+    let idUSER = 1741751741415161;
+    await axios.post('http://localhost:3009/database/newUser', { username, idUSER }, {
+      headers:{
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          Accept: "application/json",
+      }
+    })
+    .then((result) => {
+      console.log('Success');
+    }).catch((err) => console.log(err));
+  }
+
   useEffect(async () => {
     if(await isValidUser() === false) return history.push("/");
     setLoading(true);
-    db.set('test_value', 150);
     let user = await getUserFromToken(getCookie("qwerty_access"));
     let guildsNum = await getGuildsFromID(user.id, getCookie("qwerty_access"));
 
@@ -115,7 +127,7 @@ function ProfileComponent() {
                     isLoading == true ? <LoadingComponent style={styleFix}/> : ''
                   }
 
-                  <p className="profileUsername">{ username }</p>
+                  <p className="profileUsername" onClick={async () => await postNow()}>{ username }</p>
                   <p className="profileID">{ userID }</p>
                   <div className="profilePicture">
                     <img src="https://cdn.discordapp.com/embed/avatars/2.png" alt="" className="profileImg" />

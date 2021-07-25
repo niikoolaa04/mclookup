@@ -1,5 +1,6 @@
 {
   "name": "MCLookup",
   "clientid": "***REMOVED***",
-  "clientsecret": "***REMOVED***"
+  "clientsecret": "***REMOVED***",
+  "mongodb": "mongodb+srv://nikolaa:mdbpw1122@cluster0.ogfvv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 }

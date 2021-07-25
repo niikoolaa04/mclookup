@@ -28,6 +28,7 @@ router.get("/logout", (req, res) => {
   res.clearCookie("qwerty_access");
   res.redirect("http://localhost:3000");
 })
+
 router.get('/', (req, res) => {
   if(req.user) return res.json(req.user);
   else return res.json({error:"Not logged in"});

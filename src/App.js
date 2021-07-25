@@ -10,7 +10,7 @@ import './App.css';
 import ErrorComponent from './components/Other/ErrorComponent';
 import ProfileComponent from './components/Profile/ProfileComponent';
 import { useEffect } from 'react';
-
+import FooterComponent from './components/Footer/FooterComponent';
 function App() {
 
   const [authenticated, setAuthenticated] = useState(false);

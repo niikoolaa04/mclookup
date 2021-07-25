@@ -92,7 +92,7 @@ function UserComponent() {
                 <div className="userBoxContainer">
                   <div className="userBox">
                     <div className="userBoxContent">
-                      <div className="profileInfo">
+                      <div className="userInfo">
                         <div className="imageBox">
                           <img src={ userData.body } alt="" className="mcSkin" />
                         </div>

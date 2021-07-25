@@ -2,11 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap');
 
 .userContainer {
-  height: 142vh;
+  height: 100%;
+  width: 100%;
 }
 
 .userHero {
-  height: 60rem;
+  height: 130vh;
   background: linear-gradient(360deg, rgb(17, 20, 24) 40%, rgb(18, 24, 34) 60%);
   z-index: 3 !important;
 }
@@ -92,34 +93,12 @@
   transform: scale(1.1, 1.1);
 }
 
-.nothing {
-  background-color: #242a30;
-  /* background-color: red; */
-  height: 33rem;
-  margin-top: -20rem;
-  z-index: 2 !important;
-}
-
-.userWave {
-  display: flex;
-  position: absolute;
-  margin-top: 80px;
-  z-index: 1 !important;
-}
-
-.svgUser {
-  display: flex;
-  position: absolute;
-  top: 45rem;
-  z-index: 1;
-}
-
 .userBoxContent {
   display: flex;
   flex-direction: row;
 }
 
-.profileInfo {
+.userInfo {
   display: flex;
   flex-direction: column;
   justify-content: left;
@@ -382,85 +361,13 @@
   .noUser p {
     padding: 3px 3px;
   }
-}
-
-@media screen and (max-width: 1024px) and (max-height: 800px) {
-  .userContainer {
-    height: 245vh;
-  }
   .userHero {
-    height: 100rem;
+    height: 230vh;
   }
 }
 
-@media screen and (width: 1024px) and (height: 800px) {
-  .userContainer {
-    height: 190vh;
-  }
-}
-
-@media screen and (width:1280px) and (height:800px) {
-  .userContainer {
-    height: 120vh;
-  }
-}
-
-@media screen and (max-width: 414px) and (max-height: 896px){
-  .userContainer {
-    height: 178vh;
-  }
+@media screen and (width: 360px) and (height: 647px) {
   .userHero {
-    height: 100rem;
-  }
-}
-
-@media screen and (max-width: 414px) and (max-height: 736px) {
-  .userContainer {
-    height: 210vh;
-  }
-}
-
-@media screen and (max-width: 412px) and (max-height: 846px) {
-  .userContainer {
-    height: 178vh;
-  }
-  .userHero {
-    height: 95rem;
-  }
-}
-
-@media screen and (max-width: 375px) {
-  .userContainer {
-    height: 190vh;
-  }
-}
-
-@media screen and (max-width: 375px) and (max-height: 812px) and (min-height: 668px) {
-  .userHero {
-    height: 98rem;
-  }
-}
-
-@media screen and (max-width: 375px) and (max-height: 667px) {
-  .userHero {
-    height: 95.5rem;
-  }
-  .userContainer {
-    height: 229vh;
-  }
-}
-
-@media screen and (max-width: 360px) {
-  .userContainer {
-    height: 210vh;
-  }
-}
-
-@media screen and (max-width: 360px) and (max-height: 647px) {
-  .userContainer {
     height: 240vh;
-  }
-  .userHero {
-    height: 105.5rem;
   }
 }

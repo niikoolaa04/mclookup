@@ -60,6 +60,10 @@
   /* padding-right: 15px; */
 }
 
+.nav-link.profile {
+  padding-right: 15px;
+}
+
 .home, .server, .user {
   margin-right: 15px;
 }

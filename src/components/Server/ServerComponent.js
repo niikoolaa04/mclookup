@@ -28,7 +28,7 @@ function ServerComponent() {
   const [isLoading, setLoading] = useState(false);
 
   let emptySearch = '';
-  if(searchIP == '') emptySearch = 'No IP Entered'
+  if(searchIP === '') emptySearch = 'No IP Entered'
   else emptySearch = searchIP;
 
   const styleFix = {
@@ -56,9 +56,9 @@ function ServerComponent() {
             setLoading={setLoading}
           />
           {
-            isLoading == true ? <LoadingComponent style={styleFix}/> : ''
+            isLoading === true ? <LoadingComponent style={styleFix}/> : ''
           }
-          { serverData.status == '' ? 
+          { serverData.status === '' ? 
             <div className="serverBoxContainer">
               <div className="serverBox" style={{ width: '0px' }}>
                 <div className="boxContent" style={{ height: '0px' }}>
@@ -68,7 +68,7 @@ function ServerComponent() {
             </div> :
             <div className="t">
               {
-                serverData.status == 'Error' ?
+                serverData.status === 'Error' ?
                 <div className="serverBoxContainer">
                   <div className="serverBox" style={{ width: '0px' }}>
                     <div className="boxContent" style={{ height: '0px' }}>

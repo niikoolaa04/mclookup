@@ -2,9 +2,10 @@ Check 393px if you're bored
 Add three dots when username history is too long
 
 Fix Search Bar for responsivnes
-'Content is Loading' is somewhere moved too much to left/right
+'Content is Loading' is somewhere moved too much to left/right - Too much at Profile Page
 Maybe to find a better color for news section
 When screen is smaller move buttons at Home page down a bit
-Finish Profile Page
+
+Forward Express Routes to React Router
 
 * Check responsive at User Lookup for 414px, 412px, 375px etc.

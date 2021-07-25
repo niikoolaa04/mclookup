@@ -1,18 +1,81 @@
 import React, { useEffect, useState } from 'react'
+import Tooltip from '@material-ui/core/Tooltip';
+import { useHistory } from 'react-router'
 import NavbarComponent from '../Navigation/NavbarComponent'
 import FooterComponent from '../Footer/FooterComponent'
-import { isAuthenticated } from '../../utils/isAuthenticated'
-import getUserFromToken from '../../utils/getUserFromToken'
+import { getUserFromToken } from '../../utils/getUserFromToken'
+import { convertNumber } from '../../utils/utils'
 import { getCookie } from '../../utils/getCookie'
 import './style.css'
+import { getGuildsFromID } from '../../utils/getGuildsFromID'
+import { isValidUser } from '../../utils/isValidUser'
+import LoadingComponent from '../Loading/LoadingComponent'
+import ProfileServersComponent from './ProfileServersComponent'
 
 function ProfileComponent() {
+  const history = useHistory();
 
-  const [username, setUsername] = useState('')
+  const [userID, setUserID] = useState(0);
+  const [userGuilds, setUserGuilds] = useState([]);
+  const [isLoading, setLoading] = useState(false);
+  const [username, setUsername] = useState('Username#Tag');
+  const [hypeSquad, setHypeSquad] = useState({
+    name: 'Balance',
+    url: 'https://discord.com/assets/58f11abcf3c13812bff969baaeb84d82.svg'
+  });
+  const [created, setCreated] = useState('6/13/2015, 1:00:00 AM');
+  const [nitro, setNitro] = useState({
+    type: 'N/A',
+    active: false
+  });
+
+  const styleFix = {
+    transition: 'all 0.3s ease-in-out'
+  };
+
+  async function getOwnership(arr) {
+    const filtered = arr.filter(e => e.owner === true);
+    setUserGuilds(filtered);
+  }
 
   useEffect(async () => {
+    if(await isValidUser() === false) return history.push("/");
+    setLoading(true);
     let user = await getUserFromToken(getCookie("qwerty_access"));
-    setUsername(user.username + '#' + user.discriminator)
+    let guildsNum = await getGuildsFromID(user.id, getCookie("qwerty_access"));
+
+    await getOwnership(guildsNum);
+
+    setUsername(user.username + '#' + user.discriminator);
+    setUserID(user.id);
+
+    if(user.premium_type == 1) setNitro({ 
+      type: 'Nitro Classic',
+      active: true
+     });
+     else if(user.premium_type == 2) setNitro({
+       type: 'Nitro',
+       active: true
+     });
+
+    let date = convertNumber(user.id);
+    setCreated(date);
+
+    if(user.public_flags == 64) setHypeSquad({
+        name: 'HypeSquad Bravery',
+        url: 'https://discord.com/assets/995ecfdbdf94ad84dd4d802c104e4630.svg'
+      });
+    else if(user.public_flags == 128) setHypeSquad({
+        name: 'HypeSquad Brilliance',
+        url: 'https://discord.com/assets/473dadec13ab7e90e209cc60fccb31c5.svg'
+      });
+    else if(user.public_flags == 256) setHypeSquad({
+        name: 'HypeSquad Balance',
+        url: 'https://discord.com/assets/58f11abcf3c13812bff969baaeb84d82.svg'
+      });
+
+
+    setLoading(false);
   }, [])
 
   return (
@@ -24,7 +87,40 @@ function ProfileComponent() {
             <div className="profileBox">
               <div className="profileBoxContent">
                 <div className="profileInfo">
-                  Yoooo
+                  {/* <div className="profileUserTag">
+                  </div> */}
+                  <div className="badgesContainer">
+                    {
+                      hypeSquad === '' ? '' :
+                      <Tooltip title={hypeSquad.name} placement="top">
+                        <img src={hypeSquad.url} className="hypeSquad" alt="" className="badge" />
+                      </Tooltip>
+                    }
+                    {
+                      nitro.active === true ? 
+                      <Tooltip title={nitro.type} placement="top">
+                        <img src="https://discord.com/assets/e04ce699dcd2fd50d352a384511687a9.svg" className="nitroBadge" alt="" className="badge" />
+                      </Tooltip>
+                      :
+                      ''
+                    }
+                  </div>
+
+                  {
+                    isLoading == true ? <LoadingComponent style={styleFix}/> : ''
+                  }
+
+                  <p className="profileUsername">{ username }</p>
+                  <p className="profileID">{ userID }</p>
+                  <div className="profilePicture">
+                    <img src="https://cdn.discordapp.com/embed/avatars/2.png" alt="" className="profileImg" />
+                  </div>
+                  <p className="profileCreated"><span className="accCreated">Account Created</span>: { created }</p>
+                  <p className="profileGuildsCount"><span className="guildsCount">Guilds with Ownership</span>: { userGuilds.length }</p>
+
+                  <div className="serversList">
+                    <ProfileServersComponent servers={userGuilds} userID={userID} />
+                  </div>
                 </div>
               </div>
             </div>

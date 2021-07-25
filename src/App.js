@@ -10,16 +10,7 @@ import './App.css';
 import ErrorComponent from './components/Other/ErrorComponent';
 import ProfileComponent from './components/Profile/ProfileComponent';
 import { useEffect } from 'react';
-import FooterComponent from './components/Footer/FooterComponent';
 function App() {
-
-  const [authenticated, setAuthenticated] = useState(false);
-
-  useEffect(() => {
-    if(!getCookie("qwerty_access")) setAuthenticated(false);
-    else setAuthenticated(true);
-    // console.log(getCookie("qwerty_access"))
-  }, [])
     
   return (
     <div className="App">
@@ -33,24 +24,23 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-            <HomeComponent auth={authenticated} setAuth={setAuthenticated}/>
+            <HomeComponent/>
           </Route>
           <Route exact path="/server">
-            <ServerComponent auth={authenticated} setAuth={setAuthenticated} />
+            <ServerComponent />
           </Route>
           <Route exact path="/user">
-            <UserComponent auth={authenticated} setAuth={setAuthenticated} />
+            <UserComponent />
           </Route>
           <Route exact path="/profile">
-            <ProfileComponent auth={authenticated} setAuth={setAuthenticated} />
+            <ProfileComponent />
           </Route>
           <Route>
             <ErrorComponent 
               errorCode="404" 
               errorType="Page Not Found" 
               errorText="Page you tried to access couldn't be found or have been moved to other location."
-              auth={authenticated} 
-              setAuth={setAuthenticated}/>
+            />
           </Route>
         </Switch>
       </Router>

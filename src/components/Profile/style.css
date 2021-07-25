@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap');
+
 .profileContainer {
   height: 100%;
   width: 100%;
@@ -10,7 +13,6 @@
 }
 
 .profileBoxContainer {
-  /* text-align: center; */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -51,5 +53,149 @@
 .profileInfo {
   display: flex;
   flex-direction: column;
-  justify-content: left;
+}
+
+.profileImg {
+  display: flex;
+  position: relative;
+  zoom: 65%;
+  border-radius: 50%;
+  margin-left: 4.3rem;
+  top: -2rem;
+}
+
+.profileUsername {
+  display: flex;
+  position: relative;
+  margin-left: 16rem;
+  top: 5.5rem;
+  font-family: 'Kanit', sans-serif;
+  font-size: 32px;
+  color: #EDF6E1;
+}
+
+.profileID {
+  display: flex;
+  position: relative;
+  margin-left: 16rem;
+  top: 5.5rem;
+  font-family: 'Overpass', sans-serif;
+  font-size: 15px;
+  color: #EDF6E1;
+}
+
+.badgesContainer {
+  display: flex;
+  position: absolute;
+  /* left: 23rem; */
+  margin-left: 13.5rem;
+  padding-left: 35px;
+  margin-top: 10rem;
+}
+
+.badge {
+  padding-right: 5px;
+}
+
+.profileCreated {
+  display: flex;
+  position: relative;
+  margin-left: 3rem;
+  top: 1rem;
+  font-family: 'Overpass', sans-serif;
+  font-size: 15px;
+  color: #EDF6E1;
+}
+
+.accCreated {
+  font-weight: bold;
+}
+
+.profileGuildsCount {
+  display: flex;
+  position: relative;
+  margin-left: 3rem;
+  top: 1rem;
+  font-family: 'Overpass', sans-serif;
+  font-size: 15px;
+  color: #EDF6E1;
+}
+
+.guildsCount {
+  font-weight: bold;
+}
+
+.serversList {
+  opacity: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 450px;
+  height: 160px;
+  background: linear-gradient(rgb(28, 31, 36), rgb(24, 31, 43));
+  /* background: chartreuse; */
+  justify-content: flex-start;
+  align-items:flex-start;
+  border-radius: 10px;
+  z-index: 4 !important;
+  margin-left: 3rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1024px) {
+  .profileBox {
+    width: 300px;
+  }
+  .profileImg {
+    margin-top: -2rem;
+    zoom: 40%;
+  }
+  
+  .profileUsername {
+    margin-left: 10rem;
+    top: 3rem;
+    font-size: 24px;
+  }
+  
+  .profileID {
+    margin-left: 10rem;
+    top: 3rem;
+    font-size: 11px;
+  }
+  
+  .badgesContainer {
+    /* left: 23rem; */
+    margin-left: 7.5rem;
+    margin-top: 6.5rem;
+  }
+  
+  .badge {
+    padding-right: 2.5px;
+  }
+
+  .profileCreated {
+    margin-left: 1rem;
+    top: 0.5rem;
+    font-size: 13px;
+  }
+  
+  .profileGuildsCount {
+    margin-left: 1rem;
+    top: 0.65rem;
+    font-size: 13px;
+  }
+
+  .serversList {
+    width: 270px;
+    height: 200px;
+    /* background: chartreuse; */
+    z-index: 4 !important;
+    margin-left: 1rem;
+    margin-top: 3rem;
+  }
+  .serverHero {
+    height: 180vh;
+  }
 }

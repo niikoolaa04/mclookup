@@ -1,5 +1,6 @@
 const fetch = require("node-fetch");
-module.exports = async token => {
+
+async function getUserFromToken(token) {
   let tokenType = "Bearer";
   let info = await fetch("https://discordapp.com/api/users/@me", {
     headers: {
@@ -7,4 +8,8 @@ module.exports = async token => {
     }
   }).then(res => res.json());
   return info;
-};
+}
+
+module.exports = {
+  getUserFromToken,
+}

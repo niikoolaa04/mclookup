@@ -8,27 +8,6 @@ import NavbarComponent from '../Navigation/NavbarComponent';
 import getUserFromToken from '../../utils/getUserFromToken';
 
 function HomeComponent() {
-
-  // function getCookie(cName) {
-  //   const name = cName + "=";
-  //   const cDecoded = decodeURIComponent(document.cookie); //to be careful
-  //   const cArr = cDecoded.split('; ');
-  //   let res;
-  //   cArr.forEach(val => {
-  //     if (val.indexOf(name) === 0) res = val.substring(name.length);
-  //   })
-  //   return res
-  // }
-
-  // async function getUserID() {
-  //   let field = document.querySelector(".homeTitle");
-  //   let value = getCookie("qwerty_access");
-  //   console.log(value + ' - VALUE')
-  //   let userObject = await getUserFromToken(value);
-  //   console.log(userObject);
-  //   field.innerHTML = userObject.username;
-  // }
-
   return (
     <div>
       <NavbarComponent style={{ zIndex: '5000' }} />

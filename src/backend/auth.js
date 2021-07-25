@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const router = Router();
-const getTokensFromCode = require("../utils/getTokensFromCode.js");
-const getUserInfo = require("../utils/getUserFromToken.js");
+const { getTokensFromCode } = require("../utils/getTokensFromCode.js");
+const { getUserFromToken } = require("../utils/getUserFromToken.js");
 const { v4: uuid } = require("uuid");
 
 router.get("/discord/callback", async (req, res) => {
@@ -10,7 +10,6 @@ router.get("/discord/callback", async (req, res) => {
   let tokens = await getTokensFromCode(code);
   if (tokens.error && tokens.error === "invalid_request")
     return res.redirect("/");
-  let userinfo = await getUserInfo(tokens.access_token);
 
   let uid = uuid()
   res.cookie('uuid', uid, {
@@ -25,7 +24,9 @@ router.get("/discord/callback", async (req, res) => {
 router.get("/logout", (req, res) => {
   let uuid = req.cookies["uuid"];
   res.clearCookie("uuid");
-  res.redirect("/");
+  let qwerty_access = req.cookies["qwerty_access"];
+  res.clearCookie("qwerty_access");
+  res.redirect("http://localhost:3000");
 })
 router.get('/', (req, res) => {
   if(req.user) return res.json(req.user);

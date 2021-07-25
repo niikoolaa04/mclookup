@@ -13,23 +13,23 @@ function ServerFormComponent({ data, setData, input, setInput, searchIP, setSear
         setInput('');
         setData({});
         setData({
-          status: apiResponse.online == true ? 'Online' : 'Offline',
+          status: apiResponse.online === true ? 'Online' : 'Offline',
           hostname: apiResponse.hostname,
           ip: apiResponse.ip,
           port: apiResponse.port,
           version: apiResponse.version,
           playerCount: apiResponse.players.online,
           maxPlayerCount: apiResponse.players.max,
-          players: apiResponse.players.list == undefined ? [] : apiResponse.players.list,
+          players: apiResponse.players.list === undefined ? [] : apiResponse.players.list,
           software: apiResponse.software || 'Not Detected',
-          pluginsCount: apiResponse.plugins == undefined ? 0 : apiResponse.plugins.names.length,
-          plugins: apiResponse.plugins == undefined ? [] : apiResponse.plugins.names
+          pluginsCount: apiResponse.plugins === undefined ? 0 : apiResponse.plugins.names.length,
+          plugins: apiResponse.plugins === undefined ? [] : apiResponse.plugins.names
         });
         $(".firstLine").html('');
         $(".secondLine").html('');
         $(".firstLine").html(apiResponse.motd.html[0]);
         setLoading(false);
-        if(apiResponse.motd.html.length == 1) return;
+        if(apiResponse.motd.html.length === 1) return;
         $(".secondLine").html(apiResponse.motd.html[1]);
       }).catch((e) => {
         $(".firstLine").html('');

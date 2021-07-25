@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 const config = require("../config.json");
 
-module.exports = async code => {
+async function getTokensFromCode(code) {
   let clientid = config.clientid;
   let clientsecret = config.clientsecret;
   let redirect_uri = "http://localhost:3009/auth/discord/callback";
@@ -22,4 +22,8 @@ module.exports = async code => {
     headers: headers
   }).then(r => r.json());
   return tokens;
-};
+}
+
+module.exports = {
+  getTokensFromCode,
+}

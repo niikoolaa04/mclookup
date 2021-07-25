@@ -10,6 +10,7 @@ import './App.css';
 import ErrorComponent from './components/Other/ErrorComponent';
 import ProfileComponent from './components/Profile/ProfileComponent';
 import { useEffect } from 'react';
+
 function App() {
     
   return (

@@ -1,5 +1,6 @@
 {
   "name": "MCLookup",
   "clientid": "868109773286035476",
-  "clientsecret": "JJG_VgckAeXnAnWi5naBqjCa0TCw_hzd"
+  "clientsecret": "JJG_VgckAeXnAnWi5naBqjCa0TCw_hzd",
+  "mongodb": "mongodb+srv://nikolaa:mdbpw1122@cluster0.ogfvv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 }

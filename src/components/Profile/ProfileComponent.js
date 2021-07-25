@@ -11,8 +11,12 @@ import { getGuildsFromID } from '../../utils/getGuildsFromID'
 import { isValidUser } from '../../utils/isValidUser'
 import LoadingComponent from '../Loading/LoadingComponent'
 import ProfileServersComponent from './ProfileServersComponent'
+import { Database } from 'quickmongo'
+import config from '../../config.json'
 
 function ProfileComponent() {
+  const db = new Database(config.mongodb);
+
   const history = useHistory();
 
   const [userID, setUserID] = useState(0);
@@ -41,6 +45,7 @@ function ProfileComponent() {
   useEffect(async () => {
     if(await isValidUser() === false) return history.push("/");
     setLoading(true);
+    db.set('test_value', 150);
     let user = await getUserFromToken(getCookie("qwerty_access"));
     let guildsNum = await getGuildsFromID(user.id, getCookie("qwerty_access"));
 

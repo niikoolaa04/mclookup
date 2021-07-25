@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import NavbarComponent from '../Navigation/NavbarComponent'
+import FooterComponent from '../Footer/FooterComponent'
 import { isAuthenticated } from '../../utils/isAuthenticated'
 import getUserFromToken from '../../utils/getUserFromToken'
 import { getCookie } from '../../utils/getCookie'
+import './style.css'
 
 function ProfileComponent() {
 
@@ -14,7 +17,21 @@ function ProfileComponent() {
 
   return (
     <div>
-      <p className="username">{ username }</p>
+      <NavbarComponent style={{ zIndex: '5000' }} />
+      <div className="profileContainer">
+        <div className="profileHero">
+          <div className="profileBoxContainer">
+            <div className="profileBox">
+              <div className="profileBoxContent">
+                <div className="profileInfo">
+                  Yoooo
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <FooterComponent />
     </div>
   )
 }

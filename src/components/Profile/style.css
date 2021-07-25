@@ -1,0 +1,55 @@
+.profileContainer {
+  height: 100%;
+  width: 100%;
+}
+
+.profileHero {
+  height: 130vh;
+  background: linear-gradient(360deg, rgb(17, 20, 24) 40%, rgb(18, 24, 34) 60%);
+  z-index: 3 !important;
+}
+
+.profileBoxContainer {
+  /* text-align: center; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 90px;
+  font-family: 'Overpass', sans-serif;
+}
+
+.profileBox {
+  transition: 0.3s;
+  text-align: center;
+  width: 900px;
+  height: 500px;
+  background: linear-gradient(rgb(17, 20, 24), rgb(18, 24, 34));
+  border-radius: 5px;
+  z-index: 3 !important;
+}
+
+.profileBoxText {
+  padding-top: 10px;
+}
+
+.profileBoxContainer a {
+  text-decoration: none;
+  color: #EDF6E1;
+}
+
+.profileBox {
+  transition: all 0.3s ease-in-out;
+  cursor: cursor;
+  transform: scale(1.1, 1.1);
+}
+
+.profileBoxContent {
+  display: flex;
+  flex-direction: row;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}

@@ -83,7 +83,7 @@ function ServerComponent() {
                 <div className="serverBoxContainer">
                   <div className="serverBox">
                     <div className="boxContent">
-                      <div className="profileInfo">
+                      <div className="serverInfo">
                         <input type="input" value={serverData.ip + ':' + serverData.port} id="copy-ip"></input> 
                         <div className="serverFavicon">
                           <img src={`https://api.minetools.eu/favicon/${serverData.hostname}`} alt="" className="favicon" />

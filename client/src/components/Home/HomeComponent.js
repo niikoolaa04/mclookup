@@ -1,11 +1,10 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import './style.css'
 import config from '../../config.json'
 import { Link } from 'react-router-dom';
 import FooterComponent from '../Footer/FooterComponent';
 import NavbarComponent from '../Navigation/NavbarComponent';
-import getUserFromToken from '../../utils/getUserFromToken';
+import './style.css'
 
 function HomeComponent() {
   return (

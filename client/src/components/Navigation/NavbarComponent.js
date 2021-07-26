@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { getCookie } from '../../utils/getCookie';
 import { Link } from 'react-router-dom';
 import './style.css'
-import { isAuthenticated } from '../../utils/isAuthenticated';
 
 function NavbarComponent() {
 
@@ -51,7 +50,7 @@ function NavbarComponent() {
             {
               getCookie("uuid") ?                 
               <li className="nav-item">
-                <a href="http://localhost:3009/auth/logout" onClick={() => setOpen(false)} className="nav-link logout">Logout</a>
+                <a href={`${process.env.REACT_APP_SERVER_DOMAIN}/auth/logout`} onClick={() => setOpen(false)} className="nav-link logout">Logout</a>
               </li> : ''
             }
           </ul>

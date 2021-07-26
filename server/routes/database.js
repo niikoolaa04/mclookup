@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const User = require("./models/User.js");
+const User = require("../models/User.js");
 const router = Router();
 
 router.get('/users', (req, res) => {
@@ -9,11 +9,9 @@ router.get('/users', (req, res) => {
 });
 
 router.post('/newUser', function(req, res, next) {
-  console.log('working');
-  User.create(req.body, function (err, post) {
-    if (err) return next(err);
-    res.json(post);
-  });
+  User.create(req.body)
+    .then(data => res.json(data))
+    .catch(next)
 });
 
 module.exports = router;

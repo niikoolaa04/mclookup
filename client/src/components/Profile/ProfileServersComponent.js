@@ -1,17 +1,12 @@
-import { React, useState, useEffect } from 'react'
+import { React } from 'react'
 import Tooltip from '@material-ui/core/Tooltip';
 import './serversListStyle.css'
 
 function ProfileServersComponent({ servers, userID }) {
 
-  useEffect(() => {
-    console.log(servers);
-  }, [])
-
   return servers.map((srv, index) => (
     <div>
       <div className="profileServers" key={index}>
-        {/* <p className="profileServerName" key={index}>{ srv.name }</p> */}
         {
           srv.icon === null ?
           <Tooltip title={srv.name} placement="top">

@@ -6,6 +6,7 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const AuthRouter = require("./routes/auth");
 const DBRouter = require("./routes/database");
+const User = require("../server/models/User")
 
 app.use(cookieParser());
 app.use(cors());
@@ -19,7 +20,11 @@ mongoose.connect(process.env.SERVER_MONGO_URL, {
   useUnifiedTopology: true,
   useFindAndModify: false,
   useCreateIndex: true 
-}).then(() => console.log('Database Connected Successfuly')).catch((err) => console.error(err));
+}).then(() => {
+  // User.db.dropCollection('foo', function(err, result) {...}))
+  console.log('Database Connected Successfuly')
+}).catch((err) => console.error(err));
+
 
 // REACT FORWARD
 // 

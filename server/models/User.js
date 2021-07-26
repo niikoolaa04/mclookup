@@ -1,11 +1,14 @@
 var mongoose = require('mongoose');
 
 var UserSchema = new mongoose.Schema({
-  username: {
-    type: String
+  userID: {
+    type: Number,
   },
-  idUSER: {
-    type: Number
+  username: {
+    type: String,
+  },
+  flags: {
+    type: Number,
   }
 });
 

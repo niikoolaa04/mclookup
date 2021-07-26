@@ -1,10 +1,10 @@
 import { React, useState } from 'react';
-import './style.css'
 import FooterComponent from '../Footer/FooterComponent';
 import UserFormComponent from './UserFormComponent';
 import NavbarComponent from '../Navigation/NavbarComponent';
 import LoadingComponent from '../Loading/LoadingComponent';
 import Tooltip from '@material-ui/core/Tooltip';
+import './style.css'
 
 function UserComponent() {
   const [nameHistory, setNameHistory] = useState([]);

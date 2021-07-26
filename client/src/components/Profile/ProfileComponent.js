@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from 'react'
-import Tooltip from '@material-ui/core/Tooltip';
 import { useHistory } from 'react-router'
+import Tooltip from '@material-ui/core/Tooltip';
+import axios from 'axios';
 import NavbarComponent from '../Navigation/NavbarComponent'
 import FooterComponent from '../Footer/FooterComponent'
+import LoadingComponent from '../Loading/LoadingComponent'
+import ProfileServersComponent from './ProfileServersComponent'
 import { getUserFromToken } from '../../utils/getUserFromToken'
 import { convertNumber } from '../../utils/utils'
 import { getCookie } from '../../utils/getCookie'
-import './style.css'
 import { getGuildsFromID } from '../../utils/getGuildsFromID'
 import { isValidUser } from '../../utils/isValidUser'
-import LoadingComponent from '../Loading/LoadingComponent'
-import ProfileServersComponent from './ProfileServersComponent'
-import config from '../../config.json'
-import axios from 'axios';
+import './style.css'
 
 function ProfileComponent() {
   const history = useHistory();
@@ -41,18 +40,11 @@ function ProfileComponent() {
   }
 
   async function postNow() {
-    let username = "niikoolaa04";
-    let idUSER = 1741751741415161;
-    await axios.post('http://localhost:3009/database/newUser', { username, idUSER }, {
+    await axios.post(`${process.env.REACT_APP_SERVER_DOMAIN}/database/newUser`, { username: 'Test', idUSER: 123 }, {
       headers:{
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-          Accept: "application/json",
-      }
-    })
-    .then((result) => {
-      console.log('Success');
-    }).catch((err) => console.log(err));
+    }})
+    .catch((err) => console.log(err));
   }
 
   useEffect(async () => {
@@ -61,7 +53,7 @@ function ProfileComponent() {
     let user = await getUserFromToken(getCookie("qwerty_access"));
     let guildsNum = await getGuildsFromID(user.id, getCookie("qwerty_access"));
 
-    await getOwnership(guildsNum);
+    getOwnership(guildsNum);
 
     setUsername(user.username + '#' + user.discriminator);
     setUserID(user.id);

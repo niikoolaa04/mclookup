@@ -1,17 +1,16 @@
 const fetch = require("node-fetch");
-const config = require("../config.json");
 
 async function getTokensFromCode(code) {
-  let clientid = config.clientid;
-  let clientsecret = config.clientsecret;
-  let redirect_uri = "http://localhost:3009/auth/discord/callback";
+  let client_id = process.env.SERVER_CLIENT_ID;
+  let client_secret = process.env.SERVER_CLIENT_SECRET;
+  let redirect_uri = `${process.env.SERVER_DOMAIN}/auth/discord/callback`;
   let fetch_url = "https://discordapp.com/api/oauth2/token";
   let headers = {
     "Content-Type": "application/x-www-form-urlencoded"
   };
   let params = new URLSearchParams();
-  params.append("client_id", clientid);
-  params.append("client_secret", clientsecret);
+  params.append("client_id", client_id);
+  params.append("client_secret", client_secret);
   params.append("grant_type", "authorization_code");
   params.append("code", code);
   params.append("redirect_uri", redirect_uri);

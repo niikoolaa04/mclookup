@@ -8,6 +8,4 @@ When screen is smaller move buttons at Home page down a bit
 
 Forward Express Routes to React Router
 
-Stopped at backend for mongo, soooo difficulty
-
 * Check responsive at User Lookup for 414px, 412px, 375px etc.

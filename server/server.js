@@ -1,23 +1,25 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require('mongoose');
 const app = express();
 const cookieParser = require("cookie-parser");
-const AuthRouter = require("./auth.js");
-const DBRouter = require("./database.js");
-const config = require("../config.json");
 const cors = require("cors");
+const AuthRouter = require("./routes/auth");
+const DBRouter = require("./routes/database");
+
 app.use(cookieParser());
-app.use(cors());const cors = require("cors");
+app.use(cors());
+app.use(express.json())
 
 app.use("/auth", AuthRouter);
 app.use("/database", DBRouter);
 
-mongoose.connect(config.mongodb, { 
+mongoose.connect(process.env.SERVER_MONGO_URL, { 
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
   useCreateIndex: true 
-}).then(() => console.log('Database Connected')).catch((err) => console.error(err));
+}).then(() => console.log('Database Connected Successfuly')).catch((err) => console.error(err));
 
 // REACT FORWARD
 // 
@@ -25,6 +27,6 @@ mongoose.connect(config.mongodb, {
 // app.get('*', (req,res) => res.sendFile(path.join(__dirname+'/public/index.html')));
 // app.listen(3000,() => console.log('Server on port 3000'));
 
-app.listen("3009", () => {
-  console.log("Your app is listening on port 3009");
+app.listen(process.env.SERVER_PORT, () => {
+  console.log("Your app is listening on port " + process.env.SERVER_PORT);
 });

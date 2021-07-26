@@ -1,18 +1,16 @@
+import { useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route  } from 'react-router-dom';
+import { newsArray } from './assets/news';
 import HomeComponent from './components/Home/HomeComponent';
 import ServerComponent from './components/Server/ServerComponent';
 import UserComponent from './components/User/UserComponent';
 import NewsComponent from './components/News/NewsComponent';
-import { newsArray } from './assets/news';
-import { BrowserRouter as Router, Switch, Route  } from 'react-router-dom';
-import { getCookie } from './utils/getCookie';
-import { useState } from 'react';
-import './App.css';
 import ErrorComponent from './components/Other/ErrorComponent';
 import ProfileComponent from './components/Profile/ProfileComponent';
-import { useEffect } from 'react';
+import './App.css';
 
 function App() {
-    
+
   return (
     <div className="App">
       {

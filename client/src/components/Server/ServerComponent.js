@@ -1,10 +1,10 @@
 import { React, useState } from 'react';
-import './style.css'
 import FooterComponent from '../Footer/FooterComponent';
 import ServerFormComponent from './ServerFormComponent';
 import NavbarComponent from '../Navigation/NavbarComponent';
 import Tooltip from '@material-ui/core/Tooltip';
 import LoadingComponent from '../Loading/LoadingComponent';
+import './style.css'
 
 function ServerComponent() {
 

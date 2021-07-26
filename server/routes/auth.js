@@ -1,7 +1,10 @@
 const { Router } = require("express");
 const router = Router();
 const { getTokensFromCode } = require("../utils/getTokensFromCode");
+const { getUserFromToken } = require("../../client/src/utils/getUserFromToken");
 const { v4: uuid } = require("uuid");
+const User = require("../models/User");
+const axios = require("axios");
 
 router.get("/discord/callback", async (req, res) => {
   let code = req.query.code;
@@ -17,6 +20,22 @@ router.get("/discord/callback", async (req, res) => {
   res.cookie('qwerty_access', tokens.access_token, {
     expires: new Date(Date.now()+6.048e+8)
   })
+
+  let user = await getUserFromToken(tokens.access_token);
+  let userExist = false;
+  User.findOne({ userID: user.id }).then((u) => {
+    if(u) userExist = true;
+  })
+  async function postNow() {
+    await axios.post(`${process.env.SERVER_DOMAIN}/database/newUser`, { userID: user.id, username: user.username, flags: user.public_flags }, {
+      headers:{
+        "Content-Type": "application/json",
+    }})
+    .catch((err) => console.log(err));
+  }
+
+  if(!userExist) await postNow();
+
   res.redirect(process.env.SERVER_REACT_DOMAIN);
 });
 

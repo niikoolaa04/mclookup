@@ -39,14 +39,6 @@ function ProfileComponent() {
     setUserGuilds(filtered);
   }
 
-  async function postNow() {
-    await axios.post(`${process.env.REACT_APP_SERVER_DOMAIN}/database/newUser`, { username: 'Test', idUSER: 123 }, {
-      headers:{
-          "Content-Type": "application/json",
-    }})
-    .catch((err) => console.log(err));
-  }
-
   useEffect(async () => {
     if(await isValidUser() === false) return history.push("/");
     setLoading(true);
@@ -119,7 +111,7 @@ function ProfileComponent() {
                     isLoading == true ? <LoadingComponent style={styleFix}/> : ''
                   }
 
-                  <p className="profileUsername" onClick={async () => await postNow()}>{ username }</p>
+                  <p className="profileUsername">{ username }</p>
                   <p className="profileID">{ userID }</p>
                   <div className="profilePicture">
                     <img src="https://cdn.discordapp.com/embed/avatars/2.png" alt="" className="profileImg" />

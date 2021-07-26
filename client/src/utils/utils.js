@@ -1,4 +1,4 @@
-function convertNumber(number) {
+async function convertNumber(number) {
   let id = parseInt(number);
 
   let binary = id.toString(2);

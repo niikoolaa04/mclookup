@@ -7,6 +7,7 @@ import UserComponent from './components/User/UserComponent';
 import NewsComponent from './components/News/NewsComponent';
 import ErrorComponent from './components/Other/ErrorComponent';
 import ProfileComponent from './components/Profile/ProfileComponent';
+import UsersComponent from './components/Users/UsersComponent';
 import './App.css';
 
 function App() {
@@ -31,8 +32,11 @@ function App() {
           <Route exact path="/user">
             <UserComponent />
           </Route>
-          <Route exact path="/profile">
+          <Route exact path="/profile/:id">
             <ProfileComponent />
+          </Route>
+          <Route exact path="/users">
+            <UsersComponent />
           </Route>
           <Route>
             <ErrorComponent 

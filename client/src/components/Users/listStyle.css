@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap');
+
+.usersCard {
+  padding-top: 0px;
+  background-color: #26282e;
+  border-radius: 5px;
+  display: inline-block;
+  width: 230px;
+  height: 105px;
+  position: relative;
+  left: 0px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 10px;
+  transition: 0.3s
+}
+
+.userlistUsername {
+  color: rgb(241, 233, 233);
+  font-family: 'Kanit', sans-serif;
+  display: flex;
+  position: relative;
+  margin-left: 5rem;
+  margin-top: -5.35rem;
+}
+
+.userlistID {
+  color: rgb(214, 212, 212);
+  font-family: 'Overpass', sans-serif;
+  font-size: 12px;
+  margin-left: 5rem;
+}
+
+.userlistIcon {
+  margin-top: -30px;
+  margin-left: -25px;
+  transform: scale(0.4);
+  border-radius: 50%;
+}
+
+.usersCard:hover {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.05);
+}

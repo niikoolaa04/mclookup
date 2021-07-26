@@ -7,7 +7,16 @@ var UserSchema = new mongoose.Schema({
   username: {
     type: String,
   },
-  flags: {
+  discriminator: {
+    type: Int64,
+  },
+  avatarURL: {
+    type: String,
+  },
+  hypeSquad: {
+    type: Number,
+  },
+  nitro: {
     type: Number,
   }
 });

@@ -25,9 +25,20 @@ router.get("/discord/callback", async (req, res) => {
   let userExist = false;
   User.findOne({ userID: user.id }).then((u) => {
     if(u) userExist = true;
-  })
+  });
+  let avatar = '';
+  if(user.avatar == null) avatar = "https://cdn.discordapp.com/embed/avatars/0.png";
+  else avatar = `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.webp?size=256`
+
   async function postNow() {
-    await axios.post(`${process.env.SERVER_DOMAIN}/database/newUser`, { userID: user.id, username: user.username, flags: user.public_flags }, {
+    await axios.post(`${process.env.SERVER_DOMAIN}/database/newUser`, { 
+      userID: user.id, 
+      username: user.username, 
+      discriminator: user.discriminator,
+      hypeSquad: user.public_flags,
+      avatarURL: avatar,
+      nitro: user.premium_type
+    }, {
       headers:{
         "Content-Type": "application/json",
     }})

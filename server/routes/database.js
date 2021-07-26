@@ -3,8 +3,24 @@ const User = require("../models/User.js");
 const router = Router();
 
 router.get('/users', (req, res) => {
+  // if(req.headers.origin !== process.env.SERVER_REACT_DOMAIN) return res.redirect(process.env.SERVER_REACT_DOMAIN)
   User.find({}).then(function (users) {
-    res.send(users);
+    res.json(users);
+  });
+});
+
+router.get('/users/:id', (req, res) => {
+  // if(req.headers.origin !== process.env.SERVER_REACT_DOMAIN) return res.redirect(process.env.SERVER_REACT_DOMAIN)
+  User.findOne({userID: req.params.id}, function (err, post) {
+    if (err) return console.log(err);
+    res.json(post);
+  });
+});
+
+router.put('/users/:id', async function(req, res, next) {
+  await User.findOneAndUpdate({ userID: req.params.id }, req.body, function (err, post) {
+    console.log('UPDATE')
+    res.json(post);
   });
 });
 

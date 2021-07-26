@@ -1,30 +1,29 @@
 import React, { useEffect, useState } from 'react'
-import { useHistory } from 'react-router'
+import { useParams } from 'react-router';
 import Tooltip from '@material-ui/core/Tooltip';
 import axios from 'axios';
 import NavbarComponent from '../Navigation/NavbarComponent'
 import FooterComponent from '../Footer/FooterComponent'
 import LoadingComponent from '../Loading/LoadingComponent'
 import ProfileServersComponent from './ProfileServersComponent'
-import { getUserFromToken } from '../../utils/getUserFromToken'
 import { convertNumber } from '../../utils/utils'
 import { getCookie } from '../../utils/getCookie'
 import { getGuildsFromID } from '../../utils/getGuildsFromID'
-import { isValidUser } from '../../utils/isValidUser'
 import './style.css'
 
 function ProfileComponent() {
-  const history = useHistory();
+  const { id } = useParams();
 
   const [userID, setUserID] = useState(0);
+  const [currentUser, setCurrentUser] = useState([]);
   const [userGuilds, setUserGuilds] = useState([]);
   const [isLoading, setLoading] = useState(false);
   const [username, setUsername] = useState('Username#Tag');
   const [hypeSquad, setHypeSquad] = useState({
-    name: 'Balance',
-    url: 'https://discord.com/assets/58f11abcf3c13812bff969baaeb84d82.svg'
+    name: '',
+    url: ''
   });
-  const [created, setCreated] = useState('6/13/2015, 1:00:00 AM');
+  const [created, setCreated] = useState('');
   const [nitro, setNitro] = useState({
     type: 'N/A',
     active: false
@@ -39,42 +38,47 @@ function ProfileComponent() {
     setUserGuilds(filtered);
   }
 
-  useEffect(async () => {
-    if(await isValidUser() === false) return history.push("/");
-    setLoading(true);
-    let user = await getUserFromToken(getCookie("qwerty_access"));
-    let guildsNum = await getGuildsFromID(user.id, getCookie("qwerty_access"));
-
-    getOwnership(guildsNum);
-
-    setUsername(user.username + '#' + user.discriminator);
-    setUserID(user.id);
-
-    if(user.premium_type == 1) setNitro({ 
-      type: 'Nitro Classic',
-      active: true
-     });
-     else if(user.premium_type == 2) setNitro({
-       type: 'Nitro',
-       active: true
-     });
-
-    let date = convertNumber(user.id);
-    setCreated(date);
-
-    if(user.public_flags == 64) setHypeSquad({
+  async function getUser() {
+    await axios.get("http://localhost:3009/database/users/" + id, {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }).then(async (res) => {
+      setCurrentUser(res.data);
+      let time = await convertNumber(res.data.userID);
+      if(res.data.nitro == 1) setNitro({
+        type: 'Nitro Classic',
+        active: true
+      });
+      else if(res.data.nitro == 2) setNitro({
+        type: 'Nitro',
+        active: true
+      });
+      else setNitro({
+        type: 'N/A',
+        active: false
+      });
+      if(res.data.hypeSquad == 64) setHypeSquad({
         name: 'HypeSquad Bravery',
         url: 'https://discord.com/assets/995ecfdbdf94ad84dd4d802c104e4630.svg'
       });
-    else if(user.public_flags == 128) setHypeSquad({
+      else if(res.data.hypeSquad == 128) setHypeSquad({
         name: 'HypeSquad Brilliance',
         url: 'https://discord.com/assets/473dadec13ab7e90e209cc60fccb31c5.svg'
       });
-    else if(user.public_flags == 256) setHypeSquad({
+      else if(res.data.hypeSquad == 256) setHypeSquad({
         name: 'HypeSquad Balance',
         url: 'https://discord.com/assets/58f11abcf3c13812bff969baaeb84d82.svg'
       });
+      setCreated(time);
+    });
+  }
 
+  useEffect(async () => {
+    setLoading(true);
+    getUser();
+    let guildsNum = await getGuildsFromID(currentUser.userID, getCookie("qwerty_access"));
+    getOwnership(guildsNum);
 
     setLoading(false);
   }, [])
@@ -111,16 +115,18 @@ function ProfileComponent() {
                     isLoading == true ? <LoadingComponent style={styleFix}/> : ''
                   }
 
-                  <p className="profileUsername">{ username }</p>
-                  <p className="profileID">{ userID }</p>
+                  <p className="profileUsername">{ currentUser.username }#{ currentUser.discriminator }</p>
+                  <p className="profileID">{ currentUser.userID }</p>
                   <div className="profilePicture">
-                    <img src="https://cdn.discordapp.com/embed/avatars/2.png" alt="" className="profileImg" />
+                    <img src={currentUser.avatarURL} alt="" className="profileImg" />
                   </div>
-                  <p className="profileCreated"><span className="accCreated">Account Created</span>: { created }</p>
-                  <p className="profileGuildsCount"><span className="guildsCount">Guilds with Ownership</span>: { userGuilds.length }</p>
-
-                  <div className="serversList">
-                    <ProfileServersComponent servers={userGuilds} userID={userID} />
+                  <div className="profileExtra">
+                    <p className="profileCreated"><span className="accCreated">Account Created</span>: { created }</p>
+                    <p className="profileGuildsCount"><span className="guildsCount">Guilds with Ownership</span>: { userGuilds.length }</p>
+                    
+                    <div className="serversList">
+                      <ProfileServersComponent servers={userGuilds} userID={userID} />
+                    </div>
                   </div>
                 </div>
               </div>

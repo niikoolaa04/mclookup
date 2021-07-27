@@ -38,7 +38,7 @@ function ProfileComponent() {
   }
 
   async function getUser() {
-    await axios.get(proccess.env.REACT_APP_SERVER_DOMAIN + "/database/users/" + id, {
+    await axios.get("http://193.23.127.180:3009/database/users/" + id, {
       headers: {
         "Content-Type": "application/json"
       }

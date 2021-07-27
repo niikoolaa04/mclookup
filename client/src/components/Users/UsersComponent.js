@@ -12,7 +12,9 @@ function UsersComponent() {
       <NavbarComponent style={{ zIndex: '5000' }} />
       <div className="userListContainer">
         <div className="userListHero">
-          <UsersList users={users} setUsers={setUsers}/>
+          <div className="usersListAll">
+            <UsersList users={users} setUsers={setUsers}/>
+          </div>
         </div>
       </div>
     </div>

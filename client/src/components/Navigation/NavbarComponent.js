@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { getCookie } from '../../utils/getCookie';
 import { Link } from 'react-router-dom';
 import './style.css'
+import { getCurrentUser } from '../../utils/utils';
 
 function NavbarComponent() {
 
   const [open, setOpen] = useState(false);
+  const [currentUser, setCurrentUser] = useState(0);
 
   const styleOpen = {
     right: "0%"
@@ -13,6 +15,11 @@ function NavbarComponent() {
   const styleClosed = {
     right: "-100%"
   }
+
+  useEffect(async () => {
+    let cUser = await getCurrentUser();
+    setCurrentUser(cUser);
+  }, [])
 
   let menuOpened = open ? styleOpen : styleClosed;
 
@@ -40,7 +47,7 @@ function NavbarComponent() {
             {
               getCookie("uuid") ? 
                 <li className="nav-item">
-                  <Link to="/profile" onClick={() => setOpen(false)} className="nav-link profile">Profile</Link>
+                  <Link to={"/profile/" + currentUser} onClick={() => setOpen(false)} className="nav-link profile">Profile</Link>
                 </li>
               :
               <li className="nav-item">

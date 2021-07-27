@@ -1,3 +1,6 @@
+const { getCookie } = require("./getCookie");
+const { getUserFromToken } = require("./getUserFromToken");
+
 async function convertNumber(number) {
   let id = parseInt(number);
 
@@ -16,6 +19,13 @@ async function convertNumber(number) {
   return dataFormat;
 }
 
+async function getCurrentUser() {
+  let user = await getUserFromToken(getCookie("qwerty_access"));
+
+  return user.id;
+}
+
 module.exports = {
-  convertNumber
+  convertNumber,
+  getCurrentUser,
 }

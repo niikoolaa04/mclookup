@@ -3,7 +3,7 @@ const User = require("../models/User.js");
 const router = Router();
 
 router.get('/users', (req, res) => {
-  if(req.headers.origin !== process.env.SERVER_REACT_DOMAIN) return res.redirect(process.env.SERVER_REACT_DOMAIN)
+  // if(req.headers.origin !== process.env.SERVER_REACT_DOMAIN) return res.redirect(process.env.SERVER_REACT_DOMAIN)
   User.find({}).then(function (users) {
     res.json(users);
   });

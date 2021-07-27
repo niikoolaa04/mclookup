@@ -12,9 +12,14 @@
   z-index: 3 !important;
 }
 
-.usersListAll {
-  padding-top: 25px;
-  margin-left: 35px;
+.usersWrapper {
+  margin-top: 50px;
+}
+
+.usersWrapper:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .userListTitle {
@@ -38,6 +43,6 @@
 
 @media screen and (max-width: 1024px) {
   .userListHero {
-    height: 180vh;
+    height: 310vh;
   }
 }

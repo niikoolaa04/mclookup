@@ -11,7 +11,7 @@ function UsersComponent() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [usersPerPage] = useState(20);
+  const [usersPerPage] = useState(10);
 
   async function getAllUsers() {
     await axios.get("http://localhost:3009/database/users", {
@@ -46,19 +46,19 @@ function UsersComponent() {
       <NavbarComponent style={{ zIndex: '5000' }} />
       <div className="userListContainer">
         <div className="userListHero">
-          <h2 className="userListTitle">All Registered Users</h2>
+          <h2 className="userListTitle">All Registered Users { users.length }</h2>
           <div className="userListSubtitleDiv">
             <p className="userListSubtitle">List of all Users Registered to our Website.</p>
           </div>
           {/* row */}
-          <div className="usersListAll">
+          <div className="usersWrapper">
             <UsersList users={currentUsers} setUsers={setUsers}/>
-            <PagionationComponent
+          </div>
+          <PagionationComponent
               currentPage={currentPage}
               nextPage={nextPage}
               prevPage={prevPage}
-            />
-          </div>
+          />
         </div>
       </div>
       <FooterComponent />

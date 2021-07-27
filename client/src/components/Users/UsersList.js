@@ -5,9 +5,8 @@ import './listStyle.css'
 function UsersList({ users, setUsers }) {
 
   return users.map((u, index) => (
-    // column
-    <div className="usersCard" key={index}>
-      <div className="card">
+    <div className="allUsersWrapper" key={index}>
+      <div className="userCard">
         <img src={u.avatarURL} alt="" className="userlistIcon" />
         <p className="userlistUsername">{ u.username }#{ u.discriminator }</p>
         <p className="userlistID">{ u.userID }</p>

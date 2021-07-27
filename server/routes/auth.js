@@ -45,8 +45,7 @@ router.get("/discord/callback", async (req, res) => {
     }}).then(() => console.log('New User Added to Mongoose DB')).catch((err) => console.log(err));
   }
 
-  console.log(userExist);
-  if(!userExist) await postNow();
+  if(userExist == false) await postNow();
 
   res.redirect(process.env.SERVER_REACT_DOMAIN);
 });

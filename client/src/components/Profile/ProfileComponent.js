@@ -18,7 +18,6 @@ function ProfileComponent() {
   const [currentUser, setCurrentUser] = useState([]);
   const [userGuilds, setUserGuilds] = useState([]);
   const [isLoading, setLoading] = useState(false);
-  const [username, setUsername] = useState('Username#Tag');
   const [hypeSquad, setHypeSquad] = useState({
     name: '',
     url: ''

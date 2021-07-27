@@ -1,14 +1,16 @@
 var mongoose = require('mongoose');
+require('mongoose-long')(mongoose);
+let Long =  mongoose.Schema.Types.Long
 
 var UserSchema = new mongoose.Schema({
   userID: {
-    type: Number,
+    type: Long,
   },
   username: {
     type: String,
   },
   discriminator: {
-    type: Int64,
+    type: String,
   },
   avatarURL: {
     type: String,

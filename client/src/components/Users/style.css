@@ -13,7 +13,27 @@
 }
 
 .usersListAll {
-  height: 50px;
+  padding-top: 25px;
+  margin-left: 35px;
+}
+
+.userListTitle {
+  font-family: 'Kanit', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 45px;
+  color: #EDF6E5;
+}
+
+.userListSubtitleDiv {
+  padding-top: 30px;
+}
+
+.userListSubtitle {
+  text-align: center;
+  font-family: 'Kanit', sans-serif;
+  color: #EDF6E1;
+  line-height: 17px;
 }
 
 @media screen and (max-width: 1024px) {

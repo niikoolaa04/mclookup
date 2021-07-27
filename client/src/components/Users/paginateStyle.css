@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+.pagesContainer {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+}
+
+.nextPage {
+  width: 48px;
+  height: 48px;
+  background: #26282e;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(240, 232, 232);
+  transition: 0.3s;
+  margin-left: 15px;
+}
+
+.currentPage {
+  width: 48px;
+  height: 48px;
+  background: #26282e;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(240, 232, 232);
+  margin-left: 15px;
+  font-family: 'Kanit', sans-serif;
+  font-size: 24px;
+}
+
+.prevPage {
+  width: 48px;
+  height: 48px;
+  background: #26282e;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(240, 232, 232);
+  transition: 0.3s;
+}
+
+.nextPage:hover, .prevPage:hover {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.05);
+  cursor: pointer;
+}

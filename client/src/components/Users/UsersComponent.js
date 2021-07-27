@@ -14,7 +14,7 @@ function UsersComponent() {
   const [usersPerPage] = useState(10);
 
   async function getAllUsers() {
-    await axios.get("http://localhost:3009/database/users", {
+    await axios.get(proccess.env.REACT_APP_SERVER_DOMAIN + "/database/users", {
       headers: {
         "Content-Type": "application/json"
       }

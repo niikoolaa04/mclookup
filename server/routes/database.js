@@ -1,6 +1,12 @@
 const { Router } = require("express");
+const cors = require('../utils/corsFix');
 const User = require("../models/User.js");
 const router = Router();
+
+router.options('*', cors.corsWithOptions, (req, res) => {
+  res.sendStatus(200);
+  console.log("cors check idk");
+});
 
 router.get('/users', (req, res) => {
   // if(req.headers.origin !== process.env.SERVER_REACT_DOMAIN) return res.redirect(process.env.SERVER_REACT_DOMAIN)
@@ -24,7 +30,7 @@ router.put('/users/:id', async function(req, res, next) {
   });
 });
 
-router.post('/newUser', function(req, res, next) {
+router.post('/newUser', cors.corsWithOptions, function(req, res, next) {
   if(req.headers.origin !== process.env.SERVER_REACT_DOMAIN) return res.redirect(process.env.SERVER_REACT_DOMAIN)
   User.create(req.body)
     .then(data => res.json(data))

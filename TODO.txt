@@ -8,4 +8,6 @@ When screen is smaller move buttons at Home page down a bit
 
 Forward Express Routes to React Router
 
+req.headers.host and req.headers.origin isn't same, add checks to json endpoints
+
 * Check responsive at User Lookup for 414px, 412px, 375px etc.

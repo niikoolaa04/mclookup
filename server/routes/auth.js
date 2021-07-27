@@ -22,6 +22,7 @@ router.get("/discord/callback", async (req, res) => {
   })
 
   let user = await getUserFromToken(tokens.access_token);
+  console.log(user.id)
   let userExist = false;
   User.findOne({ userID: user.id }).then((u) => {
     if(u) userExist = true;
@@ -41,10 +42,10 @@ router.get("/discord/callback", async (req, res) => {
     }, {
       headers:{
         "Content-Type": "application/json",
-    }})
-    .catch((err) => console.log(err));
+    }}).then(() => console.log('New User Added to Mongoose DB')).catch((err) => console.log(err));
   }
 
+  console.log(userExist);
   if(!userExist) await postNow();
 
   res.redirect(process.env.SERVER_REACT_DOMAIN);

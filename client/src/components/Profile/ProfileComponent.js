@@ -40,6 +40,7 @@ function ProfileComponent() {
   async function getUser() {
     await axios.get(`${process.env.REACT_APP_SERVER_DOMAIN}/database/users/${id}`, {
       headers: {
+        "Request_Token": `${process.env.REACT_APP_API_KEY}`,
         "Content-Type": "application/json"
       }
     }).then(async (res) => {

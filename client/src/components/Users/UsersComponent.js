@@ -14,7 +14,6 @@ function UsersComponent() {
   const [usersPerPage] = useState(10);
 
   async function getAllUsers() {
-    console.log(process.env)
     await axios.get(`${process.env.REACT_APP_SERVER_DOMAIN}/database/users`, {
       headers: {
         "Request_Token": `${process.env.REACT_APP_API_KEY}`,

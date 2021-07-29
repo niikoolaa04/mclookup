@@ -1,3 +1,7 @@
+== GENERAL ==
+
+Browsers freeze when saving n reloading idk why
+
 == FRONTEND ==
 
 Fix Search Bar for responsivnes

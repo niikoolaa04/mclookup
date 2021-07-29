@@ -5,10 +5,7 @@ import axios from 'axios';
 import NavbarComponent from '../Navigation/NavbarComponent'
 import FooterComponent from '../Footer/FooterComponent'
 import LoadingComponent from '../Loading/LoadingComponent'
-import ProfileServersComponent from './ProfileServersComponent'
 import { convertNumber } from '../../utils/utils'
-import { getCookie } from '../../utils/getCookie'
-import { getGuildsFromID } from '../../utils/getGuildsFromID'
 import './style.css'
 import { updateAllProfiles } from '../../utils/updateProfile';
 
@@ -17,7 +14,6 @@ function ProfileComponent() {
 
   const [userID, setUserID] = useState(0);
   const [currentUser, setCurrentUser] = useState([]);
-  const [userGuilds, setUserGuilds] = useState([]);
   const [isLoading, setLoading] = useState(false);
   const [hypeSquad, setHypeSquad] = useState({
     name: '',
@@ -32,11 +28,6 @@ function ProfileComponent() {
   const styleFix = {
     transition: 'all 0.3s ease-in-out'
   };
-
-  async function getOwnership(arr) {
-    const filtered = arr.filter(e => e.owner === true);
-    setUserGuilds(filtered);
-  }
 
   async function getUser() {
     await axios.get(`${process.env.REACT_APP_SERVER_DOMAIN}/api/users/${id}`, {
@@ -77,10 +68,8 @@ function ProfileComponent() {
 
   useEffect(async () => {
     setLoading(true);
-    let guildsNum = await getGuildsFromID(currentUser.userID, getCookie("qwerty_access"));
     getUser();
-    getOwnership(guildsNum);
-    updateAllProfiles();
+    // updateAllProfiles();
     setLoading(false);
   }, [])
 
@@ -123,10 +112,9 @@ function ProfileComponent() {
                   </div>
                   <div className="profileExtra">
                     <p className="profileCreated"><span className="accCreated">Account Created</span>: { created }</p>
-                    <p className="profileGuildsCount"><span className="guildsCount">Guilds with Ownership</span>: { userGuilds.length }</p>
                     
-                    <div className="serversList">
-                      <ProfileServersComponent servers={userGuilds} userID={userID} />
+                    <div className="profileDescription">
+                      Lorem ipsum gsehkns sng songseohgsanhjsenhskhskhbsejysbgk bsjknh sjgneihnsejgbsghsbhgsbngsionhsoihnsekhnskh
                     </div>
                   </div>
                 </div>

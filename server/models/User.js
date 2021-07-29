@@ -20,6 +20,9 @@ var UserSchema = new mongoose.Schema({
   },
   nitro: {
     type: Number,
+  },
+  description: {
+    type: String,
   }
 });
 

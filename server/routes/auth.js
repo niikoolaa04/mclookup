@@ -23,7 +23,7 @@ router.get("/discord/callback", async (req, res) => {
 
   let user = await getUserFromToken(tokens.access_token);
   let userExist = false;
-  User.findOne({ userID: user.id }).then((u) => {
+  await User.findOne({ userID: user.id }).then((u) => {
     if(u) userExist = true;
   });
   let avatar = '';
@@ -31,7 +31,8 @@ router.get("/discord/callback", async (req, res) => {
   else avatar = `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.webp?size=256`
 
   async function postNow() {
-    await axios.post(`${process.env.SERVER_DOMAIN}/database/newUser`, { 
+    if(userExist) return;
+    await axios.post(`${process.env.SERVER_DOMAIN}/api/newUser`, { 
       userID: user.id, 
       username: user.username, 
       discriminator: user.discriminator,
@@ -45,7 +46,7 @@ router.get("/discord/callback", async (req, res) => {
     }}).catch((err) => console.log(err));
   }
 
-  if(userExist == false) await postNow();
+  await postNow();
 
   res.redirect(process.env.SERVER_REACT_DOMAIN);
 });

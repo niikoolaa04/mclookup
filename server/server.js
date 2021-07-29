@@ -5,7 +5,7 @@ const app = express();
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const AuthRouter = require("./routes/auth");
-const DBRouter = require("./routes/database");
+const APIRouter = require("./routes/api");
 const User = require("../server/models/User")
 
 app.use(cookieParser());
@@ -19,7 +19,7 @@ app.use(express.json())
 // });
 
 app.use("/auth", AuthRouter);
-app.use("/database", DBRouter);
+app.use("/api", APIRouter);
 
 mongoose.connect(process.env.SERVER_MONGO_URL, { 
   useNewUrlParser: true,

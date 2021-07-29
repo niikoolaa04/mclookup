@@ -10,6 +10,7 @@ import { convertNumber } from '../../utils/utils'
 import { getCookie } from '../../utils/getCookie'
 import { getGuildsFromID } from '../../utils/getGuildsFromID'
 import './style.css'
+import { updateAllProfiles } from '../../utils/updateProfile';
 
 function ProfileComponent() {
   const { id } = useParams();
@@ -38,7 +39,7 @@ function ProfileComponent() {
   }
 
   async function getUser() {
-    await axios.get(`${process.env.REACT_APP_SERVER_DOMAIN}/database/users/${id}`, {
+    await axios.get(`${process.env.REACT_APP_SERVER_DOMAIN}/api/users/${id}`, {
       headers: {
         "Request_Token": `${process.env.REACT_APP_API_KEY}`,
         "Content-Type": "application/json"
@@ -76,10 +77,10 @@ function ProfileComponent() {
 
   useEffect(async () => {
     setLoading(true);
-    getUser();
     let guildsNum = await getGuildsFromID(currentUser.userID, getCookie("qwerty_access"));
+    getUser();
     getOwnership(guildsNum);
-
+    updateAllProfiles();
     setLoading(false);
   }, [])
 

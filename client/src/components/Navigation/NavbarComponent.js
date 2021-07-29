@@ -44,6 +44,9 @@ function NavbarComponent() {
             <li className="nav-item">
               <Link to="/user" onClick={() => setOpen(false)} className="nav-link user">User Lookup</Link>
             </li>
+            <li className="nav-item">
+              <Link to="/users" onClick={() => setOpen(false)} className="nav-link users">Users List</Link>
+            </li>
             {
               getCookie("uuid") ? 
                 <li className="nav-item">

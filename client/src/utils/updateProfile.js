@@ -1,7 +1,7 @@
 const axios = require("axios");
 
 function updateAllProfiles() {
-  axios.get(`${process.env.REACT_APP_SERVER_DOMAIN}/database/users`, {
+  axios.get(`${process.env.REACT_APP_SERVER_DOMAIN}/api/users`, {
     headers: {
       "Request_Token": `${process.env.SERVER_API_KEY}`
     }
@@ -22,7 +22,7 @@ function updateAllDB(profile) {
     let avatar = '';
     if(resp.data.avatar == null) avatar = "https://cdn.discordapp.com/embed/avatars/0.png";
     else avatar = `https://cdn.discordapp.com/avatars/${resp.data.id}/${resp.data.avatar}.webp?size=256`;
-    axios.put(`${process.env.REACT_APP_SERVER_DOMAIN}/database/users/${profile.userID}`, {
+    axios.put(`${process.env.REACT_APP_SERVER_DOMAIN}/api/users/${profile.userID}`, {
       userID: resp.data.id,
       username: resp.data.username,
       avatarURL: avatar,

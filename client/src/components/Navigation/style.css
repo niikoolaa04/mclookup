@@ -60,11 +60,11 @@
   /* padding-right: 15px; */
 }
 
-.nav-link.profile {
+/* .nav-link.profile {
   padding-right: 15px;
-}
+} */
 
-.home, .server, .user {
+.home, .server, .user, .profile, .users {
   margin-right: 15px;
 }
 

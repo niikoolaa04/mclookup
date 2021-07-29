@@ -14,7 +14,7 @@ function UsersComponent() {
   const [usersPerPage] = useState(10);
 
   async function getAllUsers() {
-    await axios.get(`${process.env.REACT_APP_SERVER_DOMAIN}/database/users`, {
+    await axios.get(`${process.env.REACT_APP_SERVER_DOMAIN}/api/users`, {
       headers: {
         "Request_Token": `${process.env.REACT_APP_API_KEY}`,
         "Content-Type": "application/json"
@@ -47,7 +47,7 @@ function UsersComponent() {
       <NavbarComponent style={{ zIndex: '5000' }} />
       <div className="userListContainer">
         <div className="userListHero">
-          <h2 className="userListTitle">All Registered Users { users.length }</h2>
+          <h2 className="userListTitle">All Registered Users</h2>
           <div className="userListSubtitleDiv">
             <p className="userListSubtitle">List of all Users Registered to our Website.</p>
           </div>

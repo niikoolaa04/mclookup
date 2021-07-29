@@ -125,7 +125,7 @@
   font-weight: bold;
 }
 
-.serversList {
+.profileDescription {
   opacity: 100%;
   display: flex;
   position: relative;
@@ -135,8 +135,6 @@
   height: 160px;
   background: linear-gradient(rgb(28, 31, 36), rgb(24, 31, 43));
   /* background: chartreuse; */
-  justify-content: flex-start;
-  align-items:flex-start;
   border-radius: 10px;
   z-index: 4 !important;
   margin-left: 3rem;

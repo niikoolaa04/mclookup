@@ -4,8 +4,6 @@ import config from '../../config.json'
 import { Link } from 'react-router-dom';
 import FooterComponent from '../Footer/FooterComponent';
 import NavbarComponent from '../Navigation/NavbarComponent';
-import { updateProfile } from '../../utils/updateProfile';
-import axios from 'axios';
 import './style.css'
 
 function HomeComponent() {
@@ -14,7 +12,7 @@ function HomeComponent() {
       <NavbarComponent style={{ zIndex: '5000' }} />
       <div className="homeContainer">
         <div className="heroContainer" id="hero">
-          <h2 className="homeTitle" onClick={() => updateProfile()}>Minecraft Server & Player Informations</h2>
+          <h2 className="homeTitle">Minecraft Server & Player Informations</h2>
           <div className="subTitleDiv">
             <p className="subtitle">{ config.name } is service which provides you ability to</p>
             <p className="subtitle">lookup Minecraft Servers & Minecraft Players from site.</p>

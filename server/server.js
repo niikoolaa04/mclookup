@@ -31,11 +31,24 @@ mongoose.connect(process.env.SERVER_MONGO_URL, {
 }).catch((err) => console.error(err));
 
 
-// REACT FORWARD
-// 
-// app.use(express.static(__dirname + '/public'));
-// app.get('*', (req,res) => res.sendFile(path.join(__dirname+'/public/index.html')));
-// app.listen(3000,() => console.log('Server on port 3000'));
+/**
+  REACT & EXPRESS
+  JUST DO 'NPM RUN BUILD' AND THIS, ALSO CHANGE ENV VARIABLES
+
+app.get("/", (req, res, next) => {
+  //res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"))
+  res.sendFile(path.join(__dirname, '../client/build/index.html'))
+})
+
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+})
+
+ */
 
 app.listen(process.env.SERVER_PORT, () => {
   console.log("Your app is listening on port " + process.env.SERVER_PORT);

@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 const { getTokensFromCode } = require("../utils/getTokensFromCode");
-const { getUserFromToken } = require("../../client/src/utils/getUserFromToken");
+const { getUserFromToken } = require("../utils/getUserFromToken");
 const { v4: uuid } = require("uuid");
 const User = require("../models/User");
 const axios = require("axios");
@@ -22,7 +22,6 @@ router.get("/discord/callback", async (req, res) => {
   })
 
   let user = await getUserFromToken(tokens.access_token);
-  // console.log(user.id)
   let userExist = false;
   User.findOne({ userID: user.id }).then((u) => {
     if(u) userExist = true;
@@ -40,7 +39,8 @@ router.get("/discord/callback", async (req, res) => {
       avatarURL: avatar,
       nitro: user.premium_type
     }, {
-      headers:{
+      headers: {
+        "Request_Token": `${process.env.SERVER_API_KEY}`,
         "Content-Type": "application/json",
     }}).catch((err) => console.log(err));
   }

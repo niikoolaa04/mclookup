@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap');
+
+.descFormContainer {
+  margin-left: 35rem;
+  margin-top: -10.7rem;
+}
+
+.descLabel {
+  color: #fff;
+  font-family: 'Overpass', sans-serif;
+}
+
+.descBttn {
+  transition: 0.3s;
+  text-transform: uppercase;
+  padding: 5px 5px;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  outline: none;
+  border: none;
+  width: 100%;
+  background-color: #5865F2;
+  color: #fff;
+  font-family: 'Overpass', sans-serif;
+  cursor: pointer;
+}
+
+textarea {
+  transition: 0.3s;
+  resize: none;
+}
+
+.descArea {
+  width: 300px;
+  height: 110px;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}

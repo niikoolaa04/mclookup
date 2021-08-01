@@ -7,14 +7,18 @@ import FooterComponent from '../Footer/FooterComponent'
 import LoadingComponent from '../Loading/LoadingComponent'
 import { convertNumber } from '../../utils/utils'
 import './style.css'
-import { updateAllProfiles } from '../../utils/updateProfile';
+import { getCookie } from '../../utils/getCookie';
+import DescriptionComponent from './DescriptionComponent';
+import { getUserFromToken } from '../../utils/getUserFromToken';
 
 function ProfileComponent() {
   const { id } = useParams();
 
-  const [userID, setUserID] = useState(0);
+  const [descVisible, setDescVisible] = useState(false);
   const [currentUser, setCurrentUser] = useState([]);
+  const [loggedUser, setLoggedUser] = useState(null);
   const [isLoading, setLoading] = useState(false);
+  const [refresh, setRefresh] = useState(true)
   const [hypeSquad, setHypeSquad] = useState({
     name: '',
     url: ''
@@ -66,10 +70,16 @@ function ProfileComponent() {
     });
   }
 
+  async function getLoggedUser() {
+    let tokenCookie = getCookie("qwerty_access");
+    let user = await getUserFromToken(tokenCookie);
+    setLoggedUser(user.id);
+  }
+
   useEffect(async () => {
     setLoading(true);
     getUser();
-    // updateAllProfiles();
+    await getLoggedUser();
     setLoading(false);
   }, [])
 
@@ -114,8 +124,26 @@ function ProfileComponent() {
                     <p className="profileCreated"><span className="accCreated">Account Created</span>: { created }</p>
                     
                     <div className="profileDescription">
-                      Lorem ipsum gsehkns sng songseohgsanhjsenhskhskhbsejysbgk bsjknh sjgneihnsejgbsghsbhgsbngsionhsoihnsekhnskh
+                      {/* ~485 characters limit */}
+                      <div className="descWrapper">
+                        <p className="descriptionText"> 
+                          { currentUser.description }
+                        </p>
+                      </div>
+                      {
+                        currentUser.userID == loggedUser ?
+                        <button className="editDescription" onClick={() => setDescVisible(true)}>Edit Description</button>
+                        : ''
+                      }
                     </div>
+                    {
+                      descVisible ? 
+                      <DescriptionComponent 
+                        userID={loggedUser} 
+                        setDescVisible={setDescVisible} 
+                      /> 
+                      : ''
+                    }
                   </div>
                 </div>
               </div>

@@ -10,6 +10,7 @@ import './style.css'
 import { getCookie } from '../../utils/getCookie';
 import DescriptionComponent from './DescriptionComponent';
 import { getUserFromToken } from '../../utils/getUserFromToken';
+import SnackbarComponent from '../Snackbar/SnackbarComponent';
 
 function ProfileComponent() {
   const { id } = useParams();
@@ -92,6 +93,7 @@ function ProfileComponent() {
             <div className="profileBox">
               <div className="profileBoxContent">
                 <div className="profileInfo">
+                  {/* <SnackbarComponent text='ihrt uiorrijriouroioyrtn jnkj ny nenyejnej jnejyeyjnej' /> */}
                   {/* <div className="profileUserTag">
                   </div> */}
                   <div className="badgesContainer">

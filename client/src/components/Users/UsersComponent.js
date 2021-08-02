@@ -2,6 +2,7 @@ import {React, useState, useEffect} from 'react'
 import NavbarComponent from '../Navigation/NavbarComponent';
 import FooterComponent from '../Footer/FooterComponent';
 import PagionationComponent from './PagionationComponent';
+import UsersFormComponent from './UsersFormComponent';
 import UsersList from './UsersList'
 import axios from 'axios';
 import './style.css'
@@ -9,7 +10,7 @@ import './style.css'
 function UsersComponent() {
 
   const [users, setUsers] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [oldUsers, setOldUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [usersPerPage] = useState(10);
 
@@ -21,11 +22,12 @@ function UsersComponent() {
       }
     }).then((res) => {
       setUsers(res.data);
+      setOldUsers(res.data);
     });
   }
 
   useEffect(() => {
-    getAllUsers()
+    getAllUsers();
   }, [])
 
   const indexOfLastPost = currentPage * usersPerPage;
@@ -49,16 +51,21 @@ function UsersComponent() {
         <div className="userListHero">
           <h2 className="userListTitle">All Registered Users</h2>
           <div className="userListSubtitleDiv">
-            <p className="userListSubtitle">List of all Users Registered to our Website.</p>
-          </div>
-          {/* row */}
+            <p className="userListSubtitle">Enter Username to search for.</p>
+          </div> 
+          <UsersFormComponent
+            setCurrentPage={setCurrentPage}
+            setUsers={setUsers}
+            users={users}
+            oldUsers={oldUsers}
+          />
           <div className="usersWrapper">
             <UsersList users={currentUsers} setUsers={setUsers}/>
           </div>
           <PagionationComponent
-              currentPage={currentPage}
-              nextPage={nextPage}
-              prevPage={prevPage}
+            currentPage={currentPage}
+            nextPage={nextPage}
+            prevPage={prevPage}
           />
         </div>
       </div>

@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap');
 
-.userContainer {
+.userLookupContainer {
   height: 100%;
   width: 100%;
 }
 
-.userHero {
+.userLookupHero {
   height: 130vh;
   background: linear-gradient(360deg, rgb(17, 20, 24) 40%, rgb(18, 24, 34) 60%);
   z-index: 3 !important;
 }
 
-.userTitle {
+.userLookupTitle {
   font-family: 'Kanit', sans-serif;
   text-transform: uppercase;
   text-align: center;
@@ -20,18 +20,18 @@
   color: #EDF6E5;
 }
 
-.userSubtitleDiv {
+.userLookupSubtitleDiv {
   padding-top: 30px;
 }
 
-.userSubtitle {
+.userLookupSubtitle {
   text-align: center;
   font-family: 'Kanit', sans-serif;
   color: #EDF6E1;
   line-height: 17px;
 }
 
-.userBoxContainer {
+.userLookupBoxContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -39,7 +39,7 @@
   font-family: 'Overpass', sans-serif;
 }
 
-.userBox {
+.userLookupBox {
   transition: 0.3s;
   text-align: center;
   width: 900px;
@@ -68,11 +68,11 @@
   padding-top: 25px;
 }
 
-.userBoxText {
+.userLookupBoxText {
   padding-top: 10px;
 }
 
-.userBoxContainer a {
+.userLookupBoxContainer a {
   text-decoration: none;
   color: #EDF6E1;
 }
@@ -81,24 +81,24 @@
   top: 35px;
 }
 
-.userImg {
+.userLookupImg {
   padding-top: 13px;
   width: 96px;
   height: 96px;
 }
 
-.userBox {
+.userLookupBox {
   transition: all 0.3s ease-in-out;
   cursor: cursor;
   transform: scale(1.1, 1.1);
 }
 
-.userBoxContent {
+.userLookupBoxContent {
   display: flex;
   flex-direction: row;
 }
 
-.userInfo {
+.userLookupInfo {
   display: flex;
   flex-direction: column;
   justify-content: left;
@@ -294,7 +294,7 @@
 } */
 
 @media screen and (max-width:1024px) {
-  .userBox {
+  .userLookupBox {
     width: 300px;
     height: 73rem;
   }
@@ -320,7 +320,7 @@
     height: 310px;
     margin-left: 3.5rem;
   }
-  .userBoxContainer {
+  .userLookupBoxContainer {
     display: flex;
     height: 41.8rem;
   }
@@ -361,13 +361,13 @@
   .noUser p {
     padding: 3px 3px;
   }
-  .userHero {
+  .userLookupHero {
     height: 250vh;
   }
 }
 
 @media screen and (width: 360px) and (height: 647px) {
-  .userHero {
+  .userLookupHero {
     height: 240vh;
   }
 }

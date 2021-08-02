@@ -5,12 +5,14 @@ import axios from 'axios';
 import NavbarComponent from '../Navigation/NavbarComponent'
 import FooterComponent from '../Footer/FooterComponent'
 import LoadingComponent from '../Loading/LoadingComponent'
+import Button from '@material-ui/core/Button';
 import { convertNumber } from '../../utils/utils'
 import './style.css'
 import { getCookie } from '../../utils/getCookie';
 import DescriptionComponent from './DescriptionComponent';
 import { getUserFromToken } from '../../utils/getUserFromToken';
 import SnackbarComponent from '../Snackbar/SnackbarComponent';
+import { isOwner } from '../../utils/utils';
 
 function ProfileComponent() {
   const { id } = useParams();
@@ -21,7 +23,6 @@ function ProfileComponent() {
   const [currentUser, setCurrentUser] = useState([]);
   const [loggedUser, setLoggedUser] = useState(null);
   const [isLoading, setLoading] = useState(false);
-  const [refresh, setRefresh] = useState(true)
   const [hypeSquad, setHypeSquad] = useState({
     name: '',
     url: ''
@@ -94,6 +95,19 @@ function ProfileComponent() {
             <div className="profileBox">
               <div className="profileBoxContent">
                 <div className="profileInfo">
+                  <div className="manageUserBttns">
+                    {
+                      (async() => await isOwner()) ? 
+                      currentUser.staff == false ?
+                        <Button variant="contained" color="primary" className="manageAdminBttn" >
+                          ADD ADMINISTRATOR
+                        </Button> :
+                        <Button variant="contained" color="primary" className="manageAdminBttn" >
+                          REMOVE ADMINISTRATOR
+                        </Button>
+                      : ''
+                    }
+                  </div>
                   <div className="badgesContainer">
                     {
                       currentUser.owner == true ?

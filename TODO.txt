@@ -1,10 +1,9 @@
 == GENERAL ==
 
-Browsers freeze when saving n reloading idk why
+//
 
 == FRONTEND ==
 
-Fix Search Bar for responsivnes
 'Content is Loading' is somewhere moved too much to left/right - Too much at Profile Page
 Maybe to find a better color for news section
 When screen is smaller move buttons at Home page down a bit
@@ -15,7 +14,6 @@ Three dots when Username History is too Long (same as users list box)
 
 == BACKEND ==
 
-Search Users at Users Page
 Discord Servers/Minecraft Servers/Paid Ads System, smthn like that
 Administration Panel, admins can approve ads/servers smthng like that
-Some sort of customization of Profile
+Some sort of customization of Profile ~ added About Me

@@ -163,6 +163,12 @@
   height: 24px;
 }
 
+.manageUserBttns {
+  position: absolute;
+  margin-top: 3rem;
+  margin-left: 40rem;
+}
+
 @media screen and (max-width: 1024px) {
   .profileBox {
     width: 300px;
@@ -183,8 +189,7 @@
     font-size: 11px;
   }
   .badgesContainer {
-    /* left: 23rem; */
-    margin-left: 7.5rem;
+    margin-left: 8rem;
     margin-top: 6.5rem;
   }
   .badge {
@@ -202,6 +207,14 @@
   }
   .profileHero {
     height: 165vh;
-    background-color: red;
+  }
+  .manageUserBttns {
+    display: flex;
+    position: absolute;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    margin-top: 45rem;
+    margin-left: 15%;
   }
 }

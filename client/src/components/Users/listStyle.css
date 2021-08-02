@@ -10,8 +10,9 @@
 .userCard {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   /* padding: 16px; */
-  padding: 16px 16px 16px 16px;
-  padding-bottom: 40px;
+  /* padding: 16px 16px 16px 16px; */
+  /* padding-bottom: 40px; */
+  height: 130px;
   background-color: #26282e;
   border-radius: 5px;
   transition: 0.3s;
@@ -26,7 +27,7 @@
   display: flex;
   position: relative;
   margin-left: 6rem;
-  margin-top: -4.7rem;
+  margin-top: -4rem;
 }
 
 .userlistID {
@@ -49,13 +50,13 @@
   color: #fff;
   font-family: 'Overpass', sans-serif;
   margin-left: 6rem;
-  margin-top: 5px;
+  margin-top: 10px;
   cursor: pointer;
 }
 
 .userlistIcon {
-  margin-left: 10px;
-  margin-top: 10px;
+  margin-left: 15px;
+  margin-top: 15px;
   width: 64px;
   border-radius: 50%;
 }
@@ -68,6 +69,18 @@
 .viewUserProfile:hover {
   opacity: 0.9;
   transition: all 0.3s ease-in-out;
+}
+
+.listBadge {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  margin-left: 15px;
+  margin-top: 40px;
+}
+
+.listStaff {
+  margin-left: 45px;
 }
 
 @media screen and (max-width: 1024px) {

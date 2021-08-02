@@ -51,6 +51,7 @@ textarea {
     margin-top: 4rem;
   }
   .descBttn, .descArea {
+    margin-left: 7px;
     width: 95%;
   }
 }

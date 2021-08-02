@@ -1,3 +1,4 @@
+const axios = require("axios");
 const { getCookie } = require("./getCookie");
 const { getUserFromToken } = require("./getUserFromToken");
 
@@ -25,7 +26,22 @@ async function getCurrentUser() {
   return user.id;
 }
 
+async function isOwner() {
+  let id = await getCurrentUser();
+  let owner = false;
+  await axios.get(`${process.env.REACT_APP_SERVER_DOMAIN}/api/users/${id}`, {
+    headers: {
+      "Request_Token": `${process.env.REACT_APP_API_KEY}`
+    }
+  }).then((resp) => {
+    if(resp.data.owner == true) return owner = true;
+  })
+
+  return owner;
+}
+
 module.exports = {
   convertNumber,
   getCurrentUser,
+  isOwner,
 }

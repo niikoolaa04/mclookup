@@ -22,6 +22,14 @@ router.get('/users/:id', (req, res) => {
   });
 });
 
+router.get('/search/users/:username', (req, res) => {
+  if(req.headers.request_token != process.env.SERVER_API_KEY) return res.send('No');
+  User.findOne({username: req.params.username}, function (err, post) {
+    if (err) return console.log(err);
+    res.json(post);
+  });
+});
+
 router.put('/users/:id', async function(req, res, next) {
   if(req.headers.request_token != process.env.SERVER_API_KEY) return res.send('No');
   await User.findOneAndUpdate({ userID: req.params.id }, req.body, function (err, post) {

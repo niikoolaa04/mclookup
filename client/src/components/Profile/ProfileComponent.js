@@ -16,6 +16,8 @@ function ProfileComponent() {
   const { id } = useParams();
 
   const [descVisible, setDescVisible] = useState(false);
+  const [message, setMessage] = useState('');
+  const [open, setOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState([]);
   const [loggedUser, setLoggedUser] = useState(null);
   const [isLoading, setLoading] = useState(false);
@@ -29,10 +31,6 @@ function ProfileComponent() {
     type: 'N/A',
     active: false
   });
-
-  const styleFix = {
-    transition: 'all 0.3s ease-in-out'
-  };
 
   async function getUser() {
     await axios.get(`${process.env.REACT_APP_SERVER_DOMAIN}/api/users/${id}`, {
@@ -89,13 +87,13 @@ function ProfileComponent() {
       <NavbarComponent style={{ zIndex: '5000' }} />
       <div className="profileContainer">
         <div className="profileHero">
+          {
+            isLoading == true ? <LoadingComponent marginFix='6.5rem' /> : ''
+          }
           <div className="profileBoxContainer">
             <div className="profileBox">
               <div className="profileBoxContent">
                 <div className="profileInfo">
-                  {/* <SnackbarComponent text='ihrt uiorrijriouroioyrtn jnkj ny nenyejnej jnejyeyjnej' /> */}
-                  {/* <div className="profileUserTag">
-                  </div> */}
                   <div className="badgesContainer">
                     {
                       hypeSquad === '' ? '' :
@@ -112,11 +110,6 @@ function ProfileComponent() {
                       ''
                     }
                   </div>
-
-                  {
-                    isLoading == true ? <LoadingComponent style={styleFix}/> : ''
-                  }
-
                   <p className="profileUsername">{ currentUser.username }#{ currentUser.discriminator }</p>
                   <p className="profileID">{ currentUser.userID }</p>
                   <div className="profilePicture">
@@ -143,6 +136,10 @@ function ProfileComponent() {
                       <DescriptionComponent 
                         userID={loggedUser} 
                         setDescVisible={setDescVisible} 
+                        message={message}
+                        setMessage={setMessage}
+                        open={open}
+                        setOpen={setOpen}
                       /> 
                       : ''
                     }
@@ -153,6 +150,7 @@ function ProfileComponent() {
           </div>
         </div>
       </div>
+      <SnackbarComponent open={open} setOpen={setOpen} message={message} setMessage={setMessage} />
       <FooterComponent />
     </div>
   )

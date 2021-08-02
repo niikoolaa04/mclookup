@@ -161,55 +161,42 @@
 @media screen and (max-width: 1024px) {
   .profileBox {
     width: 300px;
+    height: 800px;
   }
   .profileImg {
     margin-top: -2rem;
     zoom: 40%;
   }
-  
   .profileUsername {
     margin-left: 10rem;
     top: 3rem;
     font-size: 24px;
   }
-  
   .profileID {
     margin-left: 10rem;
     top: 3rem;
     font-size: 11px;
   }
-  
   .badgesContainer {
     /* left: 23rem; */
     margin-left: 7.5rem;
     margin-top: 6.5rem;
   }
-  
   .badge {
     padding-right: 2.5px;
   }
-
   .profileCreated {
     margin-left: 1rem;
     top: 0.5rem;
     font-size: 13px;
   }
-  
   .profileGuildsCount {
     margin-left: 1rem;
     top: 0.65rem;
     font-size: 13px;
   }
-
-  .serversList {
-    width: 270px;
-    height: 200px;
-    /* background: chartreuse; */
-    z-index: 4 !important;
-    margin-left: 1rem;
-    margin-top: 3rem;
-  }
-  .serverHero {
-    height: 180vh;
+  .profileHero {
+    height: 165vh;
+    background-color: red;
   }
 }

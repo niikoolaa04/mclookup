@@ -1,15 +1,26 @@
-import { React, useState } from 'react'
-import './style.css'
+import { React, useEffect, useState } from 'react'
+import Snackbar from '@material-ui/core/Snackbar';
 
-function SnackbarComponent({ text }) {
+function SnackbarComponent({ open, setOpen, message, setMessage }) {
+
+  let vertical = 'bottom';
+  let horizontal = 'right';
+
+  const handleClose = () => {
+    setOpen(false);
+    setMessage('');
+  };
+  
   return (
     <div>
-      <div className="snackbarContainer">
-        <div className="iconContainer">
-          <i class="fas fa-check"></i>
-        </div>
-        <p className="snackText">{ text }</p>
-      </div>
+      <Snackbar
+        anchorOrigin={{ vertical, horizontal }}
+        open={open}
+        onClose={handleClose}
+        message={message}
+        autoHideDuration={5000}
+        key={vertical + horizontal}
+      />
     </div>
   )
 }

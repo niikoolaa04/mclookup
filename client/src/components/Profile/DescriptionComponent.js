@@ -2,14 +2,22 @@ import { React, useState, useEffect } from 'react'
 import axios from 'axios';
 import './description.css'
 
-function DescriptionComponent({ userID, setDescVisible }) {
+function DescriptionComponent({ open, setOpen, message, setMessage, userID, setDescVisible }) {
 
   const [desc, setDesc] = useState('');
 
   const handleChange = (e) => setDesc(e.target.value);
+
+  function handleReturn() {
+    setDesc('')
+    setOpen(true);
+    setMessage('Description is too short, try again.');
+  }
   
   function handleSubmit(e) {
-    if(desc.length < 8) return;
+    if(desc.length < 8) return handleReturn();
+    setOpen(true);
+    setMessage('Description Updated Successfully');
     axios.put(`${process.env.REACT_APP_SERVER_DOMAIN}/api/users/${userID}/description`, {
       description: desc
     }, {
@@ -30,8 +38,7 @@ function DescriptionComponent({ userID, setDescVisible }) {
             value={desc} 
             className="descArea" 
             onChange={(e) => handleChange(e)}
-            maxlength="480">
-
+            maxLength="480">
           </textarea>
         </form>
         <button className="descBttn" onClick={(e) => handleSubmit(e)}>Update</button>

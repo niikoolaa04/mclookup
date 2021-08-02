@@ -37,3 +37,20 @@ textarea {
   outline: none;
   transition: all 0.3s ease-in-out;
 }
+
+@media screen and (max-width: 1024px) {
+  .profileDescription {
+    margin-left: 0.5rem;
+    width: 285px;
+  }
+  .descWrapper {
+    height: 250px;
+  }
+  .descFormContainer {
+    margin-left: 0;
+    margin-top: 4rem;
+  }
+  .descBttn, .descArea {
+    width: 95%;
+  }
+}

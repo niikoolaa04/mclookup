@@ -88,7 +88,7 @@
   display: flex;
   position: absolute;
   /* left: 23rem; */
-  margin-left: 13.5rem;
+  margin-left: 13.9rem;
   padding-left: 35px;
   margin-top: 10rem;
 }
@@ -156,6 +156,11 @@
   font-family: 'Overpass', sans-serif;
   cursor: pointer;
   margin-top: 10px;
+}
+
+.ownerBadge {
+  width: 28px;
+  height: 24px;
 }
 
 @media screen and (max-width: 1024px) {

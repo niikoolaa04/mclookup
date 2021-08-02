@@ -36,7 +36,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 90px;
+  margin-top: 70px;
   font-family: 'Overpass', sans-serif;
 }
 
@@ -199,14 +199,14 @@
     width: 300px;
   }
   .motdEl {
-    left: -7px;
+    left: 7px;
     top: 32rem;
     font-size: 18px;
     padding: 15px 15px;
     width: 280px;
   }
   .serverFavicon {
-    margin-top: 41.5rem;
+    margin-top: 42.3rem;
     margin-left: 5.5rem;
   }
   .serverVersion, .serverSoftware, .serverPlayers, .serverIP, .serverPlugins {

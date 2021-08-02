@@ -96,15 +96,31 @@ function ProfileComponent() {
                 <div className="profileInfo">
                   <div className="badgesContainer">
                     {
+                      currentUser.owner == true ?
+                        <Tooltip title="Website Owner" placement="top">
+                          <img src="https://image.flaticon.com/icons/png/128/5158/5158965.png" className="badge ownerBadge" alt="" />
+                        </Tooltip>
+                        :
+                        ''
+                    }
+                    {
+                      currentUser.staff == true ?
+                        <Tooltip title="Website Staff" placement="top">
+                          <img src="https://discord.com/assets/f62be1ec9bdd82d3d77158ad81830e68.svg" className="badge staffBadge" alt="" />
+                        </Tooltip>
+                        :
+                        ''
+                    }
+                    {
                       hypeSquad === '' ? '' :
                       <Tooltip title={hypeSquad.name} placement="top">
-                        <img src={hypeSquad.url} className="hypeSquad" alt="" className="badge" />
+                        <img src={hypeSquad.url} className="badge hypeSquad" alt="" />
                       </Tooltip>
                     }
                     {
                       nitro.active === true ? 
                       <Tooltip title={nitro.type} placement="top">
-                        <img src="https://discord.com/assets/e04ce699dcd2fd50d352a384511687a9.svg" className="nitroBadge" alt="" className="badge" />
+                        <img src="https://discord.com/assets/e04ce699dcd2fd50d352a384511687a9.svg" className="badge nitroBadge" alt="" />
                       </Tooltip>
                       :
                       ''

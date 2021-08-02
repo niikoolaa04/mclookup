@@ -43,17 +43,23 @@ function UserFormComponent({ data, setData, input, setInput, searchUser, setSear
 
   return (
     <div>
-      <div className="userFormContainer">
-        <form onSubmit={(e) => {
-          getPlayer(e);
-          }}>
-          <input type="text" className="userInput" id="name" placeholder="Username/UUID" onChange={(e) => handleChange(e)} required="" />
-        </form>
-        <Button variant="contained" className="userFormBttn" color="primary" onClick={(e) => {
-          getPlayer(e)
-        }}> 
-          Search
-        </Button>
+      <div className="userFormWrapper">
+        <div className="userFormContainer">
+          <div className="userForm">
+            <form onSubmit={(e) => {
+              getPlayer(e);
+              }}>
+              <input type="text" className="userInput" id="name" placeholder="Username/UUID" onChange={(e) => handleChange(e)} required="" />
+            </form>
+          </div>
+          <div className="bttnUser">
+            <Button variant="contained" className="serverFormBttn" color="primary" onClick={(e) => {
+              getPlayer(e)
+            }}> 
+              Search
+            </Button>
+          </div>
+        </div>
       </div>
     </div>
   )

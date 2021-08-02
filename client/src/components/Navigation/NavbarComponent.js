@@ -26,7 +26,7 @@ function NavbarComponent() {
   return (
     <>
       <div className="navContainer">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/archive/a/ac/20070325222640%21No_image_available.svg/120px-No_image_available.svg.png" alt="title image" className="title" />
+        <img src="https://i.imgur.com/B07iA8L.png" alt="title image" className="title" />
         <div className="navigation">
           <i id="open-menu" className="fas fa-bars" onClick={() => {
             setOpen(true);

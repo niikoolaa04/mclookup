@@ -1,81 +1,98 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 
-/* .userFormContainer form {
-  display: flex;
-  position: absolute;
-  left: 77vh;
-} */
-
-.userFormContainer form {
-  display: flex;
-  position: absolute;
-  left: 77vh;
+.userFormWrapper {
+  width: 100%;
+  height: 70px;
 }
 
 .userFormContainer {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
 }
 
-.userInput {
+.userForm {
+  display: flex;
   position: relative;
-  top: 11px;
-  font-family: 'Roboto', sans-serif;
-  color: #333;
-  font-size: 1.2rem;
-	margin: 0 auto;
-  padding: 10px 10px 10px 10px;
-  border-radius: 0.2rem;
-  background-color: rgb(255, 255, 255);
-  border: none;
-  width: 90%;
-  display: block;
-  border-bottom: 0.3rem solid transparent;
-  transition: all 0.3s;
-  outline: none;
+  justify-content: center;
+  top: 10px;
+}
+
+.bttnUser {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  top: 10px;
+  left: 25px;
 }
 
 .userFormBttn {
-  top: 17px;
-  left: 110px;
+  display: block;
 }
 
-@media screen and (max-width: 1280px) {
-  .userFormContainer form {
-    display: flex;
-    position: absolute;
-    left: 54vh;
-  }
+.userInput {
+  width: 250px;
+  height: 50px;
+  padding: 12px 12px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  background: linear-gradient(rgb(34, 39, 46), rgb(43, 52, 66));
+}
+
+.userInput::placeholder {
+  color: #fff;
+  opacity: 1;
+  font-family: 'Kanit', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.7px;
+}
+
+.userInput:-ms-input-placeholder {
+  color: #fff;
+  font-family: 'Kanit', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.7px;
+}
+
+.userInput::-ms-input-placeholder {
+  color: #fff;
+  font-family: 'Kanit', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.7px;
+}
+
+.userInput:focus {
+  border: 2px solid #3f51b5;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 2px solid #3f51b5;
+  -webkit-text-fill-color: #fff;
+  -webkit-box-shadow: 0 0 0px 1000px linear-gradient(rgb(34, 39, 46), rgb(43, 52, 66)) inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 @media screen and (max-width: 1024px) {
-  .userFormContainer form {
-    display: flex;
-    position: absolute;
-    left: 39vh;
-  }
-}
-
-@media screen and (max-width:800px) {
   .userInput {
-    width: 70%;
+    width: 210px;
   }
-  .userFormContainer form {
-    left: 3vh;
-  }
-}
-
-@media screen and (max-width: 375px) {
-  .userFormContainer form {
-    left: 1vh;
-  }
-}
-
-@media screen and (max-width: 360px) {
-  .userFormContainer form {
-    left: -10px;
-  }
-  .userFormBttn {
-    left: 115px;
+  .bttnUser {
+    left: 15px;
   }
 }

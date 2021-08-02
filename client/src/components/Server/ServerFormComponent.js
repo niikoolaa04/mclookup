@@ -47,19 +47,24 @@ function ServerFormComponent({ data, setData, input, setInput, searchIP, setSear
 
   return (
     <div>
-      <div className="motdElement"></div>
-      <div className="serverFormContainer">
-        <form onSubmit={(e) => {
-          getJavaServer(searchIP);
-          e.preventDefault();
-          }}>
-            <input type="text" className="serverInput" id="name" placeholder="Server Address" onChange={(e) => handleChange(e)} required="" />
-        </form>
-        <Button variant="contained" className="serverFormBttn" color="primary" onClick={() => {
-          getJavaServer(searchIP)
-        }}> 
-          Search
-        </Button>
+      <div className="serverFormWrapper">
+        <div className="serverFormContainer">
+          <div className="serverForm">
+            <form onSubmit={(e) => {
+              getJavaServer(searchIP);
+              e.preventDefault();
+              }}>
+                <input type="text" className="serverInput" id="name" placeholder="Server Address" onChange={(e) => handleChange(e)} required="" />
+            </form>
+          </div>
+          <div className="formBttn">
+            <Button variant="contained" className="serverFormBttn" color="primary" onClick={() => {
+              getJavaServer(searchIP)
+            }}> 
+              Search
+            </Button>
+          </div>
+        </div>
       </div>
     </div>
   )

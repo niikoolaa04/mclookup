@@ -38,7 +38,10 @@ router.get("/discord/callback", async (req, res) => {
       discriminator: user.discriminator,
       hypeSquad: user.public_flags,
       avatarURL: avatar,
-      nitro: user.premium_type
+      nitro: user.premium_type,
+      description: '',
+      owner: false,
+      staff: false
     }, {
       headers: {
         "Request_Token": `${process.env.SERVER_API_KEY}`,

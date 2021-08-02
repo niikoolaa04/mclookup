@@ -23,6 +23,12 @@ var UserSchema = new mongoose.Schema({
   },
   description: {
     type: String,
+  },
+  owner: {
+    type: Boolean
+  },
+  staff: {
+    type: Boolean
   }
 });
 

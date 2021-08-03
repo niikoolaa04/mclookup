@@ -175,13 +175,13 @@
     height: 800px;
   }
   .profileImg {
-    margin-top: -2rem;
+    margin-top: 2rem;
     zoom: 40%;
   }
   .profileUsername {
     margin-left: 10rem;
     top: 3rem;
-    font-size: 24px;
+    font-size: 13px;
   }
   .profileID {
     margin-left: 10rem;
@@ -190,7 +190,7 @@
   }
   .badgesContainer {
     margin-left: 8rem;
-    margin-top: 6.5rem;
+    margin-top: 5.5rem;
   }
   .badge {
     padding-right: 2.5px;
@@ -209,12 +209,12 @@
     height: 165vh;
   }
   .manageUserBttns {
+    width: 100%;
     display: flex;
     position: absolute;
     margin: 0;
     justify-content: center;
     align-items: center;
     margin-top: 45rem;
-    margin-left: 15%;
   }
 }

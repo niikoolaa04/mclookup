@@ -12,16 +12,16 @@ function UsersList({ users, setUsers }) {
         <p className="userlistUsername">{ u.username }#{ u.discriminator }</p>
         <p className="userlistID">{ u.userID }</p>
         {
-          u.owner == true ?
-          <Tooltip title="Website Owner" placement="top">
-            <img src="https://image.flaticon.com/icons/png/128/5158/5158965.png" className="listBadge listOwner" alt="" />
-          </Tooltip> : ''
-        }
-        {
           u.staff == true ?
             <Tooltip title="Website Staff" placement="top">
               <img src="https://discord.com/assets/f62be1ec9bdd82d3d77158ad81830e68.svg" className="listBadge listStaff" alt="" />
             </Tooltip> : ''
+        }
+        {
+          u.owner == true ?
+          <Tooltip title="Website Owner" placement="top">
+            <img src="https://image.flaticon.com/icons/png/128/5158/5158965.png" className="listBadge listOwner" alt="" />
+          </Tooltip> : ''
         }
         <Link to={'/profile/' + u.userID} className="linkToUser">
           <button className="viewUserProfile">View</button>

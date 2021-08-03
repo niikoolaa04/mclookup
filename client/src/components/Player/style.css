@@ -4,6 +4,7 @@
 .playerContainer {
   height: 100%;
   width: 100%;
+  overflow-x: hidden;
 }
 
 .playerHero {
@@ -47,6 +48,7 @@
   /* background-color: beige; */
   background: linear-gradient(rgb(17, 20, 24), rgb(18, 24, 34));
   border-radius: 5px;
+  overflow-x: hidden;
   z-index: 3 !important;
 }
 
@@ -357,5 +359,16 @@
 @media screen and (width: 360px) and (height: 647px) {
   .playerHero {
     height: 270vh;
+  }
+}
+
+.playerBoxStatus-entering {
+  animation-name: userOpacity;
+  animation-duration: 1.5s;
+}
+
+@keyframes userOpacity {
+  0% {
+    opacity: 0;
   }
 }

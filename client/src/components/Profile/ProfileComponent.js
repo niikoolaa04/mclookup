@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router';
-import Tooltip from '@material-ui/core/Tooltip';
 import axios from 'axios';
+import Tooltip from '@material-ui/core/Tooltip';
+import Transition from 'react-transition-group/Transition';
 import NavbarComponent from '../Navigation/NavbarComponent'
 import FooterComponent from '../Footer/FooterComponent'
 import LoadingComponent from '../Loading/LoadingComponent'
+import DescriptionComponent from './DescriptionComponent';
+import SnackbarComponent from '../Snackbar/SnackbarComponent';
 import Button from '@material-ui/core/Button';
 import { convertNumber } from '../../utils/utils'
-import './style.css'
 import { getCookie } from '../../utils/getCookie';
-import DescriptionComponent from './DescriptionComponent';
 import { getUserFromToken } from '../../utils/getUserFromToken';
-import SnackbarComponent from '../Snackbar/SnackbarComponent';
 import { isOwner } from '../../utils/utils';
+import './style.css'
 
 function ProfileComponent() {
   const { id } = useParams();
@@ -92,91 +93,95 @@ function ProfileComponent() {
             isLoading == true ? <LoadingComponent marginFix='6.5rem' /> : ''
           }
           <div className="profileBoxContainer">
-            <div className="profileBox">
-              <div className="profileBoxContent">
-                <div className="profileInfo">
-                  <div className="manageUserBttns">
-                    {
-                      (async() => await isOwner()) ? 
-                      currentUser.staff == false ?
-                        <Button variant="contained" color="primary" className="manageAdminBttn" >
-                          ADD ADMINISTRATOR
-                        </Button> :
-                        <Button variant="contained" color="primary" className="manageAdminBttn" >
-                          REMOVE ADMINISTRATOR
-                        </Button>
-                      : ''
-                    }
-                  </div>
-                  <div className="badgesContainer">
-                    {
-                      currentUser.owner == true ?
-                        <Tooltip title="Website Owner" placement="top">
-                          <img src="https://image.flaticon.com/icons/png/128/5158/5158965.png" className="badge ownerBadge" alt="" />
-                        </Tooltip>
-                        :
-                        ''
-                    }
-                    {
-                      currentUser.staff == true ?
-                        <Tooltip title="Website Staff" placement="top">
-                          <img src="https://discord.com/assets/f62be1ec9bdd82d3d77158ad81830e68.svg" className="badge staffBadge" alt="" />
-                        </Tooltip>
-                        :
-                        ''
-                    }
-                    {
-                      hypeSquad === '' ? '' :
-                      <Tooltip title={hypeSquad.name} placement="top">
-                        <img src={hypeSquad.url} className="badge hypeSquad" alt="" />
-                      </Tooltip>
-                    }
-                    {
-                      nitro.active === true ? 
-                      <Tooltip title={nitro.type} placement="top">
-                        <img src="https://discord.com/assets/e04ce699dcd2fd50d352a384511687a9.svg" className="badge nitroBadge" alt="" />
-                      </Tooltip>
-                      :
-                      ''
-                    }
-                  </div>
-                  <p className="profileUsername">{ currentUser.username }#{ currentUser.discriminator }</p>
-                  <p className="profileID">{ currentUser.userID }</p>
-                  <div className="profilePicture">
-                    <img src={currentUser.avatarURL} alt="" className="profileImg" />
-                  </div>
-                  <div className="profileExtra">
-                    <p className="profileCreated"><span className="accCreated">Account Created</span>: { created }</p>
-                    
-                    <div className="profileDescription">
-                      {/* ~485 characters limit */}
-                      <div className="descWrapper">
-                        <p className="descriptionText"> 
-                          { currentUser.description }
-                        </p>
+            <Transition in={true} timeout={1500} mountOnEnter unmountOnExit appear>
+              {(state) => (
+                <div className={`profileBox profileBoxStatus-${state}`}>
+                  <div className="profileBoxContent">
+                    <div className="profileInfo">
+                      <div className="manageUserBttns">
+                        {
+                          (async() => await isOwner()) ? 
+                          currentUser.staff == false ?
+                            <Button variant="contained" color="primary" className="manageAdminBttn" >
+                              ADD ADMINISTRATOR
+                            </Button> :
+                            <Button variant="contained" color="primary" className="manageAdminBttn" >
+                              REMOVE ADMINISTRATOR
+                            </Button>
+                          : ''
+                        }
                       </div>
-                      {
-                        currentUser.userID == loggedUser ?
-                        <button className="editDescription" onClick={() => setDescVisible(true)}>Edit Description</button>
-                        : ''
-                      }
+                      <div className="badgesContainer">
+                        {
+                          currentUser.owner == true ?
+                            <Tooltip title="Website Owner" placement="top">
+                              <img src="https://image.flaticon.com/icons/png/128/5158/5158965.png" className="badge ownerBadge" alt="" />
+                            </Tooltip>
+                            :
+                            ''
+                        }
+                        {
+                          currentUser.staff == true ?
+                            <Tooltip title="Website Staff" placement="top">
+                              <img src="https://discord.com/assets/f62be1ec9bdd82d3d77158ad81830e68.svg" className="badge staffBadge" alt="" />
+                            </Tooltip>
+                            :
+                            ''
+                        }
+                        {
+                          hypeSquad === '' ? '' :
+                          <Tooltip title={hypeSquad.name} placement="top">
+                            <img src={hypeSquad.url} className="badge hypeSquad" alt="" />
+                          </Tooltip>
+                        }
+                        {
+                          nitro.active === true ? 
+                          <Tooltip title={nitro.type} placement="top">
+                            <img src="https://discord.com/assets/e04ce699dcd2fd50d352a384511687a9.svg" className="badge nitroBadge" alt="" />
+                          </Tooltip>
+                          :
+                          ''
+                        }
+                      </div>
+                      <p className="profileUsername">{ currentUser.username }#{ currentUser.discriminator }</p>
+                      <p className="profileID">{ currentUser.userID }</p>
+                      <div className="profilePicture">
+                        <img src={currentUser.avatarURL} alt="" className="profileImg" />
+                      </div>
+                      <div className="profileExtra">
+                        <p className="profileCreated"><span className="accCreated">Account Created</span>: { created }</p>
+                        
+                        <div className="profileDescription">
+                          {/* ~485 characters limit */}
+                          <div className="descWrapper">
+                            <p className="descriptionText"> 
+                              { currentUser.description }
+                            </p>
+                          </div>
+                          {
+                            currentUser.userID == loggedUser ?
+                            <button className="editDescription" onClick={() => setDescVisible(true)}>Edit Description</button>
+                            : ''
+                          }
+                        </div>
+                        {
+                          descVisible ? 
+                          <DescriptionComponent 
+                            userID={loggedUser} 
+                            setDescVisible={setDescVisible} 
+                            message={message}
+                            setMessage={setMessage}
+                            open={open}
+                            setOpen={setOpen}
+                          /> 
+                          : ''
+                        }
+                      </div>
                     </div>
-                    {
-                      descVisible ? 
-                      <DescriptionComponent 
-                        userID={loggedUser} 
-                        setDescVisible={setDescVisible} 
-                        message={message}
-                        setMessage={setMessage}
-                        open={open}
-                        setOpen={setOpen}
-                      /> 
-                      : ''
-                    }
                   </div>
                 </div>
-              </div>
-            </div>
+              )}
+            </Transition>
           </div>
         </div>
       </div>

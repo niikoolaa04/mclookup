@@ -2,269 +2,140 @@
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap');
 
 .homeContainer {
-  height: 183vh;
+  width: 100%;
+  height: 100%;
 }
 
-.heroContainer {
-  height: 80vh;
-  background: linear-gradient(rgb(17, 20, 24), rgb(18, 24, 34));
+.homeHero {
+  height: 50vh;
+  background: #12171f;
   z-index: 3 !important;
+}
+
+.homeText {
+  text-align: center;
 }
 
 .homeTitle {
-  font-family: 'Kanit', sans-serif;
+  padding-top: 55px;
   text-transform: uppercase;
-  text-align: center;
-  padding-top: 45px;
-  color: #EDF6E5;
-}
-
-.subTitleDiv {
-  padding-top: 30px;
-}
-
-.subtitle {
-  text-align: center;
   font-family: 'Kanit', sans-serif;
-  color: #EDF6E1;
-  line-height: 17px;
+  font-size: 32px;
+  color: #fff;
 }
 
-.boxContainer {
-  /* text-align: center; */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 90px;
+.homeSubtitle {
   font-family: 'Overpass', sans-serif;
+  color: #fff;
+  padding-top: 25px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
-.firstBox {  
+.lookUserBttn {
+  margin-right: 30px;
   transition: 0.3s;
-  text-align: center;
-  width: 375px;
-  height: 270px;
-  background-color: #fff;
-  border-radius: 5px;
-  margin-right: 65px;
-  box-shadow: rgb(201, 199, 199) 2px 2px;
-  z-index: 3 !important;
-}
-.secondBox {
-  transition: 0.3s;
-  text-align: center;
-  width: 375px;
-  height: 270px;
-  background-color: #fff;
-  border-radius: 5px;
-  margin-left: 65px;
-  box-shadow: rgb(201, 199, 199) 2px 2px;
-  z-index: 3 !important;
-}
-
-.boxText.user {
-  padding-left: 15px;
-  text-align: center;
-  justify-content: flex-end;
-}
-
-.boxText.server {
-  padding-left: 15px;
-  text-align: center;
-  justify-content: center;
-}
-
-.boxText {
-  padding-top: 10px;
-}
-
-.boxContainer a {
-  text-decoration: none;
-  color: #EDF6E1;
-}
-
-/* .boxBttn {
-  margin-top: 50px;
-} */
-
-.userImage, .serverImage {
-  padding-top: 13px;
-  width: 96px;
-  height: 96px;
-}
-
-.firstBox:hover, .secondBox:hover {
-  transition: all 0.3s ease-in-out;
-  cursor: cursor;
-  transform: scale(1.1, 1.1);
-}
-
-.moreInfo {
-  background-color: #242a30;
-  height: 45rem;
-  z-index: 2 !important;
-  margin-top: -1px;
-}
-
-.infoTitle {
-  text-align: center;
-  padding-top: 150px;
-  font-family: 'Kanit', sans-serif;
-  color: #EDF6E1;
   text-transform: uppercase;
-}
-
-.infoText {
-  margin-top: 35px;
-  text-align: center;
-  color: #EDF6E1;
+  padding: 5px 5px;
+  letter-spacing: 0.5px;
+  border-radius: 2px;
+  outline: none;
+  border: none;
+  width: 20%;
+  height: 50px;
+  background-color: #5865F2;
+  color: #fff;
   font-family: 'Overpass', sans-serif;
+  cursor: pointer;
 }
 
-.infoHeader {
-  text-align: center;
-  font-family: 'Kanit', sans-serif;
-  color: #EDF6E1;
-  margin-top: 35px;
-}
-
-.teamMembers {
-  margin-top: 35px;
-  text-align: center;
-  color: #EDF6E1;
+.lookSrvBttn {
+  margin-left: 30px;
+  transition: 0.3s;
+  text-transform: uppercase;
+  padding: 5px 5px;
+  letter-spacing: 0.5px;
+  border-radius: 2px;
+  outline: none;
+  border: none;
+  width: 20%;
+  height: 50px;
+  background-color: #5865F2;
+  color: #fff;
   font-family: 'Overpass', sans-serif;
+  cursor: pointer;
+}
+
+.homeBttns {
+  text-align: center;
+  padding-top: 50px;
   z-index: 5 !important;
 }
 
-/* browser resize znaci nekih ovako ovi do 800px */
-
-@media screen and (min-width: 1281px) {
-  .homeContainer {
-    height: 70rem;
-  }
-  .moreInfo {
-    height: 45rem;
-    margin-top: -5.2rem;
-  }
+.lookUserBttn:hover, .lookSrvBttn:hover {
+  transition: 0.3s;
+  opacity: 0.8;
 }
 
-@media screen and (max-width: 1280px) {
-  .homeContainer {
-    height: 65rem;
-  }
-  .moreInfo {
-    height: 40rem;
-    margin-top: -5.2rem;
-  }
+.viewArrow {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5rem;
+}
+
+.viewArrow i {
+  transition: 0.3s;
+  color: #7882f1;
+}
+
+.viewNext {
+  padding-bottom: 25px;
+  color: #fff;
+  font-family: 'Kanit', sans-serif;
+}
+
+.viewArrow i:hover {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.1);
+}
+
+svg {
+  margin-top: 5px;
+  background: #12171f;
+  margin-top: -10px;
+  z-index: 2 !important;
+}
+
+.fixWave {
+  width: 100%;
+  height: 1;
+  margin-top: -5px;
+}
+
+.usrLook, .srvLook {
+  font-size: 8px;
+  opacity: 0.9;
+  color: rgb(241, 237, 237);
 }
 
 @media screen and (max-width: 1024px) {
-  .homeContainer {
-    height: 66rem;
+  .homeHero {
+    height: 60vh;
   }
-  .moreInfo {
-    height: 44rem;
-    margin-top: -5.2rem;
+  .lookSrvBttn, .lookUserBttn {
+    padding: 5px 5px;
+    border-radius: 2px;
+    width: 35%;
+    height: 50px;
   }
-  .firstBox, .secondBox {  
-    width: 325px;
-    height: 220px;
-    margin-right: 20px;
-    margin-left: 20px;
+  .lookSrvBttn {
+    margin-left: 10px;
   }
-}
-
-@media screen and (max-width:800px) {
-  .boxContainer {
-    margin-top: 50px;
-  }
-  .firstBox {  
-    width: 210px;
-    height: 140px;
-    margin-right: 20px;
-    margin-left: 20px;
-  }
-  .secondBox {
-    width: 210px;
-    height: 140px;
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-  .userImage, .serverImage {
-    padding-top: 13px;
-    width: 32px;
-    height: 32px;
-  }
-  .boxText.user {
-    padding-right: 5px;
-    text-align: center;
-    justify-content: center;
-    font-size: 13px;
-  }
-  .boxText.server {
-    padding-left: 5px;
-    text-align: center;
-    justify-content: center;
-    font-size: 13px;
-  }
-  .boxContainer button {
-    margin-top: -26px;
-    left: 2px;
-  }
-  .infoTitle {
-    padding-top: 135px;
-  }
-  .homeContainer {
-    height: 60rem;
-  }
-  .moreInfo {
-    height: 45rem;
-  }
-  .infoText {
-    margin-top: 25px;
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-}
-
-@media screen and (max-width: 414px) {
-  .homeContainer {
-    height: 62.8rem;
-  }
-}
-
-@media screen and (max-width: 375px) {
-  .homeContainer {
-    height: 135vh;
-  }
-  .moreInfo {
-    height: 50rem;
-  }
-  .firstBox button, .secondBox button {
-    margin-top: -30px;
-  }
-}
-
-@media screen and (max-width: 375px) and (max-height: 667px) {
-  .homeContainer {
-    height: 160vh;
-  }
-  .moreInfo {
-    height: 53rem;
-  }
-}
-
-@media screen and (max-width: 360px) {
-  .homeContainer {
-    height: 145vh;
-  }
-  .moreInfo {
-    height: 55rem;
-  }
-}
-
-@media screen and (max-width: 360px) and (max-height: 647px) {
-  .homeContainer {
-    height: 165vh;
+  .lookUserBttn {
+    margin-right: 10px;
   }
 }

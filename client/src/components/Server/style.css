@@ -7,7 +7,7 @@
 }
 
 .serverHero {
-  height: 130vh;
+  height: 150vh;
   background: linear-gradient(360deg, rgb(17, 20, 24) 40%, rgb(18, 24, 34) 60%);
   z-index: 3 !important;
 }
@@ -206,7 +206,7 @@
     width: 280px;
   }
   .serverFavicon {
-    margin-top: 42.3rem;
+    margin-top: 40rem;
     margin-left: 5.5rem;
   }
   .serverVersion, .serverSoftware, .serverPlayers, .serverIP, .serverPlugins {
@@ -225,6 +225,6 @@
     padding: 3px 3px;
   }
   .serverHero {
-    height: 180vh;
+    height: 200vh;
   }
 }

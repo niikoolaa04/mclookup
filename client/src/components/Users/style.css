@@ -7,7 +7,7 @@
 }
 
 .userListHero {
-  height: 130vh;
+  height: 140vh;
   background: linear-gradient(360deg, rgb(17, 20, 24) 40%, rgb(18, 24, 34) 60%);
   z-index: 3 !important;
 }
@@ -43,6 +43,6 @@
 
 @media screen and (max-width: 1024px) {
   .userListHero {
-    height: 320vh;
+    height: 350vh;
   }
 }

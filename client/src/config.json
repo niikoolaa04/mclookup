@@ -1,6 +1,5 @@
 {
   "name": "MCLookup",
-  "clientid": "***REMOVED***",
-  "clientsecret": "***REMOVED***",
-  "mongodb": "mongodb+srv://nikolaa:mdbpw1122@cluster0.ogfvv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+  "version": "1.0 A-PREVIEW",
+  "discord": "https://discord.gg/APnKTdbM4w"  
 }

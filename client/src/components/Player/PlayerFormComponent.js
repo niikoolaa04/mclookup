@@ -3,7 +3,7 @@ import Button from '@material-ui/core/Button';
 import axios from 'axios';
 import './formStyle.css';
 
-function UserFormComponent({ data, setData, input, setInput, searchUser, setSearchUser, searchUUID, setSearchUUID, setNameHistory, nameHistory,setLoading }) {
+function PlayerFormComponent({ data, setData, input, setInput, searchUser, setSearchUser, searchUUID, setSearchUUID, setNameHistory, nameHistory,setLoading }) {
   function getPlayer(e) {
     e.preventDefault();
     setLoading(true);
@@ -65,4 +65,4 @@ function UserFormComponent({ data, setData, input, setInput, searchUser, setSear
   )
 }
 
-export default UserFormComponent
+export default PlayerFormComponent

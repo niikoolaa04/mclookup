@@ -1,6 +1,6 @@
 let newsArray = [
   {
-    title: "Welcome to our MCLookup | Minecraft Player & Server Informations",
+    title: "Welcome to MCLookup | Minecraft Player & Server Informations",
     text: "Hey! Welcome to our Website, if you find bug make sure to report it to our developers by joining Discord Server (Invite Link in Footer)"    
   },
   {

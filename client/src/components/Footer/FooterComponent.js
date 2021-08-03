@@ -10,7 +10,7 @@ function FooterComponent() {
           <p className="copyright">{ config.name }, © 2021 All rights Reserved</p>
         </div>
         <div className="social">
-          <i className="fab fa-discord fa-2x"></i>
+          <a href={config.discord} className="discord"><i className="fab fa-discord fa-2x"></i></a>
         </div>
       </div>
     </div>

@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap');
 
-.userLookupContainer {
+.playerContainer {
   height: 100%;
   width: 100%;
 }
 
-.userLookupHero {
-  height: 130vh;
+.playerHero {
+  height: 145vh;
   background: linear-gradient(360deg, rgb(17, 20, 24) 40%, rgb(18, 24, 34) 60%);
   z-index: 3 !important;
 }
 
-.userLookupTitle {
+.playerTitle {
   font-family: 'Kanit', sans-serif;
   text-transform: uppercase;
   text-align: center;
@@ -20,18 +20,18 @@
   color: #EDF6E5;
 }
 
-.userLookupSubtitleDiv {
+.playerSubtitleDiv {
   padding-top: 30px;
 }
 
-.userLookupSubtitle {
+.playerSubtitle {
   text-align: center;
   font-family: 'Kanit', sans-serif;
   color: #EDF6E1;
   line-height: 17px;
 }
 
-.userLookupBoxContainer {
+.playerBoxContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -39,7 +39,7 @@
   font-family: 'Overpass', sans-serif;
 }
 
-.userLookupBox {
+.playerBox {
   transition: 0.3s;
   text-align: center;
   width: 900px;
@@ -68,11 +68,11 @@
   padding-top: 25px;
 }
 
-.userLookupBoxText {
+.playerBoxText {
   padding-top: 10px;
 }
 
-.userLookupBoxContainer a {
+.playerBoxContainer a {
   text-decoration: none;
   color: #EDF6E1;
 }
@@ -81,24 +81,24 @@
   top: 35px;
 }
 
-.userLookupImg {
+.playerImg {
   padding-top: 13px;
   width: 96px;
   height: 96px;
 }
 
-.userLookupBox {
+.playerBox {
   transition: all 0.3s ease-in-out;
   cursor: cursor;
   transform: scale(1.1, 1.1);
 }
 
-.userLookupBoxContent {
+.playerBoxContent {
   display: flex;
   flex-direction: row;
 }
 
-.userLookupInfo {
+.playerInfo {
   display: flex;
   flex-direction: column;
   justify-content: left;
@@ -280,21 +280,9 @@
 .mobilePreview {
   display: none;
 }
-/* 
-@media screen and (max-width: 1280px) {
-  .userContainer {
-    height: 110vh;
-  }
-} */
-
-/* @media screen and (max-width: 1024px) {
-  .userContainer {
-    height: 120vh;
-  }
-} */
 
 @media screen and (max-width:1024px) {
-  .userLookupBox {
+  .playerBox {
     width: 300px;
     height: 73rem;
   }
@@ -320,7 +308,7 @@
     height: 310px;
     margin-left: 3.5rem;
   }
-  .userLookupBoxContainer {
+  .playerBoxContainer {
     display: flex;
     height: 41.8rem;
   }
@@ -361,13 +349,13 @@
   .noUser p {
     padding: 3px 3px;
   }
-  .userLookupHero {
-    height: 250vh;
+  .playerHero {
+    height: 280vh;
   }
 }
 
 @media screen and (width: 360px) and (height: 647px) {
-  .userLookupHero {
-    height: 240vh;
+  .playerHero {
+    height: 270vh;
   }
 }

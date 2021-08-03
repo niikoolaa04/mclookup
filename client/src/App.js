@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route  } from 'react-router-dom';
 import { newsArray } from './assets/news';
 import HomeComponent from './components/Home/HomeComponent';
 import ServerComponent from './components/Server/ServerComponent';
-import UserLookupComponent from './components/UserLookup/UserLookupComponent';
+import PlayerComponent from './components/Player/PlayerComponent';
 import NewsComponent from './components/News/NewsComponent';
 import ErrorComponent from './components/Other/ErrorComponent';
 import ProfileComponent from './components/Profile/ProfileComponent';
@@ -29,8 +29,8 @@ function App() {
           <Route exact path="/server">
             <ServerComponent />
           </Route>
-          <Route exact path="/user">
-            <UserLookupComponent />
+          <Route exact path="/player">
+            <PlayerComponent />
           </Route>
           <Route exact path="/profile/:id">
             <ProfileComponent />

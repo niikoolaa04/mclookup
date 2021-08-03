@@ -1,12 +1,12 @@
 import { React, useState } from 'react';
 import FooterComponent from '../Footer/FooterComponent';
-import UserLookupFormComponent from './UserLookupFormComponent';
+import PlayerFormComponent from './PlayerFormComponent';
 import NavbarComponent from '../Navigation/NavbarComponent';
 import LoadingComponent from '../Loading/LoadingComponent';
 import Tooltip from '@material-ui/core/Tooltip';
 import './style.css'
 
-function UserComponent() {
+function PlayerComponent() {
   const [nameHistory, setNameHistory] = useState([]);
   const [userData, setUserData] = useState({
     username: '',
@@ -45,13 +45,13 @@ function UserComponent() {
   return (
     <div>
       <NavbarComponent style={{ zIndex: '5000' }} />
-      <div className="userLookupContainer">
-        <div className="userLookupHero" id="hero">
-          <h2 className="userLookupTitle">Minecraft Player Informations</h2>
-          <div className="userLookupSubtitleDiv">
-            <p className="userLookupSubtitle">Enter Username of Minecraft Player</p>
+      <div className="playerContainer">
+        <div className="playerHero" id="hero">
+          <h2 className="playerTitle">Minecraft Player Informations</h2>
+          <div className="playerSubtitleDiv">
+            <p className="playerSubtitle">Enter Username of Minecraft Player</p>
           </div>
-          <UserLookupFormComponent 
+          <PlayerFormComponent 
             data={userData} 
             setData={setUserData} 
             input={input} 
@@ -68,8 +68,8 @@ function UserComponent() {
             isLoading == true ? <LoadingComponent style={styleFix}/> : ''
           }
           { userData.username == '' ? 
-            <div className="userLookupBoxContainer">
-              <div className="userLookupBox" style={{ width: '0px' }}>
+            <div className="playerBoxContainer">
+              <div className="playerBox" style={{ width: '0px' }}>
                 <div className="boxContent" style={{ height: '0px' }}>
                   
                 </div>
@@ -78,8 +78,8 @@ function UserComponent() {
             <div className="t">
               {
                 userData.username == 'Error' ?
-                <div className="userLookupBoxContainer">
-                  <div className="userLookupBox" style={{ width: '0px' }}>
+                <div className="playerBoxContainer">
+                  <div className="playerBox" style={{ width: '0px' }}>
                     <div className="boxLookupContent" style={{ height: '0px' }}>
                     </div>
                   </div>
@@ -89,10 +89,10 @@ function UserComponent() {
                     <p className="noUsername"><strong>Entered Username:</strong> { emptySearch }</p>
                   </div>
                 </div> :
-                <div className="userLookupBoxContainer">
-                  <div className="userLookupBox">
-                    <div className="userLookupBoxContent">
-                      <div className="userLookupInfo">
+                <div className="playerBoxContainer">
+                  <div className="playerBox">
+                    <div className="playerBoxContent">
+                      <div className="playerInfo">
                         <div className="imageBox">
                           <img src={ userData.body } alt="" className="mcSkin" />
                         </div>
@@ -158,4 +158,4 @@ function UserComponent() {
   )
 }
 
-export default UserComponent
+export default PlayerComponent

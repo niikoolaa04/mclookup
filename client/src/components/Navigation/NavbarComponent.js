@@ -42,7 +42,7 @@ function NavbarComponent() {
               <Link to="/server" onClick={() => setOpen(false)} className="nav-link server">Server Lookup</Link>
             </li>
             <li className="nav-item">
-              <Link to="/user" onClick={() => setOpen(false)} className="nav-link user">User Lookup</Link>
+              <Link to="/player" onClick={() => setOpen(false)} className="nav-link user">Player Lookup</Link>
             </li>
             <li className="nav-item">
               <Link to="/users" onClick={() => setOpen(false)} className="nav-link users">Users List</Link>

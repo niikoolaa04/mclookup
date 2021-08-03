@@ -17,7 +17,7 @@ function DescriptionComponent({ open, setOpen, message, setMessage, userID, setD
   function handleSubmit(e) {
     if(desc.length < 8) return handleReturn();
     setOpen(true);
-    setMessage('Description Updated Successfully');
+    setMessage('Description Updated Successfully, refresh page to see changes');
     axios.put(`${process.env.REACT_APP_SERVER_DOMAIN}/api/users/${userID}/description`, {
       description: desc
     }, {

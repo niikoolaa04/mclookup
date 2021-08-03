@@ -3,6 +3,7 @@ import FooterComponent from '../Footer/FooterComponent';
 import PlayerFormComponent from './PlayerFormComponent';
 import NavbarComponent from '../Navigation/NavbarComponent';
 import LoadingComponent from '../Loading/LoadingComponent';
+import Transition from 'react-transition-group/Transition';
 import Tooltip from '@material-ui/core/Tooltip';
 import './style.css'
 
@@ -90,63 +91,67 @@ function PlayerComponent() {
                   </div>
                 </div> :
                 <div className="playerBoxContainer">
-                  <div className="playerBox">
-                    <div className="playerBoxContent">
-                      <div className="playerInfo">
-                        <div className="imageBox">
-                          <img src={ userData.body } alt="" className="mcSkin" />
-                        </div>
-                        <p className="mcUsername">{ userData.username }</p>
-                        <input type="input" value={userData.uuid} id="copy-uuid"></input>
-                        <Tooltip title={`Click to Copy UUID`} placement="top">
-                          <div className="uuidField" onClick={() => {
-                            var text = document.querySelector('#copy-uuid');
-                            text.select();
-                            document.execCommand('copy');
-                          }}>
-                            <p>{ userData.uuid }</p>
-                          </div>
-                        </Tooltip>
-                        <div className="skinField">
-                          <p onClick={() => downloadImage(userData.skin, 'skin')}>Download Skin</p>
-                        </div>
-                        {
-                          userData.cape == '' ?
-                          '' :
-                          <div className="capeField">
-                            <p onClick={() => downloadImage(userData.cape, 'cape')}>Download Cape</p>
-                          </div>
-                        }
-                        <div className="nameHistory">
-                          <div className="nameHistoryInner">
+                  <Transition in={true} timeout={1500} mountOnEnter unmountOnExit appear>
+                    {(state) => (
+                      <div className={`playerBox playerBoxStatus-${state}`}>
+                        <div className="playerBoxContent">
+                          <div className="playerInfo">
+                            <div className="imageBox">
+                              <img src={ userData.body } alt="" className="mcSkin" />
+                            </div>
+                            <p className="mcUsername">{ userData.username }</p>
+                            <input type="input" value={userData.uuid} id="copy-uuid"></input>
+                            <Tooltip title={`Click to Copy UUID`} placement="top">
+                              <div className="uuidField" onClick={() => {
+                                var text = document.querySelector('#copy-uuid');
+                                text.select();
+                                document.execCommand('copy');
+                              }}>
+                                <p>{ userData.uuid }</p>
+                              </div>
+                            </Tooltip>
+                            <div className="skinField">
+                              <p onClick={() => downloadImage(userData.skin, 'skin')}>Download Skin</p>
+                            </div>
                             {
-                              nameHistory.map((data, i) => (
-                                <p className="newName" key={i}>{ data.name }<br /><span className="historySpan" key={i}>{ data.date == undefined ? 'First Username' : new Date(data.date).toLocaleString() }</span></p>
-                              ))
+                              userData.cape == '' ?
+                              '' :
+                              <div className="capeField">
+                                <p onClick={() => downloadImage(userData.cape, 'cape')}>Download Cape</p>
+                              </div>
+                            }
+                            <div className="nameHistory">
+                              <div className="nameHistoryInner">
+                                {
+                                  nameHistory.map((data, i) => (
+                                    <p className="newName" key={i}>{ data.name }<br /><span className="historySpan" key={i}>{ data.date == undefined ? 'First Username' : new Date(data.date).toLocaleString() }</span></p>
+                                  ))
+                                }
+                              </div>
+                            </div>
+                            <div className="mobilePreview">
+                              <img src={`https://crafatar.com/avatars/${userData.uuid}`} alt="" className="mobileAvatar" />
+                              <img src={userData.cape} alt="" className="mobileCape" />
+                            </div>
+                            {
+                              userData.cape == '' ?
+                              <div className="capePreview" style={{ marginTop: '9.5rem' }}>
+                                <img src={`https://crafatar.com/avatars/${userData.uuid}`} alt="" className="avatarIMG" />
+                              </div> :
+                              <div>
+                                <div className="capePreview">
+                                  <img src={userData.cape} alt="" className="capeIMG" />
+                                </div>
+                                <div className="avatarPreview">
+                                  <img src={`https://crafatar.com/avatars/${userData.uuid}`} alt="" className="avatarIMG" />
+                                </div>
+                              </div>
                             }
                           </div>
                         </div>
-                        <div className="mobilePreview">
-                          <img src={`https://crafatar.com/avatars/${userData.uuid}`} alt="" className="mobileAvatar" />
-                          <img src={userData.cape} alt="" className="mobileCape" />
-                        </div>
-                        {
-                          userData.cape == '' ?
-                          <div className="capePreview" style={{ marginTop: '9.5rem' }}>
-                            <img src={`https://crafatar.com/avatars/${userData.uuid}`} alt="" className="avatarIMG" />
-                          </div> :
-                          <div>
-                            <div className="capePreview">
-                              <img src={userData.cape} alt="" className="capeIMG" />
-                            </div>
-                            <div className="avatarPreview">
-                              <img src={`https://crafatar.com/avatars/${userData.uuid}`} alt="" className="avatarIMG" />
-                            </div>
-                          </div>
-                        }
                       </div>
-                    </div>
-                  </div>
+                    )}
+                  </Transition>
                 </div>
               }
             </div>

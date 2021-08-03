@@ -91,3 +91,14 @@
     margin-left: 65px;
   }
 }
+
+.userCardStatus-entering {
+  animation-name: userListOpacity;
+  animation-duration: 1s;
+}
+
+@keyframes userListOpacity {
+  0% {
+    opacity: 0;
+  }
+}

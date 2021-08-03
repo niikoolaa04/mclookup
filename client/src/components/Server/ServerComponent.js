@@ -3,6 +3,7 @@ import FooterComponent from '../Footer/FooterComponent';
 import ServerFormComponent from './ServerFormComponent';
 import NavbarComponent from '../Navigation/NavbarComponent';
 import Tooltip from '@material-ui/core/Tooltip';
+import Transition from 'react-transition-group/Transition';
 import LoadingComponent from '../Loading/LoadingComponent';
 import './style.css'
 
@@ -43,7 +44,6 @@ function ServerComponent() {
           <h2 className="serverTitle">Minecraft Server Lookup</h2>
           <div className="serverSubtitleDiv">
             <p className="serverSubtitle">Enter desired Server IP into Search Box</p>
-            {/* <p className="serverSubtitle">0 / 0</p> */}
           </div>
           <ServerFormComponent 
             data={serverData} 
@@ -81,57 +81,61 @@ function ServerComponent() {
                   </div>
                 </div> :
                 <div className="serverBoxContainer">
-                  <div className="serverBox">
-                    <div className="boxContent">
-                      <div className="serverInfo">
-                        <input type="input" value={serverData.ip + ':' + serverData.port} id="copy-ip"></input> 
-                        <div className="serverFavicon">
-                          <img src={`https://api.minetools.eu/favicon/${serverData.hostname}`} alt="" className="favicon" />
-                        </div>
-                        <div className="motdEl">
-                          <span className="firstLine"></span>
-                          <span className="secondLine"></span>
-                        </div>
-                        <p className="serverDomain">{ serverData.hostname }</p>
-                        <Tooltip title={`Click to Copy Server IP`} placement="top">
-                          <div className="serverIP" onClick={(e) => {
-                            var text = document.querySelector('#copy-ip');
-                            text.select();
-                            document.execCommand('copy');
-                          }}>
-                            <p>{ serverData.ip + ':' + serverData.port } <br /><span className="textBelow">Server IP</span></p>
+                  <Transition in={true} timeout={1500} mountOnEnter unmountOnExit appear>
+                    {(state) => (
+                      <div className={`serverBox serverBoxStatus-${state}`}>
+                        <div className="boxContent">
+                          <div className="serverInfo">
+                            <input type="input" value={serverData.ip + ':' + serverData.port} id="copy-ip"></input> 
+                            <div className="serverFavicon">
+                              <img src={`https://api.minetools.eu/favicon/${serverData.hostname}`} alt="" className="favicon" />
+                            </div>
+                            <div className="motdEl">
+                              <span className="firstLine"></span>
+                              <span className="secondLine"></span>
+                            </div>
+                            <p className="serverDomain">{ serverData.hostname }</p>
+                            <Tooltip title={`Click to Copy Server IP`} placement="top">
+                              <div className="serverIP" onClick={(e) => {
+                                var text = document.querySelector('#copy-ip');
+                                text.select();
+                                document.execCommand('copy');
+                              }}>
+                                <p>{ serverData.ip + ':' + serverData.port } <br /><span className="textBelow">Server IP</span></p>
+                              </div>
+                            </Tooltip>
+                            <div className="serverSoftware">
+                              <p>{ serverData.software } <br /><span className="textBelow">Server Software</span></p>
+                            </div>
+                            <div className="serverPlayers">
+                              {
+                                serverData.playerCount > 0 ?
+                                <Tooltip title={serverData.players.join(', ')} placement="top">
+                                  <p>{ serverData.playerCount + '/' + serverData.maxPlayerCount } <br /><span className="textBelow">Players Count</span></p>
+                                </Tooltip> :
+                                <Tooltip title={``} placement="top">
+                                  <p>{ serverData.playerCount + '/' + serverData.maxPlayerCount } <br /><span className="textBelow">Players Count</span></p>
+                                </Tooltip>
+                              }
+                              {/* <p>{ serverData.playerCount } <br /><span className="textBelow">Player Count</span></p> */}
+                            </div>
+                            <div className="serverVersion">
+                              <p>{ serverData.version } <br /><span className="textBelow">Server Version</span></p>
+                            </div>
+                            {
+                              serverData.pluginsCount >= 1 ?
+                              <div className="serverPlugins">
+                                <Tooltip title={serverData.plugins.join(', ')} placement="top">
+                                  <p>{ serverData.pluginsCount } <br /><span className="textBelow">Plugins Count</span></p>
+                                </Tooltip>
+                              </div> :
+                              <div className="serverPlugins" style={{ display: 'none' }}></div> 
+                            }
                           </div>
-                        </Tooltip>
-                        <div className="serverSoftware">
-                          <p>{ serverData.software } <br /><span className="textBelow">Server Software</span></p>
                         </div>
-                        <div className="serverPlayers">
-                          {
-                            serverData.playerCount > 0 ?
-                            <Tooltip title={serverData.players.join(', ')} placement="top">
-                              <p>{ serverData.playerCount + '/' + serverData.maxPlayerCount } <br /><span className="textBelow">Players Count</span></p>
-                            </Tooltip> :
-                            <Tooltip title={``} placement="top">
-                              <p>{ serverData.playerCount + '/' + serverData.maxPlayerCount } <br /><span className="textBelow">Players Count</span></p>
-                            </Tooltip>
-                          }
-                          {/* <p>{ serverData.playerCount } <br /><span className="textBelow">Player Count</span></p> */}
-                        </div>
-                        <div className="serverVersion">
-                          <p>{ serverData.version } <br /><span className="textBelow">Server Version</span></p>
-                        </div>
-                        {
-                          serverData.pluginsCount >= 1 ?
-                          <div className="serverPlugins">
-                            <Tooltip title={serverData.plugins.join(', ')} placement="top">
-                              <p>{ serverData.pluginsCount } <br /><span className="textBelow">Plugins Count</span></p>
-                            </Tooltip>
-                          </div> :
-                          <div className="serverPlugins" style={{ display: 'none' }}></div> 
-                        }
                       </div>
-                    </div>
-                  </div>
+                    )}
+                  </Transition>
                 </div>
               }
             </div>

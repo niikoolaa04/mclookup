@@ -112,7 +112,6 @@
 }
 
 .descWrapper {
-  opacity: 100%;
   display: flex;
   position: relative;
   flex-direction: row;
@@ -216,5 +215,16 @@
     justify-content: center;
     align-items: center;
     margin-top: 45rem;
+  }
+}
+
+.profileBoxStatus-entering {
+  animation-name: profileOpacity;
+  animation-duration: 1.5s;
+}
+
+@keyframes profileOpacity {
+  0% {
+    opacity: 0;
   }
 }

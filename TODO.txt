@@ -4,7 +4,7 @@
 
 == FRONTEND ==
 
-'Content is Loading' is somewhere moved too much to left/right - Too much at Profile Page
+'Content is Loading' is somewhere moved too much to left/right
 Maybe to find a better color for news section
 When screen is smaller move buttons at Home page down a bit
 Check 393px if you're bored

@@ -348,7 +348,7 @@
     display: flex;
     position: absolute;
     margin-top: 20px;
-    padding-right: 130px;
+    margin-right: 130px;
     width: 32px;
   }
   .mobileAvatar {

@@ -4,12 +4,9 @@
 
 == FRONTEND ==
 
-'Content is Loading' is somewhere moved too much to left/right - Mobile Player Lookup
+'Content is Loading' is somewhere moved too much to left/right - Mobile Player Lookup etc.
 Maybe to find a better color for news section
-When screen is smaller move buttons at Home page down a bit
 Check 393px if you're bored
-Three dots when Username History is too Long (same as users list box)
-Cape Preview on Mobile
 
 * Check responsive at User Lookup for 414px, 412px, 375px etc.
 

@@ -219,7 +219,21 @@
   border-radius: 5px;
   font-family: 'Overpass', sans-serif;
   transition: 0.3s;
-  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.nameHistory::-webkit-scrollbar-track {
+  background-color: rgb(240, 230, 230);
+  border-radius: 4px;
+}
+
+.nameHistory::-webkit-scrollbar {
+  width: 7px;
+}
+
+.nameHistory::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #5865F2;
 }
 
 .newName {

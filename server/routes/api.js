@@ -32,13 +32,14 @@ router.get('/search/users/:username', (req, res) => {
 
 router.put('/users/:id', async function(req, res, next) {
   if(req.headers.request_token != process.env.SERVER_API_KEY) return res.send('No');
-  await User.findOneAndUpdate({ userID: req.params.id }, req.body, function (err, post) {
+  let intUser = Number(req.params.id);
+  await User.findOneAndUpdate({ userID: intUser }, req.body, function (err, post) {
     res.json(post);
-  });
+  }).catch((err) => console.log(err));
 });
 
 router.put('/users/:id/description', async function(req, res, next) {
-  if(req.headers.request_token != process.env.SERVER_API_KEY) return res.send('No');
+if(req.headers.request_token != process.env.SERVER_API_KEY) return res.send('No');
   await User.findOneAndUpdate({ userID: req.params.id }, { 
     $set: { 
       description: req.body.description

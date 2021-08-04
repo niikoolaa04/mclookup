@@ -150,7 +150,6 @@ function ProfileComponent() {
                       </div>
                       <div className="profileExtra">
                         <p className="profileCreated"><span className="accCreated">Account Created</span>: { created }</p>
-                        
                         <div className="profileDescription">
                           {/* ~485 characters limit */}
                           <div className="descWrapper">

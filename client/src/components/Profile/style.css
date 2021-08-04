@@ -138,6 +138,7 @@
   color: #fff;
   font-family: 'Overpass', sans-serif;
   font-size: 15px;
+  text-align: left;
 }
 
 .editDescription {
@@ -215,6 +216,17 @@
     justify-content: center;
     align-items: center;
     margin-top: 45rem;
+  }
+  .profileDescription {
+    margin-left: 0;
+    width: 300px;
+    text-align: left;
+  }
+  .descWrapper {
+    width: 100%;
+    text-align: left; 
+    font-size: 10px;
+    height: 260px;
   }
 }
 

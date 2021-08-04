@@ -1,6 +1,7 @@
 import React from 'react'
 import Tooltip from '@material-ui/core/Tooltip';
 import Transition from 'react-transition-group/Transition';
+import { updateAllProfiles } from '../../utils/updateProfile';
 import { Link } from 'react-router-dom';
 import './listStyle.css'
 

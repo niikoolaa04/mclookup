@@ -3,11 +3,11 @@ const axios = require("axios");
 function updateAllProfiles() {
   axios.get(`${process.env.REACT_APP_SERVER_DOMAIN}/api/users`, {
     headers: {
-      "Request_Token": `${process.env.SERVER_API_KEY}`
+      "Request_Token": `${process.env.REACT_APP_API_KEY}`
     }
   }).then((res) => {
     for(let i = 0; i < res.data.length; i++) {
-      updateAllProfiles(res.data[i]);
+      updateAllDB(res.data[i]);
     }
   })
 }
@@ -15,7 +15,7 @@ function updateAllProfiles() {
 function updateAllDB(profile) {
   axios.get(`https://discordapp.com/api/users/${profile.userID}`, {
     headers: {
-      "Authorization": `Bot ***REMOVED***`,
+      "Authorization": `Bot ${process.env.REACT_APP_DISCORD_TOKEN}`,
       'content-type': 'application/json'
     }
   }).then((resp) => {
@@ -25,9 +25,13 @@ function updateAllDB(profile) {
     axios.put(`${process.env.REACT_APP_SERVER_DOMAIN}/api/users/${profile.userID}`, {
       userID: resp.data.id,
       username: resp.data.username,
+      discriminator: resp.data.discriminator,
       avatarURL: avatar,
       hypeSquad: resp.data.public_flags,
-      nitro: resp.data.premium_type
+      nitro: resp.data.premium_type,
+      description: profile.description,
+      owner: profile.owner,
+      staff: profile.staff
      }, {
       headers: {
         "Request_Token": `${process.env.REACT_APP_API_KEY}`

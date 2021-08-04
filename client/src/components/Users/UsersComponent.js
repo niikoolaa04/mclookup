@@ -4,6 +4,7 @@ import FooterComponent from '../Footer/FooterComponent';
 import PagionationComponent from './PagionationComponent';
 import UsersFormComponent from './UsersFormComponent';
 import UsersList from './UsersList'
+import { updateAllProfiles } from '../../utils/updateProfile';
 import axios from 'axios';
 import './style.css'
 
@@ -26,8 +27,9 @@ function UsersComponent() {
     });
   }
 
-  useEffect(() => {
+  useEffect(async () => {
     getAllUsers();
+    updateAllProfiles();
   }, [])
 
   const indexOfLastPost = currentPage * usersPerPage;

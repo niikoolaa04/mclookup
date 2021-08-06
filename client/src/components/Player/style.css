@@ -386,3 +386,14 @@
     opacity: 0;
   }
 }
+
+.plStatus-entering {
+  animation-name: plEntering;
+  animation-duration: 2s;
+}
+
+@keyframes plEntering {
+  0% {
+    opacity: 0;
+  }
+}

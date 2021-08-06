@@ -240,3 +240,15 @@
     opacity: 0;
   }
 }
+
+.srvStatus-entering {
+  animation-name: srvEntering;
+  animation-duration: 2s;
+}
+
+@keyframes srvEntering {
+  0% {
+    opacity: 0;
+  }
+}
+

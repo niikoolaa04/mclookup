@@ -17,7 +17,7 @@ router.get("/discord/callback", async (req, res) => {
   res.cookie('uuid', uid, {
     expires: new Date(Date.now()+6.048e+8)
   })
-  res.cookie('qwerty_access', tokens.access_token, {
+  res.cookie('bmfA71q', tokens.access_token, {
     expires: new Date(Date.now()+6.048e+8)
   })
 
@@ -57,8 +57,8 @@ router.get("/discord/callback", async (req, res) => {
 router.get("/logout", (req, res) => {
   let uuid = req.cookies["uuid"];
   res.clearCookie("uuid");
-  let qwerty_access = req.cookies["qwerty_access"];
-  res.clearCookie("qwerty_access");
+  let bmfA71q = req.cookies["bmfA71q"];
+  res.clearCookie("bmfA71q");
   res.redirect(process.env.SERVER_REACT_DOMAIN);
 })
 

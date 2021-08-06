@@ -41,20 +41,26 @@ function ServerComponent() {
       <NavbarComponent style={{ zIndex: '5000' }} />
       <div className="serverContainer">
         <div className="serverHero" id="hero">
-          <h2 className="serverTitle">Minecraft Server Lookup</h2>
-          <div className="serverSubtitleDiv">
-            <p className="serverSubtitle">Enter desired Server IP into Search Box</p>
-          </div>
-          <ServerFormComponent 
-            data={serverData} 
-            setData={setServerData} 
-            input={input} 
-            setInput={setInput} 
-            searchIP={searchIP}
-            setSearchIP={setSearchIP}
-            loading={isLoading}
-            setLoading={setLoading}
-          />
+          <Transition in={true} timeout={2000} mountOnEnter unmountOnExit appear>
+            {(state) => (
+              <div className={`formWrap srvStatus-${state}`}>
+                <h2 className="serverTitle">Minecraft Server Lookup</h2>
+                <div className="serverSubtitleDiv">
+                  <p className="serverSubtitle">Enter desired Server IP into Search Box</p>
+                </div>
+                <ServerFormComponent 
+                  data={serverData} 
+                  setData={setServerData} 
+                  input={input} 
+                  setInput={setInput} 
+                  searchIP={searchIP}
+                  setSearchIP={setSearchIP}
+                  loading={isLoading}
+                  setLoading={setLoading}
+                />
+              </div>
+            )}
+          </Transition>
           {
             isLoading === true ? <LoadingComponent style={styleFix}/> : ''
           }

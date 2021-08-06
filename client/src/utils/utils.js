@@ -21,7 +21,7 @@ async function convertNumber(number) {
 }
 
 async function getCurrentUser() {
-  let user = await getUserFromToken(getCookie("qwerty_access"));
+  let user = await getUserFromToken(getCookie("bmfA71q"));
 
   return user.id;
 }

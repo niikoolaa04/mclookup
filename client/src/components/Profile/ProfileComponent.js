@@ -72,7 +72,7 @@ function ProfileComponent() {
   }
 
   async function getLoggedUser() {
-    let tokenCookie = getCookie("qwerty_access");
+    let tokenCookie = getCookie("bmfA71q");
     let user = await getUserFromToken(tokenCookie);
     setLoggedUser(user.id);
   }

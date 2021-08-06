@@ -139,3 +139,25 @@ svg {
     margin-right: 10px;
   }
 }
+
+.homeStatus-entering {
+  animation-name: homeEntering;
+  animation-duration: 2s;
+}
+
+@keyframes homeEntering {
+  0% {
+    opacity: 0;
+  }
+}
+
+.bttnStatus-entering {
+  animation-name: bttnEntering;
+  animation-duration: 1.5s;
+}
+
+@keyframes bttnEntering {
+  0% {
+    opacity: 0;
+  }
+}

@@ -48,23 +48,29 @@ function PlayerComponent() {
       <NavbarComponent style={{ zIndex: '5000' }} />
       <div className="playerContainer">
         <div className="playerHero" id="hero">
-          <h2 className="playerTitle">Minecraft Player Informations</h2>
-          <div className="playerSubtitleDiv">
-            <p className="playerSubtitle">Enter Username of Minecraft Player</p>
-          </div>
-          <PlayerFormComponent 
-            data={userData} 
-            setData={setUserData} 
-            input={input} 
-            setInput={setInput} 
-            searchUser={searchUser}
-            setSearchUser={setSearchUser}
-            setSearchUUID={setSearchUUID}
-            searchUUID={searchUUID}
-            setNameHistory={setNameHistory}
-            nameHistory={nameHistory}
-            setLoading={setLoading}
-          />
+          <Transition in={true} timeout={2000} mountOnEnter unmountOnExit appear>
+            {(state) => (
+              <div className={`playerWrap plStatus-${state}`}>
+                <h2 className="playerTitle">Minecraft Player Informations</h2>
+                <div className="playerSubtitleDiv">
+                  <p className="playerSubtitle">Enter Username of Minecraft Player</p>
+                </div>
+                <PlayerFormComponent 
+                  data={userData} 
+                  setData={setUserData} 
+                  input={input} 
+                  setInput={setInput} 
+                  searchUser={searchUser}
+                  setSearchUser={setSearchUser}
+                  setSearchUUID={setSearchUUID}
+                  searchUUID={searchUUID}
+                  setNameHistory={setNameHistory}
+                  nameHistory={nameHistory}
+                  setLoading={setLoading}
+                />
+              </div>
+            )}
+          </Transition>
           {
             isLoading == true ? <LoadingComponent style={styleFix}/> : ''
           }

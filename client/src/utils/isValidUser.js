@@ -3,11 +3,11 @@ const {getUserFromToken} = require('./getUserFromToken');
 
 async function isValidUser(id, token) {
   let value = true;
-  let user = await getUserFromToken(getCookie("qwerty_access"));
+  let user = await getUserFromToken(getCookie("bmfA71q"));
   if(user.code) {
     if(user.code === 0) value = false;
   }
-  if(!getCookie("uuid") || !getCookie("qwerty_access")) value = false;
+  if(!getCookie("uuid") || !getCookie("bmfA71q")) value = false;
 
   return value;
 }

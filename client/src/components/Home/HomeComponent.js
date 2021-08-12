@@ -26,8 +26,8 @@ function HomeComponent() {
             <Transition in={true} timeout={1500} mountOnEnter unmountOnExit appear>
               {(state) => (
                 <div className={`homeBttns bttnStatus-${state}`}>
-                  <Link to="/user">
-                    <button className="lookUserBttn">LOOKUP USER<span className="usrLook"><br />(Need Players Username)</span></button>
+                  <Link to="/player">
+                    <button className="lookUserBttn">LOOKUP PLAYER<span className="usrLook"><br />(Need Players Username)</span></button>
                   </Link>
                   <Link to="/server">
                     <button className="lookSrvBttn">LOOKUP SERVER<span className="srvLook"><br />(Need Server Address)</span></button>

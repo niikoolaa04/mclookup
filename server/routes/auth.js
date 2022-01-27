@@ -33,11 +33,11 @@ router.get("/discord/callback", async (req, res) => {
   async function postNow() {
     if(userExist) return;
     await axios.post(`${process.env.SERVER_DOMAIN}/api/newUser`, { 
-      userID: user.id, 
+      userID: `${user.id}`, 
       username: user.username, 
       discriminator: user.discriminator,
       hypeSquad: user.public_flags,
-      avatarURL: avatar,
+      avatarURL: `${avatar}`,
       nitro: user.premium_type,
       description: '',
       owner: false,

@@ -100,15 +100,16 @@ function ProfileComponent() {
                     <div className="profileInfo">
                       <div className="manageUserBttns">
                         {
-                          (async() => await isOwner()) ? 
-                          currentUser.staff == false ?
-                            <Button variant="contained" color="primary" className="manageAdminBttn" >
-                              ADD ADMINISTRATOR
-                            </Button> :
-                            <Button variant="contained" color="primary" className="manageAdminBttn" >
-                              REMOVE ADMINISTRATOR
-                            </Button>
-                          : ''
+                          !loggedUser ? '' : 
+                            (async() => await isOwner()) ? 
+                            currentUser.staff == false ?
+                              <Button variant="contained" color="primary" className="manageAdminBttn" >
+                                ADD ADMINISTRATOR
+                              </Button> :
+                              <Button variant="contained" color="primary" className="manageAdminBttn" >
+                                REMOVE ADMINISTRATOR
+                              </Button>
+                            : ''
                         }
                       </div>
                       <div className="badgesContainer">

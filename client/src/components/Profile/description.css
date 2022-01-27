@@ -28,6 +28,7 @@
 
 textarea {
   resize: none;
+  text-align: center;
 }
 
 .descArea {
@@ -45,7 +46,7 @@ textarea {
 }
 
 .descArea::placeholder {
-  color: #fff;
+  color: rgba(245, 245, 245, 0.356)(8, 8, 8, 0.671);
   opacity: 1;
   font-family: 'Kanit', sans-serif;
   text-transform: uppercase;
@@ -54,7 +55,7 @@ textarea {
 }
 
 .descArea:-ms-input-placeholder {
-  color: #fff;
+  color: rgba(245, 245, 245, 0.356)(8, 8, 8, 0.671);
   font-family: 'Kanit', sans-serif;
   text-transform: uppercase;
   text-align: center;

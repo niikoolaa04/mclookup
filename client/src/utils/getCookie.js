@@ -1,4 +1,4 @@
-function getCookie(cName) {
+export const getCookie = (cName) => {
   const name = cName + "=";
   const cDecoded = decodeURIComponent(document.cookie); //to be careful
   const cArr = cDecoded.split('; ');
@@ -7,8 +7,4 @@ function getCookie(cName) {
     if (val.indexOf(name) === 0) res = val.substring(name.length);
   })
   return res
-}
-
-module.exports = {
-  getCookie,
 }

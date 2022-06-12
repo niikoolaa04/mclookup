@@ -2,7 +2,7 @@ const axios = require("axios");
 const { getCookie } = require("./getCookie");
 const { getUserFromToken } = require("./getUserFromToken");
 
-async function convertNumber(number) {
+export const convertNumber = async(number) => {
   let id = parseInt(number);
 
   let binary = id.toString(2);
@@ -20,13 +20,13 @@ async function convertNumber(number) {
   return dataFormat;
 }
 
-async function getCurrentUser() {
+export const getCurrentUser = async() => {
   let user = await getUserFromToken(getCookie("bmfA71q"));
 
   return user.id;
 }
 
-async function isOwner() {
+export const isOwner = async() => {
   let id = await getCurrentUser();
   let owner = false;
   await axios.get(`${process.env.REACT_APP_SERVER_DOMAIN}/api/users/${id}`, {
@@ -38,10 +38,4 @@ async function isOwner() {
   })
 
   return owner;
-}
-
-module.exports = {
-  convertNumber,
-  getCurrentUser,
-  isOwner,
 }

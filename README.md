@@ -26,7 +26,7 @@ Website is built with React, Express & data is saved in MongoDB (Mongoose).
 2.1 `REACT_APP_API_KEY=<SERVER_API_KEY from backend/server .env>`  
 
 ## Other Information
- - If you like this website feel free to star it ;D
+ - If you like this website feel free to star repo ;D
 
 ## Useful Links
 - React: https://reactjs.org/

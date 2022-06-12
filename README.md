@@ -4,14 +4,14 @@ Website from which you can see information about Minecraft Servers & Players. Vi
 From Player Lookup you can view Player's Skin, Username History, Cape, Avatar and more! 
 Website is built with React, Express & data is saved in MongoDB (Mongoose).
 
-✨ **Live Demo:** Soon
+✨ **Live Demo:** https://mclookup-niikoolaa04.vercel.app/
 
 ## Setup of Backend & Frontend
 ### Server Installation
 1. Run `npm install` command in server directory
 2. Make `.env` file in server directory and fill as so:  
-2.1 `SERVER_MONGO_URL=<MongoDB URL>`  
-2.2 `SERVER_DOMAIN=<Domain of your backend/server with port>`
+2.1 `SERVER_MONGO_URL=<MongoDB URL>`    
+2.2 `SERVER_DOMAIN=<Domain of your backend/server with port>`    
 2.2 `SERVER_REACT_DOMAIN=<URL of your frontend/client>`  
 2.3 `PORT=<Whatever Port you want>`  
 2.4 `SERVER_API_KEY=<Some super secret & strong string, used for API Calls from Frontend>`  

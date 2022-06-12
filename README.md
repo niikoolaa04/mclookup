@@ -4,7 +4,7 @@ Website from which you can see information about Minecraft Servers & Players. Vi
 From Player Lookup you can view Player's Skin, Username History, Cape, Avatar and more! 
 Website is built with React, Express & data is saved in MongoDB (Mongoose).
 
-✨ **Live Demo:** https://mclookup-niikoolaa04.vercel.app/
+✨ **Live Demo:** https://mclookup-niikoolaa04.vercel.app/ (Login not working)
 
 ## Setup of Backend & Frontend
 ### Server Installation

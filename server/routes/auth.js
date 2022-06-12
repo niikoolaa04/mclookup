@@ -12,15 +12,7 @@ router.get("/discord/callback", async (req, res) => {
   let tokens = await getTokensFromCode(code);
   if (tokens.error && tokens.error === "invalid_request")
     return res.redirect(process.env.SERVER_REACT_DOMAIN);
-
-  let uid = uuid()
-  res.cookie('uuid', uid, {
-    expires: new Date(Date.now()+6.048e+8)
-  })
-  res.cookie('bmfA71q', tokens.access_token, {
-    expires: new Date(Date.now()+6.048e+8)
-  })
-
+  
   let user = await getUserFromToken(tokens.access_token);
   let userExist = false;
   await User.findOne({ userID: user.id }).then((u) => {
@@ -31,25 +23,34 @@ router.get("/discord/callback", async (req, res) => {
   else avatar = `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.webp?size=256`
 
   async function postNow() {
-    if(userExist) return;
-    await axios.post(`${process.env.SERVER_DOMAIN}/api/newUser`, { 
-      userID: `${user.id}`, 
-      username: user.username, 
-      discriminator: user.discriminator,
-      hypeSquad: user.public_flags,
-      avatarURL: `${avatar}`,
-      nitro: user.premium_type,
-      description: '',
-      owner: false,
-      staff: false
-    }, {
-      headers: {
-        "Request_Token": `${process.env.SERVER_API_KEY}`,
-        "Content-Type": "application/json",
-    }}).catch((err) => console.log(err));
+    if(!userExist) {
+      await axios.post(`${process.env.SERVER_DOMAIN}/api/newUser`, { 
+        userID: `${user.id}`, 
+        username: user.username, 
+        discriminator: user.discriminator,
+        hypeSquad: user.public_flags,
+        avatarURL: `${avatar}`,
+        nitro: user.premium_type,
+        description: '',
+        owner: false,
+        staff: false
+      }, {
+        headers: {
+          "Request_Token": `${process.env.SERVER_API_KEY}`,
+          "Content-Type": "application/json",
+      }}).catch((err) => console.log(err));
+    }
   }
 
   await postNow();
+
+  let uid = uuid()
+  res.cookie('uuid', uid, {
+    expires: new Date(Date.now()+6.048e+8)
+  })
+  res.cookie('bmfA71q', tokens.access_token, {
+    expires: new Date(Date.now()+6.048e+8)
+  })
 
   res.redirect(process.env.SERVER_REACT_DOMAIN);
 });

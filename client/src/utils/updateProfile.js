@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-function updateAllProfiles() {
+export const updateAllProfiles = () => {
   axios.get(`${process.env.REACT_APP_SERVER_DOMAIN}/api/users`, {
     headers: {
       "Request_Token": `${process.env.REACT_APP_API_KEY}`
@@ -12,7 +12,7 @@ function updateAllProfiles() {
   })
 }
 
-function updateAllDB(profile) {
+export const updateAllDB = (profile) => {
   axios.get(`https://discordapp.com/api/users/${profile.userID}`, {
     headers: {
       "Authorization": `Bot ${process.env.REACT_APP_DISCORD_TOKEN}`,
@@ -38,9 +38,4 @@ function updateAllDB(profile) {
       }
     }).catch((err) => console.log(err));
   });
-}
-
-module.exports = {
-  updateAllProfiles,
-  updateAllDB,
 }

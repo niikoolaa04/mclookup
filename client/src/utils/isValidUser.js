@@ -1,7 +1,7 @@
-const {getCookie} = require('./getCookie');
-const {getUserFromToken} = require('./getUserFromToken');
+const { getCookie } = require('./getCookie');
+const { getUserFromToken } = require('./getUserFromToken');
 
-async function isValidUser(id, token) {
+export const isValidUser = async(id, token) => {
   let value = true;
   let user = await getUserFromToken(getCookie("bmfA71q"));
   if(user.code) {
@@ -10,8 +10,4 @@ async function isValidUser(id, token) {
   if(!getCookie("uuid") || !getCookie("bmfA71q")) value = false;
 
   return value;
-}
-
-module.exports = {
-  isValidUser
 }

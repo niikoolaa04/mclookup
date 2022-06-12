@@ -1,6 +1,6 @@
 const fetch = require("node-fetch");
 
-async function getUserFromID(token, user) {
+export const getUserFromID = async(token, user) => {
   let tokenType = "Bearer";
   let info = await fetch("https://discordapp.com/api/users/" + user, {
     headers: {
@@ -8,8 +8,4 @@ async function getUserFromID(token, user) {
     }
   }).then(res => res.json());
   return info;
-}
-
-module.exports = {
-  getUserFromID,
 }

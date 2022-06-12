@@ -56,6 +56,6 @@ app.get('/*', function(req, res) {
 
  */
 
-app.listen(process.env.SERVER_PORT, () => {
-  console.log("App is listening on port " + process.env.SERVER_PORT);
+app.listen(process.env.PORT, () => {
+  console.log("App is listening on port " + process.env.PORT);
 });

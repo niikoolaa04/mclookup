@@ -11,7 +11,7 @@
     "jquery": "^3.6.0",
     "mongoose": "latest",
     "mongoose-long": "^0.4.0",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^2.6.7",
     "quickmongo": "^3.0.2",
     "uuid": "^8.3.2"
   },

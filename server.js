@@ -6,12 +6,13 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const AuthRouter = require("./routes/auth");
 const APIRouter = require("./routes/api")
+const path = require("path");
 
 app.set("trust proxy", 1)
 app.use(cookieParser());
 app.use(cors({
   credentials: true,
-  origin: process.env.SERVER_CLIENT_URL
+  origin: process.env.SERVER_REACT_DOMAIN
 }));
 app.use(express.json())
 

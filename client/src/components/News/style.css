@@ -23,6 +23,8 @@
   box-shadow: rgb(37, 41, 46) 3px 3px;
   top: 10rem;
   text-align: center;
+  padding-left: 25px;
+  padding-right: 25px;
   width: 380px;
   height: 250px;
   border-radius: 5px;

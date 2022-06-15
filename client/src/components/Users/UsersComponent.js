@@ -16,18 +16,21 @@ function UsersComponent() {
   const [usersPerPage] = useState(10);
 
   async function getAllUsers() {
-    await axios.get(`${process.env.REACT_APP_SERVER_DOMAIN}/api/users`, {
+    await fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/api/users`, {
+      method: 'GET',
       headers: {
         "Request_Token": `${process.env.REACT_APP_API_KEY}`,
         "Content-Type": "application/json"
       }
-    }).then((res) => {
-      setUsers(res.data);
-      setOldUsers(res.data);
-    });
+    }).then(async(res) => {
+      let data = await res.json();
+      setUsers(data);
+      setOldUsers(data);
+    })
   }
 
   useEffect(async () => {
+    console.log(process.env.REACT_APP_SERVER_DOMAIN + "/api/users")
     getAllUsers();
     updateAllProfiles();
   }, [])

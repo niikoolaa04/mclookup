@@ -56,7 +56,7 @@ router.get("/discord/callback", async (req, res) => {
     expires: new Date(Date.now()+6.048e+8),
     sameSite: "none",
     secure: true,
-    site: "mclookup-niikoolaa04.vercel.app", httpOnly: false
+    httpOnly: false
   })
   res.redirect(process.env.SERVER_REACT_DOMAIN);
 });

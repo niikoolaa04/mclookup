@@ -5,29 +5,21 @@ const app = express();
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const AuthRouter = require("./routes/auth");
-const APIRouter = require("./routes/api");
+const APIRouter = require("./routes/api")
 
 app.set("trust proxy", 1)
 app.use(cookieParser());
 app.use(cors({
   credentials: true,
-  origin: true
+  origin: process.env.SERVER_CLIENT_URL
 }));
 app.use(express.json())
 
-app.use(function(req, res, next) {     
-  res.header('Access-Control-Allow-Credentials', true);     
-  res.header('Access-Control-Allow-Origin', req.headers.origin);     
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');     
-  res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
-  next(); 
-});  
-
-app.use((req, res, next) => {   
+/* app.use((req, res, next) => {   
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
-});
+}); */
 
 app.use("/auth", AuthRouter);
 app.use("/api", APIRouter);
@@ -45,23 +37,21 @@ mongoose.connect(process.env.SERVER_MONGO_URL, {
 /**
   REACT & EXPRESS
   JUST DO 'NPM RUN BUILD' AND THIS, ALSO CHANGE ENV VARIABLES
-
-app.use(express.static("../client/build"))
+*/
+app.use(express.static("./client/build"))
 
 app.get("/", (req, res, next) => {
-  //res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"))
-  res.sendFile(path.join(__dirname, '../client/build/index.html'))
+  //res.sendFile(path.resolve(__dirname, "./client", "build", "index.html"))
+  res.sendFile(path.join(__dirname, './client/build/index.html'))
 })
 
 app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'), function(err) {
+  res.sendFile(path.join(__dirname, './client/build/index.html'), function(err) {
     if (err) {
       res.status(500).send(err)
     }
   })
 })
-
- */
 
 app.listen(process.env.PORT, () => {
   console.log("App is listening on port " + process.env.PORT);

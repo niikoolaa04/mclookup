@@ -1,36 +1,10 @@
 const { Router } = require("express");
 const router = Router();
-const cors = require('../utils/corsFix');
-const cookieParser = require("cookie-parser");
 const { getTokensFromCode } = require("../utils/getTokensFromCode");
 const { getUserFromToken } = require("../utils/getUserFromToken");
 const { v4: uuid } = require("uuid");
 const User = require("../models/User");
 const axios = require("axios");
-
-router.options('*', cors.corsWithOptions, (req, res) => {
-  res.sendStatus(200);
-});
-
-router.use(cookieParser());
-
-router.get("/test", async(req, res) => {
-  res.cookie('test', "1234", {
-    sameSite: "lax",
-    secure: true,
-    domain: "mclookup.vercel.app"
-  });
-  res.cookie('aeaeae', "000", {
-    sameSite: "none"
-  });
-  res.cookie('glamgkaga', "000", {
-    sameSite: "none",
-    secure: true,
-    domain: "mclookup.vercel.app"
-  });
-
-  res.redirect("https://mclookup.vercel.app/");
-})
 
 router.get("/discord/callback", async (req, res) => {
   let code = req.query.code;
@@ -72,23 +46,13 @@ router.get("/discord/callback", async (req, res) => {
 
   let uid = uuid()
   res.cookie('uuid', uid, {
-    // expires: new Date(Date.now()+6.048e+8),
-    maxAge: 60000 * 60,
-    httpOnly: true,
-    sameSite: "none",
-    signed: false,
-    domain: "mclookup.vercel.app"
-  });
-
+    expires: new Date(Date.now()+6.048e+8)
+  })
   res.cookie('bmfA71q', tokens.access_token, {
-    // expires: new Date(Date.now()+6.048e+8),
-    maxAge: 60000 * 60,
-    httpOnly: true,
-    signed: false,
-    domain: "mclookup.vercel.app"
-  });
+    expires: new Date(Date.now()+6.048e+8)
+  })
 
-  res.redirect("https://mclookup.vercel.app/");
+  res.redirect(process.env.SERVER_REACT_DOMAIN);
 });
 
 router.get("/logout", (req, res) => {

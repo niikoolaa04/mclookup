@@ -124,19 +124,22 @@ svg {
 
 @media screen and (max-width: 1024px) {
   .homeHero {
-    height: 60vh;
+    height: 90vh;
+  }
+  .homeBttns {
+    display: flex;
+    flex-direction: column;
+  }
+  .lookUserBttn {
+    margin-bottom: 25px;
   }
   .lookSrvBttn, .lookUserBttn {
     padding: 5px 5px;
     border-radius: 2px;
-    width: 35%;
+    width: 75%;
     height: 50px;
-  }
-  .lookSrvBttn {
-    margin-left: 10px;
-  }
-  .lookUserBttn {
-    margin-right: 10px;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 

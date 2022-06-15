@@ -4,13 +4,7 @@
 .playerContainer {
   height: 100%;
   width: 100%;
-  overflow-x: hidden;
-}
-
-.playerHero {
-  height: 145vh;
   background: linear-gradient(360deg, rgb(17, 20, 24) 40%, rgb(18, 24, 34) 60%);
-  z-index: 3 !important;
 }
 
 .playerTitle {
@@ -44,7 +38,8 @@
   transition: 0.3s;
   text-align: center;
   width: 900px;
-  height: 500px;
+  margin-bottom: 150px;
+  margin-top: 15px;
   /* background-color: beige; */
   background: linear-gradient(rgb(17, 20, 24), rgb(18, 24, 34));
   border-radius: 5px;
@@ -98,6 +93,7 @@
 .playerBoxContent {
   display: flex;
   flex-direction: row;
+  padding-bottom: 45px;
 }
 
 .playerInfo {
@@ -219,7 +215,6 @@
   border-radius: 5px;
   font-family: 'Overpass', sans-serif;
   transition: 0.3s;
-  overflow-y: scroll;
 }
 
 .nameHistory::-webkit-scrollbar-track {
@@ -298,9 +293,12 @@
 }
 
 @media screen and (max-width:1024px) {
+  .playerContainer {
+    height: fit-content;
+  }
   .playerBox {
     width: 300px;
-    height: 73rem;
+    /* height: 73rem; */
   }
   .mcUsername {
     margin-left: 1.5rem;
@@ -323,10 +321,6 @@
     width: 190px;
     height: 310px;
     margin-left: 3.5rem;
-  }
-  .playerBoxContainer {
-    display: flex;
-    height: 41.8rem;
   }
   .avatarPreview, .capePreview {
     display: none;
@@ -359,20 +353,11 @@
   }
   .noUser {
     display: flex;
-    width: 340px;
+    width: auto;
     height: 150px;
   }
   .noUser p {
     padding: 3px 3px;
-  }
-  .playerHero {
-    height: 280vh;
-  }
-}
-
-@media screen and (width: 360px) and (height: 647px) {
-  .playerHero {
-    height: 270vh;
   }
 }
 

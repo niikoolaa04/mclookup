@@ -47,3 +47,11 @@
   justify-content: center;
   pointer-events: none;
 }
+
+@media screen and (max-width: 1024px) {
+  .newsContainer {
+    font-size: smaller;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}

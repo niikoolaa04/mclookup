@@ -4,13 +4,7 @@
 .serverContainer {
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
-}
-
-.serverHero {
-  height: 150vh;
   background: linear-gradient(360deg, rgb(17, 20, 24) 40%, rgb(18, 24, 34) 60%);
-  z-index: 3 !important;
 }
 
 .serverTitle {
@@ -45,7 +39,9 @@
   transition: 0.3s;
   text-align: center;
   width: 900px;
-  height: 500px;
+  margin-top: 15px;
+  margin-bottom: 150px;
+  /* padding-bottom: 45px; */
   background: linear-gradient(rgb(17, 20, 24), rgb(18, 24, 34));
   border-radius: 5px;
   z-index: 3 !important;
@@ -75,10 +71,6 @@
   justify-content: flex-end;
 }
 
-.serverBoxText {
-  padding-top: 10px;
-}
-
 .serverBoxContainer a {
   text-decoration: none;
   color: #EDF6E1;
@@ -103,6 +95,7 @@
 .boxContent {
   display: flex;
   flex-direction: row;
+  padding-bottom: 45px;
 }
 
 .serverInfo {
@@ -196,18 +189,28 @@
 }
 
 @media screen and (max-width:1024px) {
+  .serverContainer {
+    height: fit-content;
+  }
   .serverBox {
     width: 300px;
   }
   .motdEl {
+    position: relative;
     left: 7px;
-    top: 32rem;
+    margin-top: 25px;
+    margin-bottom: 25px;
     font-size: 18px;
     padding: 15px 15px;
     width: 280px;
+    top: 0;
   }
   .serverFavicon {
-    margin-top: 43rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    top: 0;
+    bottom: 0;
+    position: relative;
     margin-left: 5.5rem;
   }
   .serverVersion, .serverSoftware, .serverPlayers, .serverIP, .serverPlugins {
@@ -219,14 +222,11 @@
   }
   .noServer {
     display: flex;
-    width: 340px;
+    width: auto;
     height: 150px;
   }
   .noServer p {
     padding: 3px 3px;
-  }
-  .serverHero {
-    height: 200vh;
   }
 }
 

@@ -47,11 +47,11 @@ function PlayerComponent() {
     <div>
       <NavbarComponent style={{ zIndex: '5000' }} />
       <div className="playerContainer">
-        <div className="playerHero" id="hero">
+        {/* <div className="playerHero" id="hero"> */}
           <Transition in={true} timeout={2000} mountOnEnter unmountOnExit appear>
             {(state) => (
               <div className={`playerWrap plStatus-${state}`}>
-                <h2 className="playerTitle">Minecraft Player Informations</h2>
+                <h2 className="playerTitle">Minecraft Player Lookup</h2>
                 <div className="playerSubtitleDiv">
                   <p className="playerSubtitle">Enter Username of Minecraft Player</p>
                 </div>
@@ -76,24 +76,27 @@ function PlayerComponent() {
           }
           { userData.username == '' ? 
             <div className="playerBoxContainer">
-              <div className="playerBox" style={{ width: '0px' }}>
-                <div className="boxContent" style={{ height: '0px' }}>
-                  
+              <div className="playerBox">
+                <div className="">
+                  <div className="noUser">
+                    <h4 className="noUserTitle">Welcome to Search Player Page</h4>
+                    <p>To get Information about Player, enter Username into form and click 'Search'</p>
+                  </div>
                 </div>
               </div>
             </div> :
-            <div className="t">
+            <div>
               {
                 userData.username == 'Error' ?
                 <div className="playerBoxContainer">
-                  <div className="playerBox" style={{ width: '0px' }}>
-                    <div className="boxLookupContent" style={{ height: '0px' }}>
+                  <div className="playerBox">
+                    <div className="boxLookupContent">
+                      <div className="noUser" style={{ marginBottom: "50px" }}>
+                        <h4 className="noUserTitle">An Error Ocurred with your Request</h4>
+                        <p>Player with such username couldn't be found, please try again.</p>
+                        <p className="noUsername"><strong>Entered Username:</strong> { emptySearch }</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="noUser">
-                    <h4 className="noUserTitle">An Error Ocurred with your Request</h4>
-                    <p>Player with such username couldn't be found, please try again.</p>
-                    <p className="noUsername"><strong>Entered Username:</strong> { emptySearch }</p>
                   </div>
                 </div> :
                 <div className="playerBoxContainer">
@@ -162,7 +165,7 @@ function PlayerComponent() {
               }
             </div>
           }
-        </div>
+        {/* </div> */}
       </div>
       <FooterComponent />
     </div>

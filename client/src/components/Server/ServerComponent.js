@@ -40,7 +40,7 @@ function ServerComponent() {
     <div>
       <NavbarComponent style={{ zIndex: '5000' }} />
       <div className="serverContainer">
-        <div className="serverHero" id="hero">
+        {/* <div className="serverHero" id="hero"> */}
           <Transition in={true} timeout={2000} mountOnEnter unmountOnExit appear>
             {(state) => (
               <div className={`formWrap srvStatus-${state}`}>
@@ -66,24 +66,27 @@ function ServerComponent() {
           }
           { serverData.status === '' ? 
             <div className="serverBoxContainer">
-              <div className="serverBox" style={{ width: '0px' }}>
-                <div className="boxContent" style={{ height: '0px' }}>
-                  
+              <div className="serverBox">
+                <div className="">
+                  <div className="noServer">
+                    <h4 className="noServerTitle">Welcome to Search Player Page</h4>
+                    <p>To get Information about Player, enter Username into form and click 'Search'</p>
+                  </div>
                 </div>
               </div>
             </div> :
-            <div className="t">
+            <div>
               {
                 serverData.status === 'Error' ?
                 <div className="serverBoxContainer">
-                  <div className="serverBox" style={{ width: '0px' }}>
-                    <div className="boxContent" style={{ height: '0px' }}>
+                  <div className="serverBox">
+                    <div className="boxContent">
+                      <div className="noServer">
+                        <h4 className="noServerTitle">An Error Ocurred with your Request</h4>
+                        <p>Server with provided IP Address is either Offline or doesn't exist.</p>
+                        <p className="noServerIP"><strong>Entered IP Address:</strong> { emptySearch }</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="noServer">
-                    <h4 className="noServerTitle">An Error Ocurred with your Request</h4>
-                    <p>Server with provided IP Address is either Offline or doesn't exist.</p>
-                    <p className="noServerIP"><strong>Entered IP Address:</strong> { emptySearch }</p>
                   </div>
                 </div> :
                 <div className="serverBoxContainer">
@@ -146,7 +149,7 @@ function ServerComponent() {
               }
             </div>
           }
-        </div>
+        {/* </div> */}
       </div>
       <FooterComponent />
     </div>

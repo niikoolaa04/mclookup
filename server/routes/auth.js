@@ -15,8 +15,12 @@ router.options('*', cors.corsWithOptions, (req, res) => {
 router.use(cookieParser());
 
 router.get("/test", async(req, res) => {
-  res.cookie('test', "1234");
-  res.cookie('aeaeae', "000");
+  res.cookie('test', "1234", {
+    sameSite: "lax"
+  });
+  res.cookie('aeaeae', "000", {
+    sameSite: "none"
+  });
 
   res.redirect("https://mclookup.vercel.app/");
 })
@@ -63,7 +67,8 @@ router.get("/discord/callback", async (req, res) => {
   res.cookie('uuid', uid, {
     // expires: new Date(Date.now()+6.048e+8),
     maxAge: 60000 * 60,
-    httpOnly: false,
+    httpOnly: true,
+    sameSite: "none",
     signed: false,
     domain: "mclookup.vercel.app"
   });
@@ -71,7 +76,7 @@ router.get("/discord/callback", async (req, res) => {
   res.cookie('bmfA71q', tokens.access_token, {
     // expires: new Date(Date.now()+6.048e+8),
     maxAge: 60000 * 60,
-    httpOnly: false,
+    httpOnly: true,
     signed: false,
     domain: "mclookup.vercel.app"
   });

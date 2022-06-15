@@ -1,17 +1,20 @@
 const { Router } = require("express");
 const router = Router();
+const cookieParser = require("cookie-parser");
 const { getTokensFromCode } = require("../utils/getTokensFromCode");
 const { getUserFromToken } = require("../utils/getUserFromToken");
 const { v4: uuid } = require("uuid");
 const User = require("../models/User");
 const axios = require("axios");
 
+router.use(cookieParser());
+
 router.get("/discord/callback", async (req, res) => {
   let code = req.query.code;
-  if (!code) return res.redirect(process.env.SERVER_REACT_DOMAIN);
+  if (!code) return res.status(404);
   let tokens = await getTokensFromCode(code);
   if (tokens.error && tokens.error === "invalid_request")
-    return res.redirect(process.env.SERVER_REACT_DOMAIN);
+    return res.status(500);
   
   let user = await getUserFromToken(tokens.access_token);
   let userExist = false;

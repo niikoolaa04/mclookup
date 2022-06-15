@@ -16,10 +16,15 @@ router.use(cookieParser());
 
 router.get("/test", async(req, res) => {
   res.cookie('test', "1234", {
-    sameSite: "lax"
+    sameSite: "lax",
+    domain: "mclookup.vercel.app"
   });
   res.cookie('aeaeae', "000", {
     sameSite: "none"
+  });
+  res.cookie('glamgkaga', "000", {
+    sameSite: "none",
+    domain: "mclookup.vercel.app"
   });
 
   res.redirect("https://mclookup.vercel.app/");

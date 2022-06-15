@@ -1,5 +1,6 @@
 const { Router } = require("express");
 const router = Router();
+const cors = require('../utils/corsFix');
 const cookieParser = require("cookie-parser");
 const { getTokensFromCode } = require("../utils/getTokensFromCode");
 const { getUserFromToken } = require("../utils/getUserFromToken");
@@ -7,7 +8,18 @@ const { v4: uuid } = require("uuid");
 const User = require("../models/User");
 const axios = require("axios");
 
+router.options('*', cors.corsWithOptions, (req, res) => {
+  res.sendStatus(200);
+});
+
 router.use(cookieParser());
+
+router.get("/test", async(req, res) => {
+  res.cookie('test', "1234");
+  res.cookie('aeaeae', "000");
+
+  res.redirect("https://mclookup.vercel.app/");
+})
 
 router.get("/discord/callback", async (req, res) => {
   let code = req.query.code;

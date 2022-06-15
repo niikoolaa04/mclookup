@@ -11,14 +11,7 @@ app.set("trust proxy", 1)
 app.use(cookieParser());
 app.use(cors({
   credentials: true,
-  origin: [
-    "https://mclookup-app.herokuapp.com",
-    "https://mclookup-app.herokuapp.com/",
-    "https://discordapp.com",
-    "https://discord.com",
-    "https://discordapp.com/",
-    "https://discord.com/",
-  ],
+  origin: true
 }));
 app.use(express.json())
 
@@ -30,11 +23,11 @@ app.use(function(req, res, next) {
   next(); 
 });  
 
-// app.use((req, res, next) => {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//   next();
-// });
+app.use((req, res, next) => {   
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 app.use("/auth", AuthRouter);
 app.use("/api", APIRouter);

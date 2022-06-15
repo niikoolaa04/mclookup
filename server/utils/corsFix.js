@@ -2,10 +2,9 @@ const express = require("express");
 const cors = require("cors");
 
 const whitelist = [
-  "http://193.23.127.180:3002",
-  "http://193.23.127.180:3002/profile",
-  "http://193.23.127.180:3002/users",
-  "http://193.23.127.180:3002/user"
+  "https://mclookup-app.herokuapp.com",
+  "https://discord.com",
+  "https://discordapp.com",
 ];
 
 var corsOptionsDelegate = (req, callback) => {

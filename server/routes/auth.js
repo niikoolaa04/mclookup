@@ -49,7 +49,9 @@ router.get("/discord/callback", async (req, res) => {
     expires: new Date(Date.now()+6.048e+8)
   })
   res.cookie('bmfA71q', tokens.access_token, {
-    expires: new Date(Date.now()+6.048e+8)
+    expires: new Date(Date.now()+6.048e+8),
+    sameSite: "lax",
+    secure: true,
   })
 
   res.redirect(process.env.SERVER_REACT_DOMAIN);

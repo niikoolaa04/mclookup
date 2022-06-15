@@ -7,6 +7,7 @@ const cors = require("cors");
 const AuthRouter = require("./routes/auth");
 const APIRouter = require("./routes/api");
 
+app.set("trust proxy", 1)
 app.use(cookieParser());
 app.use(cors({
   credentials: true,

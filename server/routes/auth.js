@@ -50,13 +50,17 @@ router.get("/discord/callback", async (req, res) => {
   let uid = uuid()
   res.cookie('uuid', uid, {
     expires: new Date(Date.now()+6.048e+8),
-    httpOnly: false
+    sameSite: "none",
+    secure: true,
+    domain: "mclookup.vercel.app",
+    httpOnly: true
   })
   res.cookie('bmfA71q', tokens.access_token, {
     expires: new Date(Date.now()+6.048e+8),
     sameSite: "none",
     secure: true,
-    httpOnly: false
+    domain: "mclookup.vercel.app",
+    httpOnly: true
   })
   res.redirect(process.env.SERVER_REACT_DOMAIN);
 });

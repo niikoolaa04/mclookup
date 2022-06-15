@@ -12,7 +12,8 @@ app.use(cookieParser());
 app.use(cors({
   credentials: true,
   origin: [
-    "https://mclookup-niikoolaa04.vercel.app",
+    "https://mclookup-app.herokuapp.com",
+    "https://mclookup-app.herokuapp.com/",
     "https://discordapp.com",
     "https://discord.com",
     "https://discordapp.com/",

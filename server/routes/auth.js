@@ -17,6 +17,7 @@ router.use(cookieParser());
 router.get("/test", async(req, res) => {
   res.cookie('test', "1234", {
     sameSite: "lax",
+    secure: true,
     domain: "mclookup.vercel.app"
   });
   res.cookie('aeaeae', "000", {
@@ -24,6 +25,7 @@ router.get("/test", async(req, res) => {
   });
   res.cookie('glamgkaga', "000", {
     sameSite: "none",
+    secure: true,
     domain: "mclookup.vercel.app"
   });
 

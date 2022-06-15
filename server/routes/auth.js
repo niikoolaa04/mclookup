@@ -11,10 +11,10 @@ router.use(cookieParser());
 
 router.get("/discord/callback", async (req, res) => {
   let code = req.query.code;
-  if (!code) return res.status(404);
+  if (!code) return res.redirect(process.env.SERVER_REACT_DOMAIN);
   let tokens = await getTokensFromCode(code);
   if (tokens.error && tokens.error === "invalid_request")
-    return res.status(500);
+    return res.redirect(process.env.SERVER_REACT_DOMAIN);
   
   let user = await getUserFromToken(tokens.access_token);
   let userExist = false;
@@ -61,7 +61,7 @@ router.get("/discord/callback", async (req, res) => {
     secure: true,
     domain: "mclookup.vercel.app",
     httpOnly: true
-  })
+  });
   res.redirect(process.env.SERVER_REACT_DOMAIN);
 });
 

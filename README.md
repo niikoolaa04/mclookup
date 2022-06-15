@@ -16,14 +16,14 @@ Website is built with React, Express & data is saved in MongoDB (Mongoose).
 2.2 `SERVER_REACT_DOMAIN=<URL of your frontend/client>`  
 2.3 `PORT=<Whatever Port you want>`  
 2.4 `SERVER_API_KEY=<Some super secret & strong string, used for API Calls from Frontend>`  
-2.5 `SERVER_CLIENT_ID=<Discord Bot Application Client ID>`  
-2.5 `SERVER_CLIENT_SECRET=<Discord Bot Application Secret>`  
+2.5 `SERVER_CLIENT_ID=<Discord Application Client ID>`  
+2.5 `SERVER_CLIENT_SECRET=<Discord Application Secret>`  
 
 ### Client Installation
 1. Run `npm install` command in client directory
 2. Make `.env` file in client directory and fill as so:  
 2.1 `REACT_APP_SERVER_DOMAIN=<URL of your backend/server with port>`  
-2.1 `REACT_APP_OAUTH2_URL=<Discord Bot Application OAuth2 URL>`  
+2.1 `REACT_APP_OAUTH2_URL=<Discord Application OAuth2 URL with redirect to backend URL>`  
 2.1 `REACT_APP_API_KEY=<SERVER_API_KEY from backend/server .env>`  
 
 ## Other Information

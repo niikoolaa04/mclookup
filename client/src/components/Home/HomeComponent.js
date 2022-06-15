@@ -27,7 +27,7 @@ function HomeComponent() {
               {(state) => (
                 <div className={`homeBttns bttnStatus-${state}`}>
                   <Link to="/player">
-                    <button className="lookUserBttn">LOOKUP PLAYER<span className="usrLook"><br />(Need Players Username)</span></button>
+                    <button className="lookUserBttn">LOOKUP PLAYER<span className="usrLook"><br />(Need Player's Username)</span></button>
                   </Link>
                   <Link to="/server">
                     <button className="lookSrvBttn">LOOKUP SERVER<span className="srvLook"><br />(Need Server Address)</span></button>

@@ -11,7 +11,7 @@ app.set("trust proxy", 1)
 app.use(cookieParser());
 app.use(cors({
   credentials: true,
-  origin: process.env.SERVER_REACT_DOMAIN,
+  origin: true,
 }));
 app.use(express.json())
 

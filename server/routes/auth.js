@@ -57,7 +57,8 @@ router.get("/discord/callback", async (req, res) => {
     sameSite: "none",
     secure: true,
     site: "mclookup-niikoolaa04.vercel.app", httpOnly: false
-  }).redirect(process.env.SERVER_REACT_DOMAIN);
+  })
+  res.redirect(process.env.SERVER_REACT_DOMAIN);
 });
 
 router.get("/logout", (req, res) => {

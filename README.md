@@ -2,9 +2,10 @@
 
 Website from which you can see information about Minecraft Servers & Players. View Server's Player Count, Plugins (if public), icon, MoTD & much more.    
 From Player Lookup you can view Player's Skin, Username History, Cape, Avatar and more! 
+Authenticate yourself through Discord, view list of all authenticated users, customise your profile & more!
 Website is built with React, Express & data is saved in MongoDB (Mongoose).
 
-✨ **Live Demo:** https://mclookup-niikoolaa04.vercel.app/ (Login not working)
+✨ **Live Demo:** https://mclookup-app.herokuapp.com/
 
 ## Setup of Backend & Frontend
 ### Server Installation

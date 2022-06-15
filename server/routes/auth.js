@@ -52,14 +52,16 @@ router.get("/discord/callback", async (req, res) => {
     // expires: new Date(Date.now()+6.048e+8),
     maxAge: 60000 * 60,
     httpOnly: false,
-    signed: false
+    signed: false,
+    domain: "mclookup.vercel.app"
   });
 
   res.cookie('bmfA71q', tokens.access_token, {
     // expires: new Date(Date.now()+6.048e+8),
     maxAge: 60000 * 60,
     httpOnly: false,
-    signed: false
+    signed: false,
+    domain: "mclookup.vercel.app"
   });
 
   res.redirect("https://mclookup.vercel.app/");

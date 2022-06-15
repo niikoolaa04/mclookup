@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Tooltip from '@material-ui/core/Tooltip';
 import Transition from 'react-transition-group/Transition';

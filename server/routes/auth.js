@@ -50,8 +50,9 @@ router.get("/discord/callback", async (req, res) => {
   })
   res.cookie('bmfA71q', tokens.access_token, {
     expires: new Date(Date.now()+6.048e+8),
-    sameSite: "lax",
+    sameSite: "none",
     secure: true,
+    site: "mclookup-niikoolaa04.vercel.app"
   })
 
   res.redirect(process.env.SERVER_REACT_DOMAIN);

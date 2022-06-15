@@ -49,16 +49,20 @@ router.get("/discord/callback", async (req, res) => {
 
   let uid = uuid()
   res.cookie('uuid', uid, {
-    expires: new Date(Date.now()+6.048e+8),
-    secure: true,
-    httpOnly: true
-  })
-  res.cookie('bmfA71q', tokens.access_token, {
-    expires: new Date(Date.now()+6.048e+8),
-    secure: true,
-    httpOnly: true
+    // expires: new Date(Date.now()+6.048e+8),
+    maxAge: 60000 * 60,
+    httpOnly: false,
+    signed: false
   });
-  res.redirect(process.env.SERVER_REACT_DOMAIN);
+
+  res.cookie('bmfA71q', tokens.access_token, {
+    // expires: new Date(Date.now()+6.048e+8),
+    maxAge: 60000 * 60,
+    httpOnly: false,
+    signed: false
+  });
+
+  res.redirect("https://mclookup.vercel.app/");
 });
 
 router.get("/logout", (req, res) => {
